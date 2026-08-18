@@ -33,7 +33,12 @@
     "ドラッグレース"
    ],
    "region": "JP",
-   "video_official": false
+   "video_official": false,
+   "date": "2026-08-18",
+   "body": ""
   }
+ ],
+ "delivered": [
+  "eae983c160"
  ]
 }
