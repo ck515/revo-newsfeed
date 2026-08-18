@@ -155,6 +155,7 @@ def render_card(
     photo: str | Path | None = None,
     overlay: float = 0.42,
     logo_color: str = "white",
+    transparent: bool = False,
     out: str | Path = "card.png",
 ) -> Path:
     """Render one card to PNG and return its path.
@@ -170,6 +171,9 @@ def render_card(
                 text under a dark scrim. Rights-cleared sources only.
     overlay     Scrim strength, 0-1. Raise it for bright or busy photos.
     logo_color  'white' (default) or 'accent'.
+    transparent Render only the marks on a transparent background, for
+                compositing over your own image in an editor. Any photo is
+                dropped, since it would be replaced anyway.
     """
     if not headline.strip():
         raise ValueError("headline is required")
@@ -192,6 +196,7 @@ def render_card(
         .replace("__DATE__", html.escape(_fmt_date(date)))
         .replace("__LOGO_CLASS__", "accent" if logo_color == "accent" else "")
         .replace("--overlay:0.42;", f"--overlay:{overlay};")
+        .replace("__BODY_CLASS__", "transparent" if transparent else "")
     )
 
     out_path = Path(out)
@@ -210,7 +215,9 @@ def render_card(
             page.goto(tmp.as_uri())
             page.wait_for_function("document.body.dataset.ready === '1'")
             page.wait_for_timeout(120)  # let webfonts settle
-            page.locator("#card").screenshot(path=str(out_path))
+            page.locator("#card").screenshot(
+                path=str(out_path), omit_background=transparent
+            )
             browser.close()
     finally:
         tmp.unlink(missing_ok=True)
@@ -252,6 +259,10 @@ def render_cards(items: list[dict], out_dir: str | Path = "out") -> list[Path]:
                     "accent" if it.get("logo_color") == "accent" else "",
                 )
                 .replace("--overlay:0.42;", f"--overlay:{it.get('overlay', 0.42)};")
+                .replace(
+                    "__BODY_CLASS__",
+                    "transparent" if it.get("transparent") else "",
+                )
             )
             tmp = BASE_DIR / f".render_batch_{i}.html"
             tmp.write_text(filled, encoding="utf-8")
@@ -260,7 +271,9 @@ def render_cards(items: list[dict], out_dir: str | Path = "out") -> list[Path]:
                 page.wait_for_function("document.body.dataset.ready === '1'")
                 page.wait_for_timeout(80)
                 dest = out_dir / f"{name}.png"
-                page.locator("#card").screenshot(path=str(dest))
+                page.locator("#card").screenshot(
+                    path=str(dest), omit_background=bool(it.get("transparent"))
+                )
                 paths.append(dest)
             finally:
                 tmp.unlink(missing_ok=True)
@@ -278,6 +291,8 @@ def main() -> None:
     ap.add_argument("--photo", default=None)
     ap.add_argument("--overlay", type=float, default=0.42)
     ap.add_argument("--logo-color", default="white", choices=["white", "accent"])
+    ap.add_argument("--transparent", action="store_true",
+                    help="背景透過PNGで出力（編集用）")
     ap.add_argument("--out", default="card.png")
     a = ap.parse_args()
     path = render_card(
@@ -288,6 +303,7 @@ def main() -> None:
         photo=a.photo,
         overlay=a.overlay,
         logo_color=a.logo_color,
+        transparent=a.transparent,
         out=a.out,
     )
     print(path)

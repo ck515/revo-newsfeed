@@ -83,13 +83,30 @@ def build_user_message(items: list[dict]) -> str:
 
 def _parse(text: str) -> list[dict]:
     """Strip fences and parse. Raises on malformed output rather than guessing."""
-    if text.rstrip().endswith(("," , '"')) or text.count("[") > text.count("]"):
-        raise ValueError(
-            "モデルの出力が途中で切れています。max_tokens が不足しています。"
-            f"（出力 {len(text)} 文字）"
-        )
     cleaned = re.sub(r"^```(?:json)?|```$", "", text.strip(), flags=re.MULTILINE).strip()
-    data = json.loads(cleaned)
+    try:
+        data = json.loads(cleaned)
+    except json.JSONDecodeError:
+        # Truncated output: salvage the objects that did close. Losing the tail
+        # of a batch beats losing the whole day.
+        salvaged, depth, start = [], 0, None
+        for i, ch in enumerate(cleaned):
+            if ch == "{":
+                if depth == 0:
+                    start = i
+                depth += 1
+            elif ch == "}":
+                depth -= 1
+                if depth == 0 and start is not None:
+                    try:
+                        salvaged.append(json.loads(cleaned[start : i + 1]))
+                    except json.JSONDecodeError:
+                        pass
+        if not salvaged:
+            raise
+        print(f"  ! 出力が途中で切れました。{len(salvaged)}件を救出します"
+              f"（max_tokens 不足の可能性）")
+        return salvaged
     if not isinstance(data, list):
         raise ValueError("expected a JSON array")
     return data
@@ -103,8 +120,8 @@ def score_via_api(items: list[dict]) -> list[dict]:
         raise RuntimeError("ANTHROPIC_API_KEY is not set")
 
     client = anthropic.Anthropic()
-    # Roughly 130 tokens per scored item; the cap has to scale with the batch
-    # or the JSON array is truncated mid-string and fails to parse.
+    # Roughly 130 tokens per scored item. A fixed cap truncates the JSON array
+    # mid-string once the batch grows, so it has to scale with the batch.
     resp = client.messages.create(
         model=MODEL,
         max_tokens=min(16000, 1000 + 160 * len(items)),

@@ -9,18 +9,14 @@ from __future__ import annotations
 # silently dead feed looks identical to a quiet news day. `weight` nudges the
 # score for outlets whose readership overlaps REVO's most closely.
 # ---------------------------------------------------------------------------
-# 2026-08-18 実測でフィードを検証。以下は記事フィードを提供していないか
-# 到達できなかったため外した:
-#   Motor Fan            /feed も /rss もタグ一覧を返す（記事フィードなし）
-#   Car Watch            403（UA弾き）
-#   Creative Trend       未到達
-#   オンラインオートサロン  未到達
-#   Response             フィードは生きているが業界紙。50件中45件が人事情報・
-#                        建設機械・蓄電池・物流など。読者層と一致しない
-# 生きている2本だけで日次30件前後。まずはこの規模で運用する。
 SOURCES = [
     {"name": "Auto Messe Web", "url": "https://www.automesseweb.jp/feed", "weight": 1.2},
     {"name": "WEB CARTOP", "url": "https://www.webcartop.jp/feed", "weight": 1.1},
+    {"name": "Motor Fan", "url": "https://motor-fan.jp/feed", "weight": 1.0},
+    {"name": "Car Watch", "url": "https://car.watch.impress.co.jp/data/rss/1.0/cw/feed.rdf", "weight": 1.0},
+    {"name": "Response", "url": "https://response.jp/rss/index.rdf", "weight": 0.9},
+    {"name": "Creative Trend", "url": "https://creative311.com/feed", "weight": 1.0},
+    {"name": "オンラインオートサロン", "url": "https://www.tokyoautosalon.jp/rss", "weight": 1.1},
 ]
 
 # ---------------------------------------------------------------------------
@@ -50,12 +46,6 @@ EXCLUDE = {
         # Keep commercial-vehicle terms specific.
         "商用車", "軽トラ", "商用バン", "ハイエース", "N-VAN", "サンバー", "キャリイ",
         "自動運転", "ライドシェア", "MaaS", "充電インフラ",
-        # 実フィードで通過してしまったもの
-        "〈PR〉", "［PR］", "【PR】",
-        "車庫証明", "ながら運転", "違反", "免許", "交通ルール", "取り締まり",
-        "電動バイク", "二輪", "バイク",
-        "下請け", "サプライヤー",
-        "食堂", "グルメ", "ラーメン", "定食",
     ],
 }
 
@@ -91,4 +81,36 @@ POST_WINDOWS = {
 }
 
 CATEGORIES = ["DEBUT", "PARTS", "EVENT", "RACE", "RETRO"]
+
+# ---------------------------------------------------------------------------
+# Card background
+#
+#   "none"      typography only. No rights exposure at all.
+#   "category"  a fixed own-shot image per category from cards/backgrounds/.
+#               Falls back to "none" for any category with no file, so it is
+#               safe to add images one at a time.
+#   "article"   the article's own OG image, pulled from the feed.
+#
+# "article" is off by default on purpose. Feed images are made by the outlet,
+# not by the manufacturer or the organiser, and the rule set for this account
+# allows only manufacturer-official, parts-maker-official or organiser-supplied
+# material. Turning it on is a decision to accept that exposure — it should be
+# a deliberate edit, not an inherited default.
+# ---------------------------------------------------------------------------
+CARD_BACKGROUND = "category"
+BACKGROUND_DIR = "backgrounds"
+CARD_OVERLAY = 0.42             # scrim strength; raise for bright photos
 HEADLINE_MAX_CHARS = 34         # measured limit of the card renderer
+
+
+# ---------------------------------------------------------------------------
+# Local overrides
+#
+# config_local.py is not shipped in the archive, so anything set there survives
+# unzipping a new version over the top. Feed lists and exclusion keywords get
+# tuned against real traffic and must not be reset by an update.
+# ---------------------------------------------------------------------------
+try:
+    from config_local import *  # noqa: F401,F403
+except ImportError:
+    pass

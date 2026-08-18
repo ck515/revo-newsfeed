@@ -17,6 +17,17 @@
   html, body { width:1080px; height:1350px; background:var(--bg); -webkit-font-smoothing:antialiased; }
   .card { position:relative; width:1080px; height:1350px; background:var(--bg); overflow:hidden; }
 
+  /* Transparent output: the card becomes an overlay layer to composite over
+     an image in an editor. Everything that would sit behind the type is
+     dropped — the flat background and any photo — leaving only the marks. */
+  /* html is the body's parent, so the class on body cannot reach it with a
+     descendant selector — :has() is what actually clears the root fill, and
+     without it the screenshot comes back opaque. */
+  html:has(body.transparent),
+  body.transparent,
+  body.transparent .card { background:transparent; }
+  body.transparent .photo { display:none; }
+
   /* signature: oblique decal tag + livery stripe */
   .tag {
     position:absolute; z-index:2; left:var(--pad); top:158px; height:62px;
@@ -97,7 +108,7 @@
   }
 </style>
 </head>
-<body>
+<body class="__BODY_CLASS__">
   <div class="card" id="card">
     <div class="tag __TAG_CLASS__" id="tag"><span>__CATEGORY__</span></div>
     <div class="stripe" id="stripe"><i></i><i></i><i></i></div>

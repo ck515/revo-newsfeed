@@ -173,6 +173,29 @@ class Discord:
                 out.append(e)
         return out
 
+    # -- reading back what a human sent ------------------------------------
+    def recent_messages(self, limit: int = 50,
+                        channel_id: str | None = None) -> list[dict]:
+        cid = channel_id or self.channel_id
+        res = self._request("GET", f"/channels/{cid}/messages?limit={limit}")
+        return res if isinstance(res, list) else []
+
+    def download(self, url: str, dest: Path) -> Path | None:
+        """Save a Discord attachment. Attachment URLs are signed and expire,
+        so they are fetched at publish time rather than stored."""
+        if self.dry_run:
+            print(f"[dry-run] GET {url[:80]}… -> {dest}")
+            return None
+        try:
+            r = requests.get(url, timeout=30)
+            r.raise_for_status()
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            dest.write_bytes(r.content)
+            return dest
+        except Exception as e:
+            print(f"  添付の取得に失敗: {e}")
+            return None
+
     def me(self) -> dict:
         return self._request("GET", "/users/@me")
 

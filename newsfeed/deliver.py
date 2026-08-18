@@ -15,24 +15,90 @@ from pathlib import Path
 CARDS_DIR = Path(__file__).resolve().parent.parent / "cards"
 sys.path.insert(0, str(CARDS_DIR))
 
-from config import POST_WINDOWS  # noqa: E402
+from config import (  # noqa: E402
+    BACKGROUND_DIR,
+    CARD_BACKGROUND,
+    CARD_OVERLAY,
+    POST_WINDOWS,
+)
 
 
-def render(candidates: list[dict], out_dir: str | Path) -> list[Path]:
-    """Render one card per candidate using the card renderer."""
+def _download(url: str, dest: Path) -> Path | None:
+    """Fetch an article's OG image. Returns None on any failure — a missing
+    background must never take a card down with it."""
+    import requests
+
+    try:
+        r = requests.get(url, timeout=15, headers={"User-Agent": "REVO-newsfeed/1.0"})
+        r.raise_for_status()
+        if not r.headers.get("content-type", "").startswith("image/"):
+            return None
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_bytes(r.content)
+        return dest
+    except Exception as e:
+        print(f"  背景画像の取得に失敗: {e}")
+        return None
+
+
+def background_for(c: dict, out_dir: Path) -> str | None:
+    """Pick the background for one card, per CARD_BACKGROUND.
+
+    Every mode degrades to no background rather than failing, so a missing
+    file or a dead image URL costs a plain card, not a lost post.
+    """
+    # A human-supplied image always wins: it was chosen deliberately, unlike
+    # anything the mode picks automatically.
+    if c.get("photo_override"):
+        return c["photo_override"]
+
+    mode = CARD_BACKGROUND
+
+    if mode == "category":
+        p = CARDS_DIR / BACKGROUND_DIR / f"{c['category']}.jpg"
+        if p.exists():
+            return str(p)
+        alt = p.with_suffix(".png")
+        return str(alt) if alt.exists() else None
+
+    if mode == "article":
+        url = c.get("image_url")
+        if not url:
+            return None
+        dest = Path(out_dir) / "_bg" / f"{c['id']}.jpg"
+        got = _download(url, dest)
+        return str(got) if got else None
+
+    return None
+
+
+def render(candidates: list[dict], out_dir: str | Path) -> list[tuple[Path, Path]]:
+    """Render each candidate twice and return (flat, overlay) pairs.
+
+    The flat card is postable as-is. The overlay is the same card on a
+    transparent background, so a photo can be composited behind it in an
+    editor without rebuilding the layout by hand — which is faster and gives
+    a better result than any background this pipeline could pick.
+    """
     from render import render_cards  # imported late so config stays importable
 
-    items = [
-        {
-            "name": f"{i + 1:02d}_{c['id']}",
+    def spec(i, c, transparent):
+        return {
+            "name": f"{i + 1:02d}_{c['id']}" + ("_overlay" if transparent else ""),
             "headline": c["headline"],
             "category": c["category"],
             "keywords": c.get("keywords", []),
             "date": c.get("date", date.today().isoformat()),
+            "photo": None if transparent else background_for(c, Path(out_dir)),
+            "overlay": CARD_OVERLAY,
+            "transparent": transparent,
         }
-        for i, c in enumerate(candidates)
-    ]
-    return render_cards(items, out_dir=out_dir)
+
+    items = [spec(i, c, False) for i, c in enumerate(candidates)]
+    items += [spec(i, c, True) for i, c in enumerate(candidates)]
+    paths = render_cards(items, out_dir=out_dir)
+    n = len(candidates)
+    return list(zip(paths[:n], paths[n:]))
 
 
 def next_windows(start: date, count: int) -> list[str]:
@@ -61,13 +127,24 @@ def hashtags(c: dict) -> str:
 
 
 def caption(c: dict) -> str:
-    return (
-        f"{c['headline']}\n\n"
-        f"{(c.get('summary') or '')[:120]}\n\n"
-        f"詳細は{c.get('source', '各媒体')}の記事より。\n"
+    """Assemble the post caption.
+
+    The body is whatever `body` holds — generated at publish time by
+    caption.generate(). If generation was skipped or failed, the caption is the
+    headline plus the REVO line and nothing else: an empty body is better than
+    republishing the outlet's own sentences, which is what slicing the feed
+    summary amounted to.
+    """
+    parts = [c["headline"]]
+    body = (c.get("body") or "").strip()
+    if body:
+        parts.append(body)
+    parts.append(
+        f"出典: {c.get('source', '各媒体')}\n"
         f"REVOでは全国のカースポットとイベントをマップで確認できます。\n"
         f"プロフィールのリンクから。"
     )
+    return "\n\n".join(parts)
 
 
 def discord_message(c: dict, card: Path, slot: str) -> str:
@@ -76,7 +153,7 @@ def discord_message(c: dict, card: Path, slot: str) -> str:
     return "\n".join(
         [
             f"**【投稿用】{c['category']}｜{c['score']}点**  {video}",
-            f"`{card.name}`",
+            f"`{card.name}`　＋　背景透過版 `{card.stem}_overlay.png`",
             "",
             "▼ キャプション",
             "```",
@@ -149,6 +226,8 @@ def daily_review(
         "",
         "──────────",
         "数字でリアクション → カード生成 ／ ⏭ 全スキップ",
+        "このメッセージに返信すると差し替えられます: "
+        "`3` +画像 で背景、`3 新しい見出し` で見出し",
         "-# 除外内訳: "
         + "・".join(f"{k} {v}" for k, v in sorted(dropped.items()))
         + f"　｜　投稿枠 {next_windows(day, 1)[0] if next_windows(day, 1) else '—'}",

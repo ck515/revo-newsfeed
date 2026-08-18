@@ -26,6 +26,26 @@ def _strip_html(s: str) -> str:
     return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", s or "")).strip()
 
 
+def _image_url(entry) -> str:
+    """Best-effort article image from the feed entry itself.
+
+    Only used when CARD_BACKGROUND is "article". Feeds expose this in several
+    places depending on the CMS, so try each rather than assuming one.
+    """
+    for key in ("media_content", "media_thumbnail"):
+        vals = getattr(entry, key, None) or []
+        for v in vals:
+            url = v.get("url") if isinstance(v, dict) else None
+            if url:
+                return url
+    for link in getattr(entry, "links", []) or []:
+        if str(link.get("type", "")).startswith("image/") and link.get("href"):
+            return link["href"]
+    blob = str(getattr(entry, "summary", "")) + str(getattr(entry, "content", ""))
+    m = re.search(r'<img[^>]+src=["\']([^"\']+)', blob)
+    return m.group(1) if m else ""
+
+
 def _has_video(entry) -> bool:
     """Cheap check for an embedded video. Only a hint; the human decides."""
     blob = " ".join(
@@ -86,6 +106,7 @@ def collect(sources: list[dict] | None = None) -> tuple[list[dict], list[str]]:
                     "summary": _strip_html(getattr(e, "summary", ""))[:600],
                     "published": getattr(e, "published", "") or "",
                     "has_video": _has_video(e),
+                    "image_url": _image_url(e),
                 }
             )
             fresh += 1
