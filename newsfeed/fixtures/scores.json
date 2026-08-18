@@ -1,0 +1,208 @@
+[
+ {
+  "id": "a01",
+  "score": 10,
+  "reason": "スポーツカー復活、最関心事",
+  "category": "DEBUT",
+  "headline": "GRセリカ復活が確実視、ポルトガルでテスト走行",
+  "keywords": [
+   "GRセリカ",
+   "トヨタ",
+   "スポーツカー"
+  ],
+  "video_official": false,
+  "region": "JP"
+ },
+ {
+  "id": "a06",
+  "score": 9,
+  "reason": "大型オフ会の開催情報",
+  "category": "EVENT",
+  "headline": "KUHL大感謝オフ会2026、富士スピードウェイで開催",
+  "keywords": [
+   "富士スピードウェイ",
+   "オフ会",
+   "KUHL"
+  ],
+  "video_official": false,
+  "region": "JP"
+ },
+ {
+  "id": "a03",
+  "score": 8,
+  "reason": "有名メーカーの新パーツ",
+  "category": "PARTS",
+  "headline": "BLITZがプレリュード用パーツを先行開発",
+  "keywords": [
+   "BLITZ",
+   "プレリュード",
+   "ホンダ"
+  ],
+  "video_official": false,
+  "region": "JP"
+ },
+ {
+  "id": "a04",
+  "score": 8,
+  "reason": "ホットハッチ向けエアロ",
+  "category": "PARTS",
+  "headline": "ZC33Sスイフトスポーツ用エアロが登場",
+  "keywords": [
+   "スイフトスポーツ",
+   "ZC33S",
+   "エアロ"
+  ],
+  "video_official": false,
+  "region": "JP"
+ },
+ {
+  "id": "a07",
+  "score": 8,
+  "reason": "首都圏のイベント",
+  "category": "EVENT",
+  "headline": "BLITZとcarrozzeriaの体感イベントが川崎で初開催",
+  "keywords": [
+   "BLITZ",
+   "carrozzeria",
+   "川崎"
+  ],
+  "video_official": false,
+  "region": "JP"
+ },
+ {
+  "id": "a05",
+  "score": 7,
+  "reason": "カスタム向けホイール",
+  "category": "PARTS",
+  "headline": "レクサスRX用エアロと24インチ鍛造ホイールが登場",
+  "keywords": [
+   "レクサスRX",
+   "アドミレイション",
+   "ホイール"
+  ],
+  "video_official": false,
+  "region": "JP"
+ },
+ {
+  "id": "a10",
+  "score": 7,
+  "reason": "スーパーカーの新型発表",
+  "category": "DEBUT",
+  "headline": "ランボルギーニが新型モデルを発表",
+  "keywords": [
+   "ランボルギーニ",
+   "スーパーカー"
+  ],
+  "video_official": true,
+  "region": "WORLD"
+ },
+ {
+  "id": "a08",
+  "score": 6,
+  "reason": "走りに関わる改良あり",
+  "category": "DEBUT",
+  "headline": "カローラスポーツ一部改良、60周年記念車を設定",
+  "keywords": [
+   "カローラスポーツ",
+   "トヨタ",
+   "特別仕様車"
+  ],
+  "video_official": false,
+  "region": "JP"
+ },
+ {
+  "id": "a09",
+  "score": 5,
+  "reason": "国内導入だが実用車寄り",
+  "category": "DEBUT",
+  "headline": "タンドラの国内正規販売が開始",
+  "keywords": [
+   "タンドラ",
+   "トヨタ"
+  ],
+  "video_official": false,
+  "region": "JP"
+ },
+ {
+  "id": "a02",
+  "score": 3,
+  "reason": "SUVの実用面の改良",
+  "category": "DEBUT",
+  "headline": "ハリアー一部改良モデルが8月3日に発売",
+  "keywords": [
+   "ハリアー",
+   "トヨタ"
+  ],
+  "video_official": false,
+  "region": "JP"
+ },
+ {
+  "id": "a11",
+  "score": 3,
+  "reason": "実用SUV、走り要素なし",
+  "category": "DEBUT",
+  "headline": "スバル アセントの3列シートSUVに注目",
+  "keywords": [
+   "アセント",
+   "スバル"
+  ],
+  "video_official": false,
+  "region": "JP"
+ },
+ {
+  "id": "a12",
+  "score": 2,
+  "reason": "海外エントリーSUV",
+  "category": "DEBUT",
+  "headline": "メルセデス新型GLAクラスが世界初公開",
+  "keywords": [
+   "GLA",
+   "メルセデス"
+  ],
+  "video_official": false,
+  "region": "WORLD"
+ },
+ {
+  "id": "a13",
+  "score": 2,
+  "reason": "販売動向のコラム",
+  "category": null,
+  "headline": "",
+  "keywords": [],
+  "video_official": false,
+  "region": "JP"
+ },
+ {
+  "id": "x10",
+  "score": 0,
+  "reason": "車と無関係",
+  "category": null,
+  "headline": "",
+  "keywords": [],
+  "video_official": false,
+  "region": "JP"
+ },
+ {
+  "id": "x01",
+  "score": 3,
+  "reason": "北米専用グレード",
+  "category": "DEBUT",
+  "headline": "日産キックスに新グレード「ロッククリーク」追加",
+  "keywords": [
+   "キックス",
+   "日産"
+  ],
+  "region": "WORLD",
+  "video_official": false
+ },
+ {
+  "id": "x02",
+  "score": 1,
+  "reason": "インド専用の実用SUV",
+  "category": null,
+  "headline": "",
+  "keywords": [],
+  "region": "WORLD",
+  "video_official": false
+ }
+]

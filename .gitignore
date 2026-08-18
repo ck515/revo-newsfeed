@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+newsfeed/out/
+cards/out/
+.env

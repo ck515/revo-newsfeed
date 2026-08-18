@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family:'SairaCond'; src:url('fonts/SairaCondensed-Black.ttf') format('truetype'); font-weight:900; font-style:normal; }
+  @font-face { font-family:'SairaCond'; src:url('fonts/SairaCondensed-SemiBold.ttf') format('truetype'); font-weight:600; font-style:normal; }
+  @font-face { font-family:'NotoJP'; src:url('fonts/NotoSansJP.ttf') format('truetype'); font-weight:100 900; font-style:normal; }
+
+  :root {
+    --overlay:0.42;
+    --bg:#0A0A0B; --card:#16161A; --card-2:#1D1D22; --border:#26262B; --accent:#F5D547;
+    --fg:#FFFFFF; --fg-mid:rgba(255,255,255,0.60); --fg-low:rgba(255,255,255,0.32);
+    --pad:76px; --skew:-11deg;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { width:1080px; height:1350px; background:var(--bg); -webkit-font-smoothing:antialiased; }
+  .card { position:relative; width:1080px; height:1350px; background:var(--bg); overflow:hidden; }
+
+  /* signature: oblique decal tag + livery stripe */
+  .tag {
+    position:absolute; z-index:2; left:var(--pad); top:158px; height:62px;
+    /* min-width keeps a 4-character label the same width as a 5-character one,
+       so the tag reads as one consistent mark down the profile grid */
+    display:flex; align-items:center; justify-content:center;
+    min-width:168px; padding:0 26px;
+    background:var(--accent); transform:skewX(var(--skew));
+  }
+  .tag span {
+    display:block; transform:skewX(11deg);
+    font-family:'SairaCond',sans-serif; font-weight:900; font-size:38px; line-height:1;
+    letter-spacing:0.13em; color:var(--bg); white-space:nowrap;
+  }
+  .tag.jp span { font-family:'NotoJP',sans-serif; font-weight:900; font-size:30px; letter-spacing:0.08em; }
+  .stripe {
+    position:absolute; z-index:2; top:158px; height:62px;
+    display:flex; gap:10px; transform:skewX(var(--skew));
+  }
+  .stripe i { display:block; width:10px; background:rgba(255,255,255,0.22); }
+  .stripe i:first-child { background:var(--accent); opacity:0.45; }
+
+  /* body: bottom-anchored text block */
+  .body {
+    position:absolute; z-index:2; left:var(--pad); right:var(--pad);
+    top:262px; bottom:232px;
+    /* headline, rule and hashtags all sit on the bottom edge of the box,
+       with or without a photo, so the baseline is identical across cards */
+    display:flex; flex-direction:column; justify-content:flex-end;
+  }
+  .photo {
+    position:absolute; inset:0; z-index:0;
+    background:var(--card); overflow:hidden;
+  }
+  .photo img { width:100%; height:100%; object-fit:cover; display:block; filter:saturate(0.9) contrast(1.05); }
+  /* flat scrim sets the base contrast; the gradient deepens it behind the
+     text block so white type stays legible over a bright photo */
+  .photo::after {
+    content:''; position:absolute; inset:0;
+    background:
+      linear-gradient(180deg,
+        rgba(10,10,11,0) 0%,
+        rgba(10,10,11,0.12) 40%,
+        rgba(10,10,11,0.58) 100%),
+      rgba(10,10,11, var(--overlay));
+  }
+  .headline {
+    font-family:'NotoJP',sans-serif; font-weight:900; font-size:72px; line-height:1.46;
+    letter-spacing:-0.005em; color:var(--fg);
+    /* proportional metrics: trims the built-in side bearings on kana and
+       punctuation, ~11% narrower before any tracking is applied */
+    font-feature-settings:"palt" 1;
+    word-break:normal; overflow-wrap:break-word; line-break:strict; text-wrap:balance;
+    flex:0 0 auto;
+  }
+  .rule { width:84px; height:3px; background:var(--accent); margin-top:46px; flex:0 0 auto; }
+  .keywords { display:flex; flex-wrap:wrap; gap:30px; margin-top:30px; flex:0 0 auto; }
+  .kw {
+    font-family:'NotoJP',sans-serif; font-weight:500; font-size:29px; line-height:1.2;
+    color:var(--fg-mid); white-space:nowrap; font-feature-settings:"palt" 1;
+  }
+  .kw i { font-style:normal; color:var(--accent); margin-right:3px; }
+  .headline .nb { white-space:nowrap; }
+  .headline .ph-nb { white-space:nowrap; }
+
+  /* footer */
+  .footer { position:absolute; z-index:2; left:var(--pad); right:var(--pad); bottom:var(--pad); }
+  .hair { height:1px; background:var(--border); margin-bottom:32px; }
+  .footer-row { display:flex; align-items:baseline; justify-content:space-between; }
+  .mark {
+    font-family:'SairaCond',sans-serif; font-weight:900; font-size:52px; line-height:1;
+    letter-spacing:0.05em; transform:skewX(var(--skew)); color:var(--fg);
+  }
+  .mark.accent { color:var(--accent); }
+  .date {
+    font-family:'SairaCond',sans-serif; font-weight:900; font-size:52px; line-height:1;
+    letter-spacing:0.02em; transform:skewX(var(--skew)); color:var(--fg-low); white-space:nowrap;
+  }
+</style>
+</head>
+<body>
+  <div class="card" id="card">
+    <div class="tag __TAG_CLASS__" id="tag"><span>__CATEGORY__</span></div>
+    <div class="stripe" id="stripe"><i></i><i></i><i></i></div>
+    __PHOTO_BLOCK__
+    <div class="body __PHOTO_CLASS__" id="bodybox">
+      <h1 class="headline" id="headline">__HEADLINE__</h1>
+      <div class="rule"></div>
+      <div class="keywords">__KEYWORDS__</div>
+    </div>
+    <div class="footer">
+      <div class="hair"></div>
+      <div class="footer-row">
+        <div class="mark __LOGO_CLASS__">REVO</div>
+        <div class="date">__DATE__</div>
+      </div>
+    </div>
+  </div>
+<script>
+// Every decision below is a measurement, so nothing may run until the bundled
+// webfonts are actually active. Without this gate the fitting loop measures
+// fallback metrics and the layout silently reflows afterwards.
+document.fonts.ready.then(function () {
+  var tag = document.getElementById('tag');
+  var stripe = document.getElementById('stripe');
+  stripe.style.left = (tag.offsetLeft + tag.offsetWidth + 18) + 'px';
+
+  var SIZES  = [76, 70, 64, 58, 54, 50, 46, 42, 38];
+  var TRACKS = [-0.005, -0.02, -0.035, -0.05, -0.065];   // em, 横詰め
+  var ORPHAN_FLOOR = -0.085;                             // 追い込み limit
+  var h = document.getElementById('headline');
+  var body = document.getElementById('bodybox');
+
+  // The text block is bottom-anchored, so overflow spills upward — which
+  // scrollHeight does not report. Measure the stack height ourselves.
+  var ruleEl = body.querySelector('.rule');
+  var kwEl = body.querySelector('.keywords');
+  var RULE_MT = 46, KW_MT = 30;
+
+  function contentHeight() {
+    return h.getBoundingClientRect().height
+         + ruleEl.offsetHeight + RULE_MT
+         + kwEl.offsetHeight + KW_MT;
+  }
+  function overflows() { return contentHeight() > body.clientHeight - 1; }
+
+  // Returns one entry per visual line: character count and rendered width.
+  // Walks every text node because the headline contains nowrap spans.
+  function lines() {
+    var w = document.createTreeWalker(h, NodeFilter.SHOW_TEXT, null);
+    var r = document.createRange();
+    var rows = [], prevTop = null, cur = null, node;
+    while ((node = w.nextNode())) {
+      var text = node.nodeValue;
+      for (var i = 0; i < text.length; i++) {
+        r.setStart(node, i); r.setEnd(node, i + 1);
+        var b = r.getBoundingClientRect();
+        if (!b.width && !b.height) continue;
+        var top = Math.round(b.top);
+        if (prevTop === null || Math.abs(top - prevTop) > 4) {
+          if (cur) rows.push(cur);
+          prevTop = top;
+          cur = { n: 1, l: b.left, r: b.right };
+        } else {
+          cur.n++; cur.r = Math.max(cur.r, b.right);
+        }
+      }
+    }
+    if (cur) rows.push(cur);
+    return rows.map(function (x) { return { n: x.n, w: x.r - x.l }; });
+  }
+
+  function lastLineChars() {
+    var L = lines();
+    return L.length > 1 ? L[L.length - 1].n : 99;
+  }
+
+  // Rag measured in pixels, not characters: a Latin line holds more
+  // characters at the same width, so counting characters misreads the shape.
+  function rag() {
+    var L = lines();
+    if (L.length < 2) return 0;
+    var min = Infinity, max = 0;
+    for (var i = 0; i < L.length; i++) { min = Math.min(min, L[i].w); max = Math.max(max, L[i].w); }
+    return (max - min) / h.clientWidth;
+  }
+
+  // Two layers of break control, both undone when a span grows too wide for
+  // the column. Phrases come from BudouX and are the preferred break points;
+  // the runs inside them are the fallback that still holds dates and words
+  // together when a phrase has to break internally.
+  var PHRASE_LIMIT = 0.85;
+  var LIMITS = { num: 0.86, latin: 0.68, kata: 0.38 };
+  var phrases = [].slice.call(h.querySelectorAll('.ph'));
+  var runs = [].slice.call(h.querySelectorAll('.nb'));
+  function reflowRuns() {
+    var col = h.clientWidth;
+    phrases.forEach(function (s) { s.classList.add('ph-nb'); });
+    phrases.forEach(function (s) {
+      if (s.offsetWidth > PHRASE_LIMIT * col) s.classList.remove('ph-nb');
+    });
+    runs.forEach(function (s) { s.classList.add('nb'); });
+    runs.forEach(function (s) {
+      var lim = (LIMITS[s.dataset.k] || 0.6) * col;
+      if (s.offsetWidth > lim) s.classList.remove('nb');
+    });
+  }
+
+  // ---- fitting: size first, then tracking (横詰め) ----------------------
+  // Japanese typesetting tightens tracking before it drops the type size, so
+  // the search prefers the largest size that fits at any tracking, and only
+  // then reaches for a smaller size.
+  function apply(size, track) {
+    h.style.fontSize = size + 'px';
+    h.style.letterSpacing = track + 'em';
+    reflowRuns();
+  }
+
+  var chosen = { size: SIZES[SIZES.length - 1], track: TRACKS[TRACKS.length - 1] };
+  var found = false;
+  for (var i = 0; i < SIZES.length && !found; i++) {
+    for (var j = 0; j < TRACKS.length; j++) {
+      apply(SIZES[i], TRACKS[j]);
+      if (!overflows()) { chosen = { size: SIZES[i], track: TRACKS[j] }; found = true; break; }
+    }
+  }
+  apply(chosen.size, chosen.track);
+
+  // ---- 追い込み: pull an orphaned last line up by tightening -------------
+  // A last line of one or two characters is the worst rag in Japanese. Fix it
+  // by tightening at the same size rather than shrinking the whole headline,
+  // which is what a typesetter would do. ORPHAN_FLOOR is past the normal
+  // tracking range because a slightly cramped headline still beats an orphan.
+  if (lastLineChars() <= 2) {
+    var rescued = false;
+    var ladder = TRACKS.slice(TRACKS.indexOf(chosen.track) + 1).concat([ORPHAN_FLOOR]);
+    for (var k = 0; k < ladder.length; k++) {
+      apply(chosen.size, ladder[k]);
+      if (!overflows() && lastLineChars() > 2) { rescued = true; break; }
+    }
+    if (!rescued) {
+      // Tightening could not save it; try one size down before giving up.
+      var next = SIZES[SIZES.indexOf(chosen.size) + 1];
+      apply(chosen.size, chosen.track);
+      if (next) {
+        apply(next, chosen.track);
+        if (overflows() || lastLineChars() <= 2) apply(chosen.size, chosen.track);
+      }
+    }
+  }
+
+  // No rag-evening pass here on purpose. Tightening changes where the breaks
+  // fall, and once the breaks sit on BudouX phrase boundaries any change is a
+  // change for the worse: a short last line is normal in Japanese, a headline
+  // broken mid-word is not.
+  document.body.dataset.headlineSize = h.style.fontSize;
+  document.body.dataset.headlineTracking = h.style.letterSpacing;
+  document.body.dataset.headlineRag = rag().toFixed(3);
+  document.body.dataset.ready = '1';
+});
+</script>
+</body>
+</html>

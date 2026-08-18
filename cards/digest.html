@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family:'SairaCond'; src:url('fonts/SairaCondensed-Black.ttf') format('truetype'); font-weight:900; font-style:normal; }
+  @font-face { font-family:'SairaCond'; src:url('fonts/SairaCondensed-SemiBold.ttf') format('truetype'); font-weight:600; font-style:normal; }
+  @font-face { font-family:'NotoJP'; src:url('fonts/NotoSansJP.ttf') format('truetype'); font-weight:100 900; font-style:normal; }
+
+  :root {
+    --bg:#0A0A0B; --card:#16161A; --card-2:#1D1D22; --border:#26262B; --accent:#F5D547;
+    --fg:#FFFFFF; --fg-mid:rgba(255,255,255,0.60); --fg-low:rgba(255,255,255,0.32);
+    --pad:76px; --skew:-11deg;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { width:1080px; height:1350px; background:var(--bg); -webkit-font-smoothing:antialiased; }
+  .card { position:relative; width:1080px; height:1350px; background:var(--bg); overflow:hidden; }
+
+  /* same decal tag as the single-story cards, so the series reads as one set */
+  .tag {
+    position:absolute; z-index:2; left:var(--pad); top:158px; height:62px;
+    display:flex; align-items:center; justify-content:center;
+    min-width:168px; padding:0 26px;
+    background:var(--accent); transform:skewX(var(--skew));
+  }
+  .tag span {
+    display:block; transform:skewX(11deg);
+    font-family:'SairaCond',sans-serif; font-weight:900; font-size:38px; line-height:1;
+    letter-spacing:0.13em; color:var(--bg); white-space:nowrap;
+  }
+  .stripe { position:absolute; z-index:2; top:158px; height:62px; display:flex; gap:10px; transform:skewX(var(--skew)); }
+  .stripe i { display:block; width:10px; background:rgba(255,255,255,0.22); }
+  .stripe i:first-child { background:var(--accent); opacity:0.45; }
+
+  /* the date is the whole point of this card, so it gets display size */
+  .datewrap {
+    position:absolute; left:var(--pad); top:252px;
+    display:flex; align-items:baseline; gap:26px;
+  }
+  .date {
+    font-family:'SairaCond',sans-serif; font-weight:900; font-size:150px; line-height:0.86;
+    letter-spacing:0.01em; color:var(--fg); transform:skewX(var(--skew));
+  }
+  .dow {
+    font-family:'SairaCond',sans-serif; font-weight:900; font-size:52px; line-height:1;
+    letter-spacing:0.14em; color:var(--accent); transform:skewX(var(--skew));
+  }
+  .kicker {
+    position:absolute; left:var(--pad); top:412px;
+    font-family:'NotoJP',sans-serif; font-weight:500; font-size:27px;
+    letter-spacing:0.08em; color:var(--fg-mid); font-feature-settings:"palt" 1;
+  }
+
+  .list {
+    position:absolute; left:var(--pad); right:var(--pad);
+    top:486px; bottom:214px;
+    display:flex; flex-direction:column; justify-content:flex-start;
+  }
+  .row { padding:26px 0; border-top:1px solid var(--border); }
+  .row:first-child { border-top:none; padding-top:0; }
+  .meta { display:flex; align-items:center; gap:16px; margin-bottom:12px; }
+  .num {
+    font-family:'SairaCond',sans-serif; font-weight:900; font-size:30px; line-height:1;
+    color:var(--accent); transform:skewX(var(--skew)); letter-spacing:0.04em;
+  }
+  .cat {
+    font-family:'SairaCond',sans-serif; font-weight:900; font-size:26px; line-height:1;
+    letter-spacing:0.14em; color:var(--fg-mid); transform:skewX(var(--skew));
+  }
+  /* overseas stories are marked, not hidden */
+  .intl {
+    font-family:'SairaCond',sans-serif; font-weight:600; font-size:21px; line-height:1;
+    letter-spacing:0.12em; color:var(--bg); background:var(--fg-mid);
+    padding:4px 9px; transform:skewX(var(--skew));
+  }
+  .hl {
+    font-family:'NotoJP',sans-serif; font-weight:900; font-size:44px; line-height:1.36;
+    letter-spacing:-0.008em; color:var(--fg);
+    word-break:normal; overflow-wrap:break-word; line-break:strict; text-wrap:balance;
+    font-feature-settings:"palt" 1;
+  }
+  .hl .ph-nb, .hl .nb { white-space:nowrap; }
+
+  .footer { position:absolute; z-index:2; left:var(--pad); right:var(--pad); bottom:var(--pad); }
+  .hair { height:1px; background:var(--border); margin-bottom:32px; }
+  .footer-row { display:flex; align-items:baseline; justify-content:space-between; }
+  .mark {
+    font-family:'SairaCond',sans-serif; font-weight:900; font-size:52px; line-height:1;
+    letter-spacing:0.05em; transform:skewX(var(--skew)); color:var(--fg);
+  }
+  .swipe {
+    font-family:'NotoJP',sans-serif; font-weight:500; font-size:25px;
+    color:var(--fg-low); letter-spacing:0.04em;
+  }
+</style>
+</head>
+<body>
+  <div class="card" id="card">
+    <div class="tag" id="tag"><span>TODAY</span></div>
+    <div class="stripe" id="stripe"><i></i><i></i><i></i></div>
+
+    <div class="datewrap">
+      <div class="date">__DATE__</div>
+      <div class="dow">__DOW__</div>
+    </div>
+    <div class="kicker">__KICKER__</div>
+
+    <div class="list" id="list">__ROWS__</div>
+
+    <div class="footer">
+      <div class="hair"></div>
+      <div class="footer-row">
+        <div class="mark">REVO</div>
+        <div class="swipe">__SWIPE__</div>
+      </div>
+    </div>
+  </div>
+
+<script>
+document.fonts.ready.then(function () {
+  var tag = document.getElementById('tag');
+  document.getElementById('stripe').style.left =
+    (tag.offsetLeft + tag.offsetWidth + 18) + 'px';
+
+  var list = document.getElementById('list');
+  var hls = [].slice.call(list.querySelectorAll('.hl'));
+  var phrases = [].slice.call(list.querySelectorAll('.ph'));
+  var runs = [].slice.call(list.querySelectorAll('.nb'));
+
+  function reflow(col) {
+    phrases.forEach(function (s) { s.classList.add('ph-nb'); });
+    phrases.forEach(function (s) { if (s.offsetWidth > 0.85 * col) s.classList.remove('ph-nb'); });
+    runs.forEach(function (s) { s.classList.add('nb'); });
+    runs.forEach(function (s) {
+      var lim = ({num:0.86, latin:0.68, kata:0.38}[s.dataset.k] || 0.6) * col;
+      if (s.offsetWidth > lim) s.classList.remove('nb');
+    });
+  }
+
+  // One scale for every row: rows set at different sizes read as a ranking
+  // rather than a list. Step the whole block down until it clears the box.
+  var SIZES = [44, 41, 38, 35, 32, 30, 28];
+  var PADS  = [26, 24, 22, 20, 18, 16, 14];
+  var chosen = SIZES[SIZES.length - 1];
+  for (var i = 0; i < SIZES.length; i++) {
+    hls.forEach(function (h) { h.style.fontSize = SIZES[i] + 'px'; });
+    [].slice.call(list.querySelectorAll('.row')).forEach(function (r, idx) {
+      r.style.paddingTop = (idx === 0 ? 0 : PADS[i]) + 'px';
+      r.style.paddingBottom = PADS[i] + 'px';
+    });
+    reflow(list.clientWidth);
+    if (list.scrollHeight <= list.clientHeight) { chosen = SIZES[i]; break; }
+  }
+  document.body.dataset.rowSize = chosen + 'px';
+  document.body.dataset.ready = '1';
+});
+</script>
+</body>
+</html>
