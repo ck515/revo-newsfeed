@@ -1,17 +1,20 @@
 name: REVO news
 
-# Two runs a day, no always-on process. The gap between them is the human's
-# window to react; nothing publishes if nobody does.
+# Two phases. Review runs once a day; publish polls often but bails out in
+# seconds unless somebody has actually reacted, so the expensive Playwright
+# install only happens on runs that have work to do.
 on:
   schedule:
-    - cron: "0 10 * * *"   # 19:00 JST — post the day's candidate list
-    - cron: "30 12 * * *"  # 21:30 JST — read reactions, deliver the picks
+    - cron: "0 10 * * *"        # 19:00 JST — post the day's candidate list
+    # Polls all day: the point is to pick up a reaction whenever it happens,
+    # and a run with nothing to do costs a few seconds.
+    - cron: "*/5 * * * *"
   workflow_dispatch:
     inputs:
       phase:
         description: "review or publish"
         required: true
-        default: review
+        default: publish
         type: choice
         options: [review, publish]
 
@@ -19,23 +22,26 @@ concurrency:
   group: revo-news
   cancel-in-progress: false
 
+env:
+  # The runner clock is UTC. Without this, a run after midnight JST reads as
+  # the previous day and looks for a review file that was never written.
+  TZ: Asia/Tokyo
+  DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+  DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+  DISCORD_BOT_USER_ID: ${{ secrets.DISCORD_BOT_USER_ID }}
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
 jobs:
   run:
     runs-on: ubuntu-latest
     permissions:
-      contents: write        # to commit state/ back
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-          cache: pip
-
-      - name: Install
-        run: |
-          pip install feedparser anthropic requests playwright budoux
-          playwright install --with-deps chromium
 
       - name: Decide phase
         id: phase
@@ -48,32 +54,49 @@ jobs:
             echo "name=publish" >> "$GITHUB_OUTPUT"
           fi
 
+      # ---- publish: cheap check first -----------------------------------
+      # Only `requests` is needed to ask Discord who reacted. This is the step
+      # that runs ~60 times a day, so nothing heavier belongs here.
+      - name: Check for picks
+        id: check
+        if: steps.phase.outputs.name == 'publish'
+        working-directory: newsfeed
+        run: |
+          pip install --quiet requests
+          python check_picks.py
+
+      # ---- heavy install, only when needed ------------------------------
+      - name: Cache Playwright browsers
+        if: steps.phase.outputs.name == 'review' || steps.check.outputs.has_picks == 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-chromium
+
+      - name: Install
+        if: steps.phase.outputs.name == 'review' || steps.check.outputs.has_picks == 'true'
+        run: |
+          pip install --quiet feedparser anthropic requests playwright budoux
+          playwright install --with-deps chromium
+
       - name: Review
         if: steps.phase.outputs.name == 'review'
         working-directory: newsfeed
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
-          DISCORD_BOT_USER_ID: ${{ secrets.DISCORD_BOT_USER_ID }}
         run: python run_review.py --live --strict
 
       - name: Publish
-        if: steps.phase.outputs.name == 'publish'
+        if: steps.phase.outputs.name == 'publish' && steps.check.outputs.has_picks == 'true'
         working-directory: newsfeed
-        env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
-          DISCORD_BOT_USER_ID: ${{ secrets.DISCORD_BOT_USER_ID }}
         run: python run_publish.py
 
-      # seen.json and review-*.json have to survive between the two runs and
-      # between days, otherwise every article looks new every morning.
+      # seen.json and review-*.json must survive between runs, otherwise every
+      # article looks new every morning and picks are forgotten.
       - name: Persist state
+        if: steps.phase.outputs.name == 'review' || steps.check.outputs.has_picks == 'true'
         run: |
           git config user.name  "revo-news-bot"
           git config user.email "bot@users.noreply.github.com"
           git add newsfeed/state
-          git diff --cached --quiet || git commit -m "state: ${{ steps.phase.outputs.name }} $(date -u +%F)"
+          git diff --cached --quiet || git commit -m "state: ${{ steps.phase.outputs.name }} $(date -u +%FT%H:%M)"
           git pull --rebase --autostash
           git push
