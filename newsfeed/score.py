@@ -83,6 +83,11 @@ def build_user_message(items: list[dict]) -> str:
 
 def _parse(text: str) -> list[dict]:
     """Strip fences and parse. Raises on malformed output rather than guessing."""
+    if text.rstrip().endswith(("," , '"')) or text.count("[") > text.count("]"):
+        raise ValueError(
+            "モデルの出力が途中で切れています。max_tokens が不足しています。"
+            f"（出力 {len(text)} 文字）"
+        )
     cleaned = re.sub(r"^```(?:json)?|```$", "", text.strip(), flags=re.MULTILINE).strip()
     data = json.loads(cleaned)
     if not isinstance(data, list):
@@ -98,9 +103,11 @@ def score_via_api(items: list[dict]) -> list[dict]:
         raise RuntimeError("ANTHROPIC_API_KEY is not set")
 
     client = anthropic.Anthropic()
+    # Roughly 130 tokens per scored item; the cap has to scale with the batch
+    # or the JSON array is truncated mid-string and fails to parse.
     resp = client.messages.create(
         model=MODEL,
-        max_tokens=2000,
+        max_tokens=min(16000, 1000 + 160 * len(items)),
         system=SYSTEM,
         messages=[{"role": "user", "content": build_user_message(items)}],
     )
