@@ -50,14 +50,14 @@ def _client():
     return anthropic.Anthropic()
 
 
-def _article_text(url: str, limit: int = 3000) -> str:
+def _article_text(url: str, limit: int = 3000, timeout: int = 15) -> str:
     """Pull readable text off the article page so the body is written from the
     facts rather than from a 120-character feed blurb."""
     import requests
 
     try:
         r = requests.get(
-            url, timeout=15,
+            url, timeout=timeout,
             headers={"User-Agent": "Mozilla/5.0 (compatible; REVO-newsfeed/1.0)"},
         )
         r.raise_for_status()
