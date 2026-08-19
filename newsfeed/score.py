@@ -170,6 +170,32 @@ def above_threshold(scored: list[dict]) -> list[dict]:
     return [s for s in scored if s["score"] >= SCORE_THRESHOLD]
 
 
+def restore_model_names(scored: list[dict]) -> list[str]:
+    """Put back any car name the model shortened while writing the headline.
+
+    Instructing it not to shorten names reduces this but does not stop it, and
+    a headline naming the wrong car is not a cosmetic problem — it is wrong on
+    the feed permanently. So the headline is checked against the source title
+    and repaired mechanically. Runs before the length repair, because
+    restoring a name can push the headline over the limit and that decision
+    belongs to the length logic.
+    """
+    import modelnames
+
+    notes = []
+    for s_ in scored:
+        src = s_.get("title") or ""
+        head = s_.get("headline") or ""
+        if not src or not head:
+            continue
+        fixed, changes = modelnames.fix(head, src)
+        if changes:
+            s_["headline"] = fixed
+            for c in changes:
+                notes.append(f"{s_.get('id', '?')}: {c}")
+    return notes
+
+
 def repair(scored: list[dict]) -> list[str]:
     """Fix contract violations in place and return what was changed.
 
@@ -179,7 +205,7 @@ def repair(scored: list[dict]) -> list[str]:
     they affect, let alone to the batch — so each is repaired, the repair is
     reported, and the run continues.
     """
-    notes = []
+    notes = restore_model_names(scored)
     for s_ in scored:
         sid = s_.get("id", "?")
 
