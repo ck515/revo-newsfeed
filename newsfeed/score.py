@@ -56,6 +56,22 @@ headline はカード画像に載る見出しです。
 - 煽り表現、体言止めの多用、「！」「衝撃」「驚愕」は使わない
 - 走行タイムや速度を主語にしない（アプリ側の制約と整合させるため）
 
+**車種名・グレード名・型式は元記事の表記を一字も変えずに使ってください。**
+これは短縮の対象外です。字数に収まらない場合は、車名ではなく他の語を削ってください。
+この読者にとって型式やグレードは記事の中身そのものであり、一文字違うと別の車を
+指すことになります。
+
+  誤: スイフトスポーツ → スイフト
+  誤: シビックタイプR → シビック
+  誤: GR86 → 86
+  誤: ランドクルーザー250 → ランドクルーザー
+  誤: ZC33S → ZC33
+  誤: WRX S4 → WRX
+
+グレードの記号（S / SV / RS / GT / Type R / STI など）、型式（ZC33S、GDB、
+G87 など）、世代を示す数字（86、250、911 など）は、すべて記事の表記どおりに
+残してください。読者はここで車を特定しています。
+
 必ずJSON配列のみを返してください。前置き、説明、コードフェンスは不要です。
 各要素の形式:
 {{"id": "<入力のid>", "score": <0-10>, "reason": "<20字程度の判断理由>",
@@ -171,14 +187,28 @@ def repair(scored: list[dict]) -> list[str]:
         # punctuation boundary so it still reads as a sentence.
         h = s_.get("headline") or ""
         if len(h) > HEADLINE_MAX_CHARS:
-            cut = h[:HEADLINE_MAX_CHARS]
+            # Trim only at a punctuation boundary, and only if nothing
+            # alphanumeric is lost. Model designations live in those runs —
+            # "WRX S4" cut to "WRX", or "ZC33S" to "ZC33", names a different
+            # car. An over-long headline merely renders a size smaller; a
+            # wrong one is wrong on the feed forever, so the trim is skipped
+            # rather than allowed to damage a name.
+            cut = None
             for mark in ("、", "。", "，"):
-                i = cut.rfind(mark)
-                if i >= HEADLINE_MAX_CHARS - 12:
-                    cut = cut[:i]
+                i = h.rfind(mark, 0, HEADLINE_MAX_CHARS + 1)
+                if i >= HEADLINE_MAX_CHARS - 14:
+                    cand = h[:i]
+                    if not any(ch.isalnum() for ch in h[i:]):
+                        cut = cand
                     break
-            s_["headline"] = cut.rstrip("、。，")
-            notes.append(f"{sid}: 見出しを{len(h)}字→{len(s_['headline'])}字に短縮")
+            if cut:
+                s_["headline"] = cut.rstrip("、。， ")
+                notes.append(f"{sid}: 見出しを{len(h)}字→{len(s_['headline'])}字に短縮")
+            else:
+                notes.append(
+                    f"{sid}: 見出しが{len(h)}字（上限{HEADLINE_MAX_CHARS}）。"
+                    f"車名を壊さないため短縮せず、文字を小さくして出します"
+                )
 
         # An unknown or missing category cannot be rendered, and a story that
         # fits none of the five was not worth offering anyway — so demote it
@@ -228,10 +258,11 @@ def validate(scored: list[dict]) -> list[str]:
                 problems.append(f"{sid}: category が null なのに score {sc}")
         elif cat not in CATEGORIES:
             problems.append(f"{sid}: 未知のカテゴリ {cat!r}")
+        # Length is not checked here. repair() deliberately leaves a headline
+        # long when trimming it would damage a model name, and the renderer
+        # handles the overflow by stepping the type down. Reporting it as a
+        # violation would make --strict abort on a decision that was correct.
         h = s.get("headline") or ""
-        if len(h) > HEADLINE_MAX_CHARS:
-            problems.append(f"{sid}: 見出し{len(h)}字（上限{HEADLINE_MAX_CHARS}）")
-        # A headline is only needed for stories that can actually be posted.
         if not h and isinstance(sc, int) and sc >= SCORE_THRESHOLD:
             problems.append(f"{sid}: 見出しが空なのに score {sc}")
         if s.get("region") not in ("JP", "WORLD", None):
