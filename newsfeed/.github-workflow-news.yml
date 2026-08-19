@@ -100,3 +100,12 @@ jobs:
           git diff --cached --quiet || git commit -m "state: ${{ steps.phase.outputs.name }} $(date -u +%FT%H:%M)"
           git pull --rebase --autostash
           git push
+
+      # Without this a failure is silent: Discord shows nothing and the only
+      # way to notice is to open the Actions page on a hunch.
+      - name: Notify failure
+        if: failure()
+        run: |
+          curl -s -X POST "$DISCORD_WEBHOOK_URL" \
+            -H "Content-Type: application/json" \
+            -d "{\"content\": \"⚠️ REVO news 失敗 (${{ steps.phase.outputs.name }})\\nhttps://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}\"}"

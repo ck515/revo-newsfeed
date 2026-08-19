@@ -1,0 +1,69 @@
+# 2026-W36 の投稿
+# 写真は photos/ からのファイル名で指定します。
+# posts の並び順がそのままカルーセルの順番になります。
+
+week: 2026-W36
+date: 2026-08-31
+
+posts:
+
+  # ---- イベントまとめ（表紙 + 中面）--------------------------------
+  - type: cover_events
+    photo: CHANGE_ME.jpg        # photos/ に置いたファイル名
+    month: 8
+    count: 4
+    area: 首都圏・東海
+    title: 今月のカーイベント
+
+  - type: events
+    month: 8
+    area: 首都圏・東海
+    events:
+      - day: "06"
+        wd: SUN
+        name: イベント名
+        place: 神奈川・大黒PA
+
+  # ---- 機能紹介（表紙 + 中面）--------------------------------------
+  # - type: cover_feature
+  #   photo: CHANGE_ME.jpg
+  #   name_en: DRIVE LOG
+  #   name_ja: ドライブログ
+  #   hook: 走った道が、そのまま1枚のカードになります。
+  #
+  # - type: feature
+  #   name_en: DRIVE LOG
+  #   name_ja: ドライブログ
+  #   lead: 走行を記録して、あとから振り返れる機能です。
+  #   points:
+  #     - ルートが地図として残る
+  #     - 立ち寄ったスポットが紐づく
+  #     - 1枚のカードとして共有できる
+
+  # ---- 進捗・改善報告 ----------------------------------------------
+  # - type: roadmap
+  #   period: Q3
+  #   period_label: 2026年 第3四半期
+  #   phases:
+  #     - {text: 実績・称号システムの実装, status: now}
+  #     - {text: イベント連携の開放, status: next}
+  #
+  # - type: changelog
+  #   version: v1.4
+  #   when: 8月アップデート
+  #   items:
+  #     - {tag: NEW, text: 追加した機能}
+  #     - {tag: FIX, text: 直した不具合}
+
+  # ---- ニュース単発 --------------------------------------------------
+  # - type: news
+  #   category: PARTS
+  #   headline: 見出し
+  #   keywords: [キーワード1, キーワード2]
+
+caption: |
+  ここにキャプションを書きます。
+  空にしておくと caption.txt は作られません。
+
+hashtags: >
+  #車好きと繋がりたい #クルマ好き #REVO

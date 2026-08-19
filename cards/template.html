@@ -102,6 +102,8 @@
     letter-spacing:0.05em; transform:skewX(var(--skew)); color:var(--fg);
   }
   .mark.accent { color:var(--accent); }
+  .mark.has-logo { transform:none; letter-spacing:0; }
+  .mark img { display:block; height:var(--logo-h, 52px); width:auto; }
   .date {
     font-family:'SairaCond',sans-serif; font-weight:900; font-size:52px; line-height:1;
     letter-spacing:0.02em; transform:skewX(var(--skew)); color:var(--fg-low); white-space:nowrap;
@@ -121,7 +123,7 @@
     <div class="footer">
       <div class="hair"></div>
       <div class="footer-row">
-        <div class="mark __LOGO_CLASS__">REVO</div>
+        <div class="mark __LOGO_CLASS__">__MARK__</div>
         <div class="date">__DATE__</div>
       </div>
     </div>

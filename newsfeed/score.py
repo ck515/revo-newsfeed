@@ -51,7 +51,7 @@ region は日本国内の話なら "JP"、海外の話なら "WORLD" にして�
 汎用カテゴリはありません。
 
 headline はカード画像に載る見出しです。
-- 全角{HEADLINE_MAX_CHARS}文字以内。超えるとカード上で文字が小さくなり読めません
+- 全角30文字以内。上限は{HEADLINE_MAX_CHARS}文字だが、余裕を持って30以内に収めること
 - 元記事の見出しをそのまま使わず、要点だけを平叙で書く
 - 煽り表現、体言止めの多用、「！」「衝撃」「驚愕」は使わない
 - 走行タイムや速度を主語にしない（アプリ側の制約と整合させるため）
@@ -154,11 +154,73 @@ def above_threshold(scored: list[dict]) -> list[dict]:
     return [s for s in scored if s["score"] >= SCORE_THRESHOLD]
 
 
+def repair(scored: list[dict]) -> list[str]:
+    """Fix contract violations in place and return what was changed.
+
+    Aborting the run on a violation was the wrong trade: two soft problems in a
+    batch of sixteen threw away the entire day's news and the account went
+    silent with no explanation. None of these violations are fatal to the item
+    they affect, let alone to the batch — so each is repaired, the repair is
+    reported, and the run continues.
+    """
+    notes = []
+    for s_ in scored:
+        sid = s_.get("id", "?")
+
+        # A headline over the limit renders smaller, not broken. Trim it at a
+        # punctuation boundary so it still reads as a sentence.
+        h = s_.get("headline") or ""
+        if len(h) > HEADLINE_MAX_CHARS:
+            cut = h[:HEADLINE_MAX_CHARS]
+            for mark in ("、", "。", "，"):
+                i = cut.rfind(mark)
+                if i >= HEADLINE_MAX_CHARS - 12:
+                    cut = cut[:i]
+                    break
+            s_["headline"] = cut.rstrip("、。，")
+            notes.append(f"{sid}: 見出しを{len(h)}字→{len(s_['headline'])}字に短縮")
+
+        # An unknown or missing category cannot be rendered, and a story that
+        # fits none of the five was not worth offering anyway — so demote it
+        # instead of dropping the batch.
+        cat, sc = s_.get("category"), s_.get("score")
+        if cat is not None and cat not in CATEGORIES:
+            notes.append(f"{sid}: 未知のカテゴリ {cat!r} → 対象外にしました")
+            s_["score"] = min(sc if isinstance(sc, int) else 0, SCORE_THRESHOLD - 1)
+        elif cat is None and isinstance(sc, int) and sc >= SCORE_THRESHOLD:
+            notes.append(f"{sid}: category が null のため対象外にしました（score {sc}）")
+            s_["score"] = SCORE_THRESHOLD - 1
+
+        if not (s_.get("headline") or "").strip() and \
+                isinstance(s_.get("score"), int) and s_["score"] >= SCORE_THRESHOLD:
+            notes.append(f"{sid}: 見出しが空のため対象外にしました")
+            s_["score"] = SCORE_THRESHOLD - 1
+
+        if len(s_.get("keywords", [])) > 3:
+            n = len(s_["keywords"])
+            s_["keywords"] = s_["keywords"][:3]
+            notes.append(f"{sid}: キーワードを{n}件→3件に切り詰め")
+
+        if not isinstance(s_.get("score"), int) or not 0 <= s_["score"] <= 10:
+            notes.append(f"{sid}: 不正なスコア {s_.get('score')!r} → 対象外にしました")
+            s_["score"] = 0
+
+        if s_.get("region") not in ("JP", "WORLD", None):
+            s_["region"] = None
+
+    return notes
+
+
 def validate(scored: list[dict]) -> list[str]:
     """Check the model obeyed the output contract. Returns a list of problems."""
     problems = []
     for s in scored:
         sid = s.get("id", "?")
+        # Only items that can still be posted matter. Anything repair() pushed
+        # below the threshold is already out of the running, and flagging it
+        # again would make a handled problem look unhandled.
+        if isinstance(s.get("score"), int) and s["score"] < SCORE_THRESHOLD:
+            continue
         cat, sc = s.get("category"), s.get("score")
         if cat is None:
             # only allowed for stories that will never be posted anyway

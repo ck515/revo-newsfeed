@@ -1,0 +1,65 @@
+/* REVO card — shared base.
+   Every layout inherits the tokens, the tag, the footer and the type stack, so
+   the four templates read as one series. What differs between them is
+   structure, never palette or typeface. */
+
+@font-face { font-family:'SairaCond'; src:url('../fonts/SairaCondensed-Black.ttf') format('truetype'); font-weight:900; font-style:normal; }
+@font-face { font-family:'SairaCond'; src:url('../fonts/SairaCondensed-SemiBold.ttf') format('truetype'); font-weight:600; font-style:normal; }
+@font-face { font-family:'NotoJP'; src:url('../fonts/NotoSansJP.ttf') format('truetype'); font-weight:100 900; font-style:normal; }
+
+:root {
+  --bg:#0A0A0B; --card:#16161A; --card-2:#1D1D22; --border:#26262B; --accent:#F5D547;
+  --fg:#FFFFFF; --fg-mid:rgba(255,255,255,0.60); --fg-low:rgba(255,255,255,0.32);
+  --pad:76px; --skew:-11deg;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:1080px; height:1350px; background:var(--bg); -webkit-font-smoothing:antialiased; }
+html:has(body.transparent), body.transparent, body.transparent .card { background:transparent; }
+.card { position:relative; width:1080px; height:1350px; background:var(--bg); overflow:hidden; }
+
+/* --- tag + livery stripe (shared signature) --- */
+.tag {
+  position:absolute; z-index:2; left:var(--pad); top:158px; height:62px;
+  display:flex; align-items:center; justify-content:center;
+  min-width:168px; padding:0 26px;
+  background:var(--accent); transform:skewX(var(--skew));
+}
+.tag span {
+  display:block; transform:skewX(11deg);
+  font-family:'SairaCond',sans-serif; font-weight:900; font-size:38px; line-height:1;
+  letter-spacing:0.13em; color:var(--bg); white-space:nowrap;
+}
+.stripe { position:absolute; z-index:2; top:158px; height:62px; display:flex; gap:10px; transform:skewX(var(--skew)); }
+.stripe i { display:block; width:10px; background:rgba(255,255,255,0.22); }
+.stripe i:first-child { background:var(--accent); opacity:0.45; }
+
+/* --- footer (shared) --- */
+.footer { position:absolute; z-index:2; left:var(--pad); right:var(--pad); bottom:var(--pad); }
+.hair { height:1px; background:var(--border); margin-bottom:32px; }
+.footer-row { display:flex; align-items:baseline; justify-content:space-between; }
+.mark {
+  font-family:'SairaCond',sans-serif; font-weight:900; font-size:52px; line-height:1;
+  letter-spacing:0.05em; transform:skewX(var(--skew)); color:var(--fg);
+}
+/* A supplied logo replaces the typed wordmark. It is not skewed — the type was
+   sloped to match the livery, but a finished logo already carries its own
+   angle and skewing it again would distort the artwork. */
+.mark.has-logo { transform:none; letter-spacing:0; }
+.mark img { display:block; height:var(--logo-h, 52px); width:auto; }
+.date {
+  font-family:'SairaCond',sans-serif; font-weight:900; font-size:52px; line-height:1;
+  letter-spacing:0.02em; transform:skewX(var(--skew)); color:var(--fg-low); white-space:nowrap;
+}
+
+/* --- shared type helpers --- */
+.jp { font-family:'NotoJP',sans-serif; font-feature-settings:"palt" 1; }
+.en { font-family:'SairaCond',sans-serif; font-weight:900; transform:skewX(var(--skew)); }
+.body-area {
+  position:absolute; z-index:2; left:var(--pad); right:var(--pad);
+  top:262px; bottom:232px; display:flex; flex-direction:column;
+}
+.kicker {
+  font-family:'SairaCond',sans-serif; font-weight:900; font-size:30px; line-height:1;
+  letter-spacing:0.2em; color:var(--accent); transform:skewX(var(--skew));
+}
+.rule-sm { width:84px; height:3px; background:var(--accent); }

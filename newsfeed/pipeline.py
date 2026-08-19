@@ -80,8 +80,11 @@ def run(args) -> None:
     )
     scored = scoring.merge(kept, raw)
 
+    fixes = scoring.repair(scored)
     problems = scoring.validate(scored)
     print(f"\n■ 採点  {len(scored)}件")
+    for f in fixes:
+        print("  · " + f)
     if problems:
         print("  出力契約の違反:")
         for p in problems:

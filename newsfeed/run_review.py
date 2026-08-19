@@ -43,9 +43,16 @@ def gather(args, today: date):
     )
     scored = scoring.merge(kept, raw)
 
+    fixes = scoring.repair(scored)
+    if fixes:
+        print("出力契約の修復:")
+        for f in fixes:
+            print("  · " + f)
+
+    # Anything still broken after repair is a bug in repair(), not in the model.
     problems = scoring.validate(scored)
     if problems:
-        print("出力契約の違反:")
+        print("修復できなかった違反:")
         for p in problems:
             print("  ! " + p)
         if args.strict:

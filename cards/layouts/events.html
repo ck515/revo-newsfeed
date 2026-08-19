@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<style>__BASE_CSS__
+/* EVENTS / その月のイベント
+   Concept: the entry list. A race entry sheet is a dated roster — number,
+   name, place — read by scanning the left edge for a date rather than reading
+   prose. That is exactly how someone checks whether their weekend is free, so
+   the date column is set in the display face and given the accent, and
+   everything else stays quiet.
+
+   The month numeral earns its size here: on a calendar post it is the one
+   piece of information that has to survive being seen at thumbnail size. */
+
+.month { display:flex; align-items:flex-end; gap:26px; margin-bottom:8px; }
+.month .num { font-size:168px; line-height:0.8; color:var(--fg); }
+.month .en-lab {
+  font-family:'SairaCond',sans-serif; font-weight:900; font-size:44px; line-height:1;
+  letter-spacing:0.16em; color:var(--accent); transform:skewX(var(--skew));
+  padding-bottom:14px;
+}
+.area {
+  font-family:'NotoJP',sans-serif; font-weight:500; font-size:28px;
+  color:var(--fg-low); margin-bottom:36px; letter-spacing:0.04em;
+}
+
+.list { display:flex; flex-direction:column; flex:1 1 auto; min-height:0; justify-content:space-evenly; }
+.ev {
+  display:flex; align-items:flex-start; gap:28px;
+  padding:22px 0; border-top:1px solid var(--border);
+}
+.ev:last-child { border-bottom:1px solid var(--border); }
+.ev .d {
+  flex:0 0 128px;
+  font-family:'SairaCond',sans-serif; font-weight:900; font-size:44px; line-height:1.1;
+  letter-spacing:0.02em; color:var(--accent); transform:skewX(var(--skew));
+}
+.ev .d small {
+  display:block; font-size:22px; letter-spacing:0.12em; color:var(--fg-low);
+}
+.ev .info { min-width:0; }
+.ev .nm {
+  font-family:'NotoJP',sans-serif; font-weight:700; font-size:36px; line-height:1.36;
+  color:var(--fg); font-feature-settings:"palt" 1;
+}
+.ev .pl {
+  font-family:'NotoJP',sans-serif; font-weight:500; font-size:26px; line-height:1.5;
+  color:var(--fg-mid); margin-top:6px; font-feature-settings:"palt" 1;
+}
+</style>
+</head>
+<body class="__BODY_CLASS__">
+  <div class="card" id="card">
+    <div class="tag" id="tag"><span>EVENTS</span></div>
+    <div class="stripe" id="stripe"><i></i><i></i><i></i></div>
+
+    <div class="body-area" id="bodybox">
+      <div class="month">
+        <span class="num en">__MONTH__</span>
+        <span class="en-lab">__MONTH_EN__</span>
+      </div>
+      <div class="area">__AREA__</div>
+      <div class="list" id="fit">__EVENTS__</div>
+    </div>
+
+    <div class="footer">
+      <div class="hair"></div>
+      <div class="footer-row">
+        <div class="mark">__MARK__</div>
+        <div class="date">__DATE__</div>
+      </div>
+    </div>
+  </div>
+<script>
+document.fonts.ready.then(function () {
+  var tag = document.getElementById('tag'), stripe = document.getElementById('stripe');
+  stripe.style.left = (tag.offsetLeft + tag.offsetWidth + 18) + 'px';
+  function fitsNow() {
+    var list = document.querySelector('.list');
+    var used = 0;
+    [].forEach.call(list.children, function (r) { used += r.offsetHeight; });
+    return used <= list.clientHeight + 1;
+  }
+  var box = document.getElementById('bodybox');
+  // Date, name and place shrink together so the columns stay in proportion.
+  var SETS = [[44,36,26],[40,33,24],[36,30,22],[33,27,20],[30,24,18]];
+  for (var i = 0; i < SETS.length; i++) {
+    document.querySelectorAll('.ev .d').forEach(function (e) { e.style.fontSize = SETS[i][0] + 'px'; });
+    document.querySelectorAll('.ev .nm').forEach(function (e) { e.style.fontSize = SETS[i][1] + 'px'; });
+    document.querySelectorAll('.ev .pl').forEach(function (e) { e.style.fontSize = SETS[i][2] + 'px'; });
+    if (fitsNow()) break;
+  }
+  document.body.dataset.ready = '1';
+});
+</script>
+</body>
+</html>

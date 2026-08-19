@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<style>__BASE_CSS__
+/* ROADMAP
+   Concept: the sequential shift light. A row of segments that fills from the
+   left is how a driver reads progress without reading anything, so it carries
+   "how far along are we" before a single word is processed. Shipped segments
+   are solid accent, the current one is outlined, the rest are dark. */
+
+.period { display:flex; align-items:baseline; gap:22px; margin-bottom:14px; }
+.period .num { font-size:132px; line-height:0.86; color:var(--fg); letter-spacing:0.01em; }
+.period .lab { font-family:'NotoJP',sans-serif; font-weight:900; font-size:34px; color:var(--fg-mid); }
+
+.segments { display:flex; gap:9px; margin:38px 0 46px; }
+.segments i {
+  flex:1; height:20px; display:block;
+  background:var(--card-2); border:2px solid var(--border);
+}
+.segments i.done { background:var(--accent); border-color:var(--accent); }
+.segments i.now  { background:transparent; border-color:var(--accent); }
+
+.phases { display:flex; flex-direction:column; flex:1 1 auto; min-height:0; justify-content:space-evenly; }
+.phase {
+  display:flex; align-items:flex-start; gap:26px;
+  padding:26px 0; border-top:1px solid var(--border);
+}
+.phase:last-child { border-bottom:1px solid var(--border); }
+.phase .st {
+  flex:0 0 132px; font-family:'SairaCond',sans-serif; font-weight:900;
+  font-size:26px; line-height:1.5; letter-spacing:0.12em;
+  transform:skewX(var(--skew)); color:var(--fg-low);
+}
+.phase.done .st { color:var(--accent); }
+.phase.now  .st { color:var(--fg); }
+.phase .tx {
+  font-family:'NotoJP',sans-serif; font-weight:700; font-size:40px; line-height:1.42;
+  color:var(--fg-mid); font-feature-settings:"palt" 1;
+}
+.phase.done .tx, .phase.now .tx { color:var(--fg); }
+</style>
+</head>
+<body class="__BODY_CLASS__">
+  <div class="card" id="card">
+    <div class="tag" id="tag"><span>ROADMAP</span></div>
+    <div class="stripe" id="stripe"><i></i><i></i><i></i></div>
+
+    <div class="body-area" id="bodybox">
+      <div class="period">
+        <span class="num en">__PERIOD__</span>
+        <span class="lab">__PERIOD_LABEL__</span>
+      </div>
+      <div class="segments">__SEGMENTS__</div>
+      <div class="phases" id="fit">__PHASES__</div>
+    </div>
+
+    <div class="footer">
+      <div class="hair"></div>
+      <div class="footer-row">
+        <div class="mark">__MARK__</div>
+        <div class="date">__DATE__</div>
+      </div>
+    </div>
+  </div>
+<script>
+document.fonts.ready.then(function () {
+  var tag = document.getElementById('tag'), stripe = document.getElementById('stripe');
+  stripe.style.left = (tag.offsetLeft + tag.offsetWidth + 18) + 'px';
+
+  // Shrink the list until it clears the box. Row count varies per post, so the
+  // type has to give rather than the layout.
+  function fitsNow() {
+    var list = document.querySelector('.phases');
+    var used = 0;
+    [].forEach.call(list.children, function (r) { used += r.offsetHeight; });
+    return used <= list.clientHeight + 1;
+  }
+  var box = document.getElementById('bodybox'), fit = document.getElementById('fit');
+  var SIZES = [40, 36, 33, 30, 27, 24];
+  for (var i = 0; i < SIZES.length; i++) {
+    fit.style.fontSize = SIZES[i] + 'px';
+    fit.querySelectorAll('.tx').forEach(function (e) { e.style.fontSize = SIZES[i] + 'px'; });
+    if (fitsNow()) break;
+  }
+  document.body.dataset.ready = '1';
+});
+</script>
+</body>
+</html>

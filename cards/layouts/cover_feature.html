@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<style>__BASE_CSS__
+/* FEATURE COVER
+   Concept: the nameplate. A part arrives in a box with its name struck across
+   the front — solid, cropped by the edge, unmissable at arm's length. The
+   interior page explains what it does; the cover only has to make the name
+   stick.
+
+   Deliberately the inverse of the events cover: that one outlines its display
+   type so the image reads through, this one sets it solid so the name sits on
+   top of the image. Two covers in a feed should not be mistaken for each other. */
+
+.photo { position:absolute; inset:0; z-index:0; background:var(--card); overflow:hidden; }
+.photo img { width:100%; height:100%; object-fit:cover; display:block; filter:saturate(0.88) contrast(1.06); }
+.photo::after {
+  content:''; position:absolute; inset:0;
+  background:
+    linear-gradient(180deg, rgba(10,10,11,0.12) 0%, rgba(10,10,11,0.34) 44%, rgba(10,10,11,0.95) 100%),
+    rgba(10,10,11, var(--overlay));
+}
+
+.cover-body { position:absolute; z-index:2; left:var(--pad); right:40px; bottom:206px; }
+
+.kick {
+  font-family:'NotoJP',sans-serif; font-weight:700; font-size:31px; line-height:1;
+  letter-spacing:0.14em; color:var(--accent); margin-bottom:24px;
+}
+/* Bleeds past the left padding so the name reads as struck across the card
+   rather than placed inside a margin. */
+.plate {
+  margin-left:-8px;
+  font-family:'SairaCond',sans-serif; font-weight:900; font-size:172px; line-height:0.88;
+  letter-spacing:-0.005em; color:var(--fg); transform:skewX(var(--skew));
+}
+.name-ja {
+  font-family:'NotoJP',sans-serif; font-weight:900; font-size:46px; line-height:1.32;
+  letter-spacing:-0.01em; color:var(--fg); margin-top:30px; font-feature-settings:"palt" 1;
+}
+.hook {
+  font-family:'NotoJP',sans-serif; font-weight:500; font-size:31px; line-height:1.62;
+  color:var(--fg-mid); margin-top:18px; font-feature-settings:"palt" 1;
+}
+
+.swipe {
+  display:flex; align-items:center; gap:12px;
+  font-family:'SairaCond',sans-serif; font-weight:900; font-size:26px;
+  letter-spacing:0.2em; color:var(--fg-mid); transform:skewX(var(--skew));
+}
+.swipe u { text-decoration:none; color:var(--accent); letter-spacing:-0.1em; }
+</style>
+</head>
+<body class="__BODY_CLASS__">
+  <div class="card" id="card">
+    __PHOTO__
+    <div class="tag" id="tag"><span>FEATURE</span></div>
+    <div class="stripe" id="stripe"><i></i><i></i><i></i></div>
+
+    <div class="cover-body">
+      <div class="kick">__KICKER__</div>
+      <div class="plate" id="plate">__NAME_EN__</div>
+      <div class="name-ja" id="nameja">__NAME_JA__</div>
+      <div class="hook" id="hook">__HOOK__</div>
+    </div>
+
+    <div class="footer">
+      <div class="hair"></div>
+      <div class="footer-row">
+        <div class="mark">__MARK__</div>
+        <div class="swipe">SWIPE <u>››</u></div>
+      </div>
+    </div>
+  </div>
+<script>
+document.fonts.ready.then(function () {
+  var tag = document.getElementById('tag'), stripe = document.getElementById('stripe');
+  stripe.style.left = (tag.offsetLeft + tag.offsetWidth + 18) + 'px';
+
+  // The plate must stay on one line — a wrapped nameplate stops being a
+  // nameplate — so it shrinks until it fits the column.
+  var plate = document.getElementById('plate');
+  var col = 1080 - 2 * 40;   // allowed to bleed past the text column
+  var SIZES = [172, 152, 134, 118, 104, 92, 80, 70];
+  for (var i = 0; i < SIZES.length; i++) {
+    plate.style.fontSize = SIZES[i] + 'px';
+    plate.style.whiteSpace = 'nowrap';
+    if (plate.scrollWidth <= col) break;
+  }
+  document.body.dataset.ready = '1';
+});
+</script>
+</body>
+</html>

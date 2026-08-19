@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<style>__BASE_CSS__
+/* FEATURE / 機能紹介
+   Concept: the parts catalogue callout. Aftermarket catalogues name the part in
+   Latin, translate it underneath, then number the things it does — ①②③ against
+   a diagram. That structure is already familiar to anyone who has ordered
+   parts, and it forces the copy into three concrete claims instead of a
+   paragraph of feature marketing. */
+
+.name-en {
+  font-family:'SairaCond',sans-serif; font-weight:900; font-size:112px; line-height:0.92;
+  letter-spacing:0.01em; color:var(--accent); transform:skewX(var(--skew));
+  margin-bottom:18px;
+}
+.name-ja {
+  font-family:'NotoJP',sans-serif; font-weight:900; font-size:52px; line-height:1.34;
+  letter-spacing:-0.01em; color:var(--fg); font-feature-settings:"palt" 1;
+}
+.lead {
+  font-family:'NotoJP',sans-serif; font-weight:500; font-size:31px; line-height:1.66;
+  color:var(--fg-mid); margin-top:22px; font-feature-settings:"palt" 1;
+}
+.rule-sm { margin:44px 0 8px; }
+
+.points { display:flex; flex-direction:column; flex:1 1 auto; min-height:0; justify-content:space-evenly; margin-top:12px; }
+.pt { display:flex; align-items:flex-start; gap:26px; padding:22px 0; }
+.pt .n {
+  flex:0 0 58px; height:58px; border-radius:50%;
+  border:2px solid var(--accent); color:var(--accent);
+  font-family:'SairaCond',sans-serif; font-weight:900; font-size:30px;
+  display:flex; align-items:center; justify-content:center;
+}
+.pt .tx {
+  font-family:'NotoJP',sans-serif; font-weight:700; font-size:34px; line-height:1.5;
+  color:var(--fg); padding-top:6px; font-feature-settings:"palt" 1;
+}
+</style>
+</head>
+<body class="__BODY_CLASS__">
+  <div class="card" id="card">
+    <div class="tag" id="tag"><span>FEATURE</span></div>
+    <div class="stripe" id="stripe"><i></i><i></i><i></i></div>
+
+    <div class="body-area" id="bodybox">
+      <div class="name-en">__NAME_EN__</div>
+      <div class="name-ja">__NAME_JA__</div>
+      <div class="lead">__LEAD__</div>
+      <div class="rule-sm"></div>
+      <div class="points" id="fit">__POINTS__</div>
+    </div>
+
+    <div class="footer">
+      <div class="hair"></div>
+      <div class="footer-row">
+        <div class="mark">__MARK__</div>
+        <div class="date">__DATE__</div>
+      </div>
+    </div>
+  </div>
+<script>
+document.fonts.ready.then(function () {
+  var tag = document.getElementById('tag'), stripe = document.getElementById('stripe');
+  stripe.style.left = (tag.offsetLeft + tag.offsetWidth + 18) + 'px';
+  var box = document.getElementById('bodybox');
+  var en = document.querySelector('.name-en'), ja = document.querySelector('.name-ja');
+  var SETS = [[112,52,34],[100,46,31],[88,42,28],[78,38,25],[68,34,22]];
+  for (var i = 0; i < SETS.length; i++) {
+    en.style.fontSize = SETS[i][0] + 'px';
+    ja.style.fontSize = SETS[i][1] + 'px';
+    document.querySelectorAll('.pt .tx').forEach(function (e) {
+      e.style.fontSize = SETS[i][2] + 'px';
+    });
+    var pts = document.querySelector('.points'), used = 0;
+    [].forEach.call(pts.children, function (r) { used += r.offsetHeight; });
+    if (box.scrollHeight <= box.clientHeight + 1 && used <= pts.clientHeight + 1) break;
+  }
+  document.body.dataset.ready = '1';
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<style>__BASE_CSS__
+/* UPDATE / 機能改善報告
+   Concept: the service record. Car owners already read maintenance logs — a
+   dated stack of small entries, each stamped with what kind of work it was.
+   The version number takes the position a mileage reading would, and every
+   line gets a stamp, so a release reads as work done rather than as marketing. */
+
+.head { display:flex; align-items:baseline; gap:24px; margin-bottom:10px; }
+.head .ver { font-size:116px; line-height:0.9; color:var(--fg); }
+.head .when { font-family:'NotoJP',sans-serif; font-weight:900; font-size:32px; color:var(--fg-mid); }
+
+.count {
+  font-family:'NotoJP',sans-serif; font-weight:500; font-size:27px;
+  color:var(--fg-low); margin-bottom:34px;
+}
+
+.log { display:flex; flex-direction:column; flex:1 1 auto; min-height:0; justify-content:space-evenly; }
+.row {
+  display:flex; align-items:flex-start; gap:24px;
+  padding:22px 0; border-top:1px solid var(--border);
+}
+.row:last-child { border-bottom:1px solid var(--border); }
+/* The stamp is outlined, not filled: a page of solid accent blocks would read
+   as a warning panel rather than a log. */
+.row .stamp {
+  flex:0 0 104px; text-align:center;
+  font-family:'SairaCond',sans-serif; font-weight:900; font-size:23px; line-height:34px;
+  letter-spacing:0.1em; color:var(--accent);
+  border:2px solid var(--accent); transform:skewX(var(--skew));
+}
+.row .stamp span { display:block; transform:skewX(11deg); }
+.row.fix .stamp { color:var(--fg-mid); border-color:var(--border); }
+.row .tx {
+  font-family:'NotoJP',sans-serif; font-weight:700; font-size:38px; line-height:1.44;
+  color:var(--fg); font-feature-settings:"palt" 1;
+}
+</style>
+</head>
+<body class="__BODY_CLASS__">
+  <div class="card" id="card">
+    <div class="tag" id="tag"><span>UPDATE</span></div>
+    <div class="stripe" id="stripe"><i></i><i></i><i></i></div>
+
+    <div class="body-area" id="bodybox">
+      <div class="head">
+        <span class="ver en">__VERSION__</span>
+        <span class="when">__WHEN__</span>
+      </div>
+      <div class="count">__COUNT__</div>
+      <div class="log" id="fit">__ROWS__</div>
+    </div>
+
+    <div class="footer">
+      <div class="hair"></div>
+      <div class="footer-row">
+        <div class="mark">__MARK__</div>
+        <div class="date">__DATE__</div>
+      </div>
+    </div>
+  </div>
+<script>
+document.fonts.ready.then(function () {
+  var tag = document.getElementById('tag'), stripe = document.getElementById('stripe');
+  stripe.style.left = (tag.offsetLeft + tag.offsetWidth + 18) + 'px';
+  function fitsNow() {
+    var list = document.querySelector('.log');
+    var used = 0;
+    [].forEach.call(list.children, function (r) { used += r.offsetHeight; });
+    return used <= list.clientHeight + 1;
+  }
+  var box = document.getElementById('bodybox'), fit = document.getElementById('fit');
+  var SIZES = [38, 35, 32, 29, 26, 23];
+  for (var i = 0; i < SIZES.length; i++) {
+    fit.querySelectorAll('.tx').forEach(function (e) { e.style.fontSize = SIZES[i] + 'px'; });
+    if (fitsNow()) break;
+  }
+  document.body.dataset.ready = '1';
+});
+</script>
+</body>
+</html>

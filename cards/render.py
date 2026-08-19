@@ -30,6 +30,8 @@ from pathlib import Path
 
 from playwright.sync_api import sync_playwright
 
+import brandmark
+
 BASE_DIR = Path(__file__).resolve().parent
 TEMPLATE = BASE_DIR / "template.html"
 
@@ -152,6 +154,7 @@ def render_card(
     category: str = DEFAULT_CATEGORY,
     keywords: list[str] | None = None,
     date: str = "",
+    date_str: str = "",   # alias, so weekly.py can pass one keyword to every renderer
     photo: str | Path | None = None,
     overlay: float = 0.42,
     logo_color: str = "white",
@@ -175,6 +178,7 @@ def render_card(
                 compositing over your own image in an editor. Any photo is
                 dropped, since it would be replaced anyway.
     """
+    date = date or date_str
     if not headline.strip():
         raise ValueError("headline is required")
     if logo_color not in ("white", "accent"):
@@ -194,10 +198,10 @@ def render_card(
         .replace("__HEADLINE__", _protect(headline.strip()))
         .replace("__KEYWORDS__", _keywords_html(keywords))
         .replace("__DATE__", html.escape(_fmt_date(date)))
-        .replace("__LOGO_CLASS__", "accent" if logo_color == "accent" else "")
         .replace("--overlay:0.42;", f"--overlay:{overlay};")
         .replace("__BODY_CLASS__", "transparent" if transparent else "")
     )
+    filled = brandmark.apply(filled, logo_color)
 
     out_path = Path(out)
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -254,16 +258,13 @@ def render_cards(items: list[dict], out_dir: str | Path = "out") -> list[Path]:
                 .replace("__HEADLINE__", _protect(it["headline"].strip()))
                 .replace("__KEYWORDS__", _keywords_html(it.get("keywords")))
                 .replace("__DATE__", html.escape(_fmt_date(it.get("date", ""))))
-                .replace(
-                    "__LOGO_CLASS__",
-                    "accent" if it.get("logo_color") == "accent" else "",
-                )
                 .replace("--overlay:0.42;", f"--overlay:{it.get('overlay', 0.42)};")
                 .replace(
                     "__BODY_CLASS__",
                     "transparent" if it.get("transparent") else "",
                 )
             )
+            filled = brandmark.apply(filled, it.get("logo_color", "white"))
             tmp = BASE_DIR / f".render_batch_{i}.html"
             tmp.write_text(filled, encoding="utf-8")
             try:

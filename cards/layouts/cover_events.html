@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<style>__BASE_CSS__
+/* EVENTS COVER
+   Concept: the month numeral as a window. Set enormous and outlined rather
+   than filled, so the photograph reads straight through it — the number is
+   the largest thing on the card and also the least in the way. The interior
+   page uses the same numeral solid and small; here it is the image.
+
+   A cover carries one fact (which month) and one instruction (swipe). Every
+   other detail belongs on page two. */
+
+.photo { position:absolute; inset:0; z-index:0; background:var(--card); overflow:hidden; }
+.photo img { width:100%; height:100%; object-fit:cover; display:block; filter:saturate(0.88) contrast(1.06); }
+.photo::after {
+  content:''; position:absolute; inset:0;
+  background:
+    linear-gradient(180deg, rgba(10,10,11,0.10) 0%, rgba(10,10,11,0.30) 46%, rgba(10,10,11,0.94) 100%),
+    rgba(10,10,11, var(--overlay));
+}
+
+/* The numeral bleeds off the left edge: a cropped figure reads as a poster,
+   a centred one reads as a placeholder. */
+.mega {
+  position:absolute; z-index:1; left:-48px; top:268px;
+  font-family:'SairaCond',sans-serif; font-weight:900; font-size:520px; line-height:0.78;
+  letter-spacing:-0.02em; transform:skewX(var(--skew));
+  color:transparent; -webkit-text-stroke:7px var(--accent);
+}
+
+.cover-body { position:absolute; z-index:2; left:var(--pad); right:var(--pad); bottom:206px; }
+.month-en {
+  font-family:'SairaCond',sans-serif; font-weight:900; font-size:52px; line-height:1;
+  letter-spacing:0.2em; color:var(--accent); transform:skewX(var(--skew));
+  margin-bottom:26px;
+}
+.title {
+  font-family:'NotoJP',sans-serif; font-weight:900; font-size:82px; line-height:1.26;
+  letter-spacing:-0.015em; color:var(--fg); font-feature-settings:"palt" 1;
+}
+.meta {
+  display:flex; align-items:center; gap:20px; margin-top:26px;
+  font-family:'NotoJP',sans-serif; font-weight:500; font-size:30px; color:var(--fg-mid);
+}
+.meta b {
+  font-family:'SairaCond',sans-serif; font-weight:900; font-size:34px;
+  color:var(--accent); transform:skewX(var(--skew)); display:inline-block;
+}
+.meta i { display:block; width:1px; height:26px; background:var(--border); }
+
+.swipe {
+  display:flex; align-items:center; gap:12px;
+  font-family:'SairaCond',sans-serif; font-weight:900; font-size:26px;
+  letter-spacing:0.2em; color:var(--fg-mid); transform:skewX(var(--skew));
+}
+.swipe u { text-decoration:none; color:var(--accent); letter-spacing:-0.1em; }
+</style>
+</head>
+<body class="__BODY_CLASS__">
+  <div class="card" id="card">
+    __PHOTO__
+    <div class="mega">__MONTH__</div>
+    <div class="tag" id="tag"><span>EVENTS</span></div>
+    <div class="stripe" id="stripe"><i></i><i></i><i></i></div>
+
+    <div class="cover-body">
+      <div class="month-en">__MONTH_EN__ __YEAR__</div>
+      <div class="title" id="title">__TITLE__</div>
+      <div class="meta">
+        <span><b>__COUNT__</b> 件</span><i></i><span>__AREA__</span>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="hair"></div>
+      <div class="footer-row">
+        <div class="mark">__MARK__</div>
+        <div class="swipe">SWIPE <u>››</u></div>
+      </div>
+    </div>
+  </div>
+<script>
+document.fonts.ready.then(function () {
+  var tag = document.getElementById('tag'), stripe = document.getElementById('stripe');
+  stripe.style.left = (tag.offsetLeft + tag.offsetWidth + 18) + 'px';
+  var t = document.getElementById('title');
+  var SIZES = [82, 74, 66, 58, 52];
+  for (var i = 0; i < SIZES.length; i++) {
+    t.style.fontSize = SIZES[i] + 'px';
+    if (t.getBoundingClientRect().height <= 230) break;
+  }
+  document.body.dataset.ready = '1';
+});
+</script>
+</body>
+</html>
