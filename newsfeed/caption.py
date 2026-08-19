@@ -103,4 +103,15 @@ def generate(item: dict, use_article: bool = True) -> str:
     lines = [l.strip() for l in text.splitlines() if l.strip()]
     if lines and lines[0] == item.get("headline", "").strip():
         lines = lines[1:]
-    return "\n".join(lines).strip()
+    body = "\n".join(lines).strip()
+
+    # Same shortening happens in the body as in the headline, so the same
+    # repair applies.
+    import modelnames
+
+    src = " ".join(filter(None, [item.get("title"), item.get("summary")]))
+    if src.strip() and body:
+        body, changes = modelnames.fix(body, src)
+        for c in changes:
+            print(f"  本文の{c}")
+    return body

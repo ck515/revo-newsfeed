@@ -184,15 +184,49 @@ def restore_model_names(scored: list[dict]) -> list[str]:
 
     notes = []
     for s_ in scored:
-        src = s_.get("title") or ""
+        # Match against the summary as well as the title. A feed title is often
+        # a teaser with no designation in it at all — the full name only shows
+        # up in the body — and checking the title alone silently found nothing
+        # to compare against.
+        src = " ".join(filter(None, [s_.get("title"), s_.get("summary")]))
         head = s_.get("headline") or ""
-        if not src or not head:
+        if not src.strip() or not head:
             continue
         fixed, changes = modelnames.fix(head, src)
         if changes:
             s_["headline"] = fixed
             for c in changes:
                 notes.append(f"{s_.get('id', '?')}: {c}")
+    return notes
+
+
+def restore_from_article(cands: list[dict]) -> list[str]:
+    """Second pass: check the headline against the full article text.
+
+    An RSS summary is a teaser and often names no model at all — the Lamborghini
+    item said only "ランボルギーニの最新戦略" while the body named レヴエルトSV,
+    so there was nothing to compare the shortened headline against. Fetching the
+    page closes that gap.
+
+    Runs on the shortlist only, after scoring: a handful of requests a day
+    rather than one per collected item.
+    """
+    import modelnames
+    from caption import _article_text
+
+    notes = []
+    for c in cands:
+        url, head = c.get("url"), c.get("headline") or ""
+        if not url or not head:
+            continue
+        body = _article_text(url, timeout=10)
+        if not body:
+            continue
+        fixed, changes = modelnames.fix(head, body[:2000])
+        if changes:
+            c["headline"] = fixed
+            for ch in changes:
+                notes.append(f"{c.get('id', '?')}: {ch}（本文照合）")
     return notes
 
 

@@ -59,6 +59,13 @@ def gather(args, today: date):
             raise SystemExit("中断しました（--strict）")
 
     cands = scoring.above_threshold(scored)[:MAX_CANDIDATES_PER_DAY]
+
+    # Only the shortlist is worth a page fetch, and only here is the full text
+    # available to catch a model name the summary never mentioned.
+    if not args.no_article:
+        for f in scoring.restore_from_article(cands):
+            print("  · " + f)
+
     return items, cands, summarise(dropped)
 
 
@@ -69,6 +76,8 @@ def main() -> None:
     ap.add_argument("--scores", default="fixtures/scores.json")
     ap.add_argument("--date", default=None)
     ap.add_argument("--strict", action="store_true")
+    ap.add_argument("--no-article", action="store_true",
+                    help="記事本文を取得して車名を照合する処理を行わない")
     ap.add_argument("--dry-run", action="store_true", help="送信せずペイロードを表示")
     args = ap.parse_args()
 

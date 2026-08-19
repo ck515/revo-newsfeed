@@ -24,6 +24,19 @@ _GRADE = r"(?:\s+(?:S4|STI|RS|GT[0-9R]*|Type\s?R|SV|SS|GTI|R|S|Z|X)\b)*"
 _KATA = r"[ァ-ヶー]{2,}(?:[A-Za-z0-9][A-Za-z0-9\-]*)?"
 TOKEN_RE = re.compile(rf"(?P<latin>{_LATIN}{_GRADE})|(?P<kata>{_KATA})")
 
+# Katakana ending in one of these is a part or a generic noun, not a model:
+# "フルエアロキット" is a product description, "スイフトスポーツ" is a car. There
+# is no formal difference between the two, so the tail is what separates them.
+# Restoring a part name is not wrong exactly, but it rewrites copy the model
+# chose deliberately, which is not this function's job.
+GENERIC_TAILS = (
+    "キット", "セット", "パーツ", "システム", "ホイール", "ダンパー", "エアロ",
+    "サスペンション", "ブレーキ", "マフラー", "バンパー", "シート", "タイヤ",
+    "ミーティング", "イベント", "オーナー", "ドライバー", "メーカー", "ブランド",
+    "デザイン", "モデル", "グレード", "スペック", "カラー", "エンジン", "ターボ",
+    "ハイブリッド", "サーキット", "コース", "サイト", "アプリ", "サービス",
+)
+
 # Words that look like designations but are not, so a missing one means nothing.
 STOPWORDS = {
     "the", "and", "for", "new", "web", "pr", "ai", "ev", "suv", "mt", "at",
@@ -41,11 +54,42 @@ def designations(text: str) -> list[str]:
         tok = m.group(0).strip()
         if len(tok) < 2 or tok.lower() in STOPWORDS:
             continue
+        if tok.endswith(GENERIC_TAILS):
+            continue
         # A bare number is a year or a count far more often than a model.
         if tok.isdigit() and len(tok) != 2:
             continue
         out.append(tok)
     return sorted(set(out), key=len, reverse=True)
+
+
+def _standalone(stub: str, text: str) -> int:
+    """Index of an occurrence of `stub` that is not inside a longer word.
+
+    "ール" occurs inside "クール", and replacing it there produces nonsense. A
+    match only counts when the characters either side belong to a different
+    script run, which is what marks a word edge in Japanese without spaces.
+    """
+    def same_run(a: str, b: str) -> bool:
+        # NOTE: str.isalnum() is True for Japanese characters, so it cannot be
+        # used to mean "Latin letter or digit" here. Using it made every
+        # katakana name look like it continued into the following hiragana and
+        # blocked legitimate restorations.
+        kata = lambda c: "ァ" <= c <= "ヶ" or c == "ー"
+        ascii_alnum = lambda c: c.isascii() and c.isalnum()
+        return (kata(a) and kata(b)) or (ascii_alnum(a) and ascii_alnum(b))
+
+    start = 0
+    while True:
+        i = text.find(stub, start)
+        if i < 0:
+            return -1
+        before_ok = i == 0 or not same_run(text[i - 1], stub[0])
+        after = i + len(stub)
+        after_ok = after >= len(text) or not same_run(text[after], stub[-1])
+        if before_ok and after_ok:
+            return i
+        start = i + 1
 
 
 def _stub(source_tok: str, headline: str) -> str | None:
@@ -60,7 +104,11 @@ def _stub(source_tok: str, headline: str) -> str | None:
     best = None
     for n in range(len(source_tok) - 1, 1, -1):
         for stub in (source_tok[:n].rstrip(" -"), source_tok[-n:].lstrip(" -")):
-            if len(stub) >= 2 and stub in headline:
+            # Two characters of katakana is a syllable, not a name. Requiring
+            # three stops fragments like "ール" from matching inside a longer
+            # unrelated word.
+            floor = 2 if any(c.isalnum() for c in stub) else 3
+            if len(stub) >= floor and _standalone(stub, headline) >= 0:
                 if best is None or len(stub) > len(best):
                     best = stub
         if best:
@@ -92,7 +140,7 @@ def fix(headline: str, source_title: str) -> tuple[str, list[str]]:
     for stub, full in check(headline, source_title):
         # Replace the first standalone occurrence only; a name repeated in a
         # headline is rare and replacing every hit risks mangling other words.
-        idx = headline.find(stub)
+        idx = _standalone(stub, headline)
         if idx < 0:
             continue
         headline = headline[:idx] + full + headline[idx + len(stub):]
