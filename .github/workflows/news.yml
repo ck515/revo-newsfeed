@@ -109,3 +109,12 @@ jobs:
           curl -s -X POST "$DISCORD_WEBHOOK_URL" \
             -H "Content-Type: application/json" \
             -d "{\"content\": \"⚠️ REVO news 失敗 (${{ steps.phase.outputs.name }})\\nhttps://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}\"}"
+
+      # 失敗を Discord に流す。Actions の画面を見に行かないと気づけない状態を
+      # 作らないため。
+      - name: Notify failure
+        if: failure()
+        run: |
+          curl -s -X POST "$DISCORD_WEBHOOK_URL" \
+            -H "Content-Type: application/json" \
+            -d "{\"content\": \"⚠️ REVO news が失敗しました (${{ steps.phase.outputs.name }})\\nhttps://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}\"}"
