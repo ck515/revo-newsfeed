@@ -1,9 +1,9 @@
 {
  "date": "2026-08-19",
- "message_id": "1539595774428717207",
+ "message_id": "1539600613313351750",
  "channel_id": "1517909000903987472",
  "message_ids": [
-  "1539595774428717207"
+  "1539600613313351750"
  ],
  "emojis": [
   "1️⃣",
@@ -18,31 +18,6 @@
  ],
  "candidates": [
   {
-   "id": "eae983c160",
-   "source": "Auto Messe Web",
-   "weight": 1.2,
-   "url": "https://www.automesseweb.jp/2026/08/18/1980439",
-   "title": "車重700kg台で900馬力。HKSが仕立てたドラッグ専用「180SX」の正体【オレたちの“改”顧録】",
-   "summary": "ゲームで曲がらないと話題になった伝説のマシン。900馬力のRB26を積むHKSドラッグ「180SX」 曲がるための性能は、はじめから求めていない。1995年にHKSが仕立てた日産「180SX」は、1/4マイルを最短で駆け [&#8230;] The post 車重700kg台で900馬力。HKSが仕立てたドラッグ専用「180SX」の正体【オレたちの“改”顧録】 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
-   "published": "Tue, 18 Aug 2026 11:00:05 +0000",
-   "has_video": false,
-   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/08/04_AMW_260817_nissan_180sx_hks-1200x800.jpg",
-   "kept": true,
-   "reason": "HKSドラッグ180SXは旧車・チューニング読者直撃",
-   "matched": [],
-   "region_hint": "JP",
-   "score": 9,
-   "category": "RETRO",
-   "headline": "HKSがRB26搭載で仕立てた900馬力のドラッグ専用180SX",
-   "keywords": [
-    "180SX",
-    "HKS",
-    "RB26"
-   ],
-   "region": "JP",
-   "video_official": false
-  },
-  {
    "id": "9ae1441483",
    "source": "Auto Messe Web",
    "weight": 1.2,
@@ -53,16 +28,16 @@
    "has_video": false,
    "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/08/44_AMW_260817_lamborghini-miura-p400_.jpeg",
    "kept": true,
-   "reason": "旧車スーパーカーの相場高騰は読者の関心が高い",
+   "reason": "ミウラの相場高騰は旧車好きに刺さる",
    "matched": [],
    "region_hint": "JP",
    "score": 8,
    "category": "RETRO",
-   "headline": "ランボルギーニ ミウラ P400の落札額が約4.5億円に高騰",
+   "headline": "ランボルギーニ「ミウラ」市販3台目が4.5億円に高騰",
    "keywords": [
     "ミウラ",
-    "ランボルギーニ",
-    "オークション"
+    "旧車相場",
+    "ランボルギーニ"
    ],
    "region": "WORLD",
    "video_official": false
@@ -78,16 +53,16 @@
    "has_video": false,
    "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/08/01_AMW_260818_Lamborghini-miura_.jpeg",
    "kept": true,
-   "reason": "ミウラ60周年×レヴエルトS世界初公開は読者直撃",
+   "reason": "新型レヴエルトSデビュー×ミウラ60周年で読者の関心が高い",
    "matched": [],
    "region_hint": "JP",
    "score": 8,
    "category": "DEBUT",
-   "headline": "ランボルギーニがレヴエルトSを世界初公開、ミウラ43台も集結",
+   "headline": "ランボルギーニがレヴエルトSを公開、ミウラ43台も集結",
    "keywords": [
     "レヴエルトS",
     "ミウラ",
-    "ランボルギーニ"
+    "ペブルビーチ"
    ],
    "region": "WORLD",
    "video_official": false
@@ -103,16 +78,16 @@
    "has_video": false,
    "image_url": "",
    "kept": true,
-   "reason": "E46型M3 CSLの相場と評価は旧車読者が高反応",
+   "reason": "E46型M3 CSLの再評価・相場高騰は旧車好きに直撃",
    "matched": [],
    "region_hint": "JP",
    "score": 8,
    "category": "RETRO",
-   "headline": "新車価格の3倍で取引されるE46型M3 CSLの現在地",
+   "headline": "新車価格の3倍に高騰するE46型M3 CSLの価値",
    "keywords": [
-    "E46型M3 CSL",
-    "BMW M",
-    "旧車相場"
+    "M3 CSL",
+    "E46",
+    "BMW M"
    ],
    "region": "WORLD",
    "video_official": false
@@ -128,12 +103,12 @@
    "has_video": false,
    "image_url": "",
    "kept": true,
-   "reason": "920馬力ランボのPHEVスーパーカー試乗は読者直撃",
+   "reason": "920馬力PHEVスーパーカーの国内試乗レポートは高反応",
    "matched": [],
    "region_hint": "JP",
    "score": 8,
    "category": "DEBUT",
-   "headline": "920馬力のランボルギーニ テメラリオを日本の公道で試乗",
+   "headline": "920馬力PHEV「テメラリオ」を公道で試乗した印象",
    "keywords": [
     "テメラリオ",
     "ランボルギーニ",
@@ -153,12 +128,12 @@
    "has_video": false,
    "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/08/02_AMW_260813_nissan_fairladyz-rz34_432look-1200x800.jpg",
    "kept": true,
-   "reason": "RZ34のツライチカスタムはJDM読者に刺さる",
+   "reason": "RZ34のツライチカスタムはZ乗りに響く",
    "matched": [],
    "region_hint": "JP",
    "score": 7,
    "category": "PARTS",
-   "headline": "NISMOホイール流用でツライチを仕上げた432オレンジのRZ34",
+   "headline": "NISMOホイール流用でツライチを極めた432オレンジのRZ34",
    "keywords": [
     "RZ34",
     "フェアレディZ",
@@ -178,15 +153,15 @@
    "has_video": false,
    "image_url": "https://image-automesseweb.com/wp-content/uploads/2024/04/09_230403_AMW_SLK_02.jpg",
    "kept": true,
-   "reason": "幻のスーパーカー話は旧車・歴史好き読者に響く",
+   "reason": "850馬力の幻のスーパーカー話は旧車・歴史好きに響く",
    "matched": [],
    "region_hint": "JP",
    "score": 7,
    "category": "RETRO",
-   "headline": "AMG製V12 4ターボ850馬力のクライスラー ME four-twelveが幻に終わった理由",
+   "headline": "AMG製リッターV12×4ターボ850馬力、クライスラー「ME four-twelve」が幻に終わった理由",
    "keywords": [
-    "クライスラー ME four-twelve",
-    "AMG",
+    "ME four-twelve",
+    "クライスラー",
     "スーパーカー"
    ],
    "region": "WORLD",
@@ -203,16 +178,41 @@
    "has_video": false,
    "image_url": "",
    "kept": true,
-   "reason": "日本人ペア初優勝の節目はモータースポーツ好きに響く",
+   "reason": "三菱ラリーアートの31年初快挙はモータースポーツファンに刺さる",
    "matched": [],
    "region_hint": "JP",
    "score": 7,
    "category": "RACE",
-   "headline": "チーム三菱ラリーアートが日本人ペア初のアジアクロスカントリーラリー総合優勝",
+   "headline": "チーム三菱アジアクロスカントリーラリーアートが日本人ペアで初の総合優勝",
    "keywords": [
     "三菱ラリーアート",
     "アジアクロスカントリーラリー",
-    "ラリー"
+    "AXCR"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  },
+  {
+   "id": "d64f67600f",
+   "source": "WEB CARTOP",
+   "weight": 1.1,
+   "url": "https://www.webcartop.jp/2026/08/1869494/",
+   "title": "車名が「Goes Like Hell」だと!? コブラでお馴染み「シェルビー」がホットハッチを手がけていただけでも衝撃なのに10年前の落札価格がたった275万円でまた衝撃",
+   "summary": "この記事をまとめると ■コブラやGT350などの大排気量FRスポーツカーで有名なシェルビー ■じつはシェルビーはFFハッチバックもチューニングして限定販売していたことがあった ■オムニGLHSの2016年のオークション落札価格はたった275万円だった キャロル・シェルビーによる隠れたホットハッチ 「...",
+   "published": "Wed, 19 Aug 2026 08:33:37 +0000",
+   "has_video": false,
+   "image_url": "",
+   "kept": true,
+   "reason": "シェルビー製ホットハッチという意外な歴史はコアファンに刺さる",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 7,
+   "category": "RETRO",
+   "headline": "シェルビーが手がけたFF限定ホットハッチ、オムニGLHSの素性",
+   "keywords": [
+    "シェルビー",
+    "ホットハッチ",
+    "旧車"
    ],
    "region": "WORLD",
    "video_official": false
