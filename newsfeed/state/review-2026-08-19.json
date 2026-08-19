@@ -1,9 +1,9 @@
 {
  "date": "2026-08-19",
- "message_id": "1539600613313351750",
+ "message_id": "1539609042660360292",
  "channel_id": "1517909000903987472",
  "message_ids": [
-  "1539600613313351750"
+  "1539609042660360292"
  ],
  "emojis": [
   "1️⃣",
@@ -18,31 +18,6 @@
  ],
  "candidates": [
   {
-   "id": "9ae1441483",
-   "source": "Auto Messe Web",
-   "weight": 1.2,
-   "url": "https://www.automesseweb.jp/2026/08/19/1980453",
-   "title": "相場3億から約4.5億へ高騰！ ランボルギーニ「ミウラ」市販3台目の衝撃",
-   "summary": "落札額303万ドルを叩き出した初期型「P400」。ポロストリコ認定のV12スーパーカーが蘇るまで 2026年8月13日〜15日、米カリフォルニア州で開催された「The Monterey Auction」にて、ランボルギー [&#8230;] The post 相場3億から約4.5億へ高騰！ ランボルギーニ「ミウラ」市販3台目の衝撃 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
-   "published": "Wed, 19 Aug 2026 03:00:07 +0000",
-   "has_video": false,
-   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/08/44_AMW_260817_lamborghini-miura-p400_.jpeg",
-   "kept": true,
-   "reason": "ミウラの相場高騰は旧車好きに刺さる",
-   "matched": [],
-   "region_hint": "JP",
-   "score": 8,
-   "category": "RETRO",
-   "headline": "ランボルギーニ「ミウラ」市販3台目が4.5億円に高騰",
-   "keywords": [
-    "ミウラ",
-    "旧車相場",
-    "ランボルギーニ"
-   ],
-   "region": "WORLD",
-   "video_official": false
-  },
-  {
    "id": "1926b39285",
    "source": "Auto Messe Web",
    "weight": 1.2,
@@ -53,21 +28,69 @@
    "has_video": false,
    "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/08/01_AMW_260818_Lamborghini-miura_.jpeg",
    "kept": true,
-   "reason": "新型レヴエルトSデビュー×ミウラ60周年で読者の関心が高い",
+   "reason": "レヴエルトS世界初公開とミウラ60周年、スーパーカー好きに刺さる",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 9,
+   "category": "DEBUT",
+   "headline": "新型レヴエルトSVが世界初公開、ミウラ43台が集結したペブルビーチ",
+   "keywords": [
+    "レヴエルトS",
+    "ランボルギーニ",
+    "ミウラ"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  },
+  {
+   "id": "9ae1441483",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/08/19/1980453",
+   "title": "相場3億から約4.5億へ高騰！ ランボルギーニ「ミウラ」市販3台目の衝撃",
+   "summary": "落札額303万ドルを叩き出した初期型「P400」。ポロストリコ認定のV12スーパーカーが蘇るまで 2026年8月13日〜15日、米カリフォルニア州で開催された「The Monterey Auction」にて、ランボルギー [&#8230;] The post 相場3億から約4.5億へ高騰！ ランボルギーニ「ミウラ」市販3台目の衝撃 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Wed, 19 Aug 2026 03:00:07 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/08/44_AMW_260817_lamborghini-miura-p400_.jpeg",
+   "kept": true,
+   "reason": "ミウラ初期型の高騰は旧車・スーパーカー好きに直撃",
    "matched": [],
    "region_hint": "JP",
    "score": 8,
-   "category": "DEBUT",
-   "headline": "ランボルギーニがレヴエルトSを公開、ミウラ43台も集結",
+   "category": "RETRO",
+   "headline": "ランボルギーニ ミウラ P400の落札額が約4.5億円に高騰",
    "keywords": [
-    "レヴエルトS",
     "ミウラ",
-    "ペブルビーチ"
+    "ランボルギーニ",
+    "旧車相場"
    ],
    "region": "WORLD",
-   "video_official": false,
-   "date": "2026-08-19",
-   "body": "ミウラ誕生60周年にあたる今年、ペブルビーチに世界中から43台のミウラが集結した。同一車種のクラシックカーが一堂に会した数としては史上最大規模という。同じ会場でランボルギーニは新型「レヴエルトSV」を世界初公開し、60周年を称える限定99台の「レヴエルト ミウラ 60° オマージュ」も発表した。伝説と最新HPEVが並ぶ光景、どちらに目が行く？"
+   "video_official": false
+  },
+  {
+   "id": "432820fc51",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/08/19/1979301",
+   "title": "「スペーサーはダメ」。NISMOホイール流用でツライチを極めた432オレンジのRZ34",
+   "summary": "初代S30の「Z432」をオマージュ。専用色オレンジを纏う2024年式フェアレディZ ST 鮮やかなオレンジのボディが視線を集める1台がある。オーナーの“きん”さんが選んだのは、RZ34の専用色として設定された432オレ [&#8230;] The post 「スペーサーはダメ」。NISMOホイール流用でツライチを極めた432オレンジのRZ34 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Tue, 18 Aug 2026 22:00:15 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/08/02_AMW_260813_nissan_fairladyz-rz34_432look-1200x800.jpg",
+   "kept": true,
+   "reason": "RZ34のホイール・ツライチカスタム、Z乗りに直撃",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 8,
+   "category": "PARTS",
+   "headline": "NISMOホイール流用でツライチを仕上げたフェアレディZ432グランプリオレンジのRZ34",
+   "keywords": [
+    "RZ34",
+    "フェアレディZ",
+    "ツライチ"
+   ],
+   "region": "JP",
+   "video_official": false
   },
   {
    "id": "7c8b4ff071",
@@ -80,16 +103,16 @@
    "has_video": false,
    "image_url": "",
    "kept": true,
-   "reason": "E46型M3 CSLの再評価・相場高騰は旧車好きに直撃",
+   "reason": "E46型M3 CSLの再評価・高騰は旧車好きに直撃",
    "matched": [],
    "region_hint": "JP",
    "score": 8,
    "category": "RETRO",
-   "headline": "新車価格の3倍に高騰するE46型M3 CSLの価値",
+   "headline": "E46型M3 0CSLが新車価格の3倍で取引される現在地",
    "keywords": [
-    "M3 CSL",
-    "E46",
-    "BMW M"
+    "E46型M3 CSL",
+    "BMW M",
+    "旧車相場"
    ],
    "region": "WORLD",
    "video_official": false
@@ -105,12 +128,12 @@
    "has_video": false,
    "image_url": "",
    "kept": true,
-   "reason": "920馬力PHEVスーパーカーの国内試乗レポートは高反応",
+   "reason": "920馬力のランボルギーニ テメラリオ公道試乗はスーパーカー好きに直撃",
    "matched": [],
    "region_hint": "JP",
    "score": 8,
    "category": "DEBUT",
-   "headline": "920馬力PHEV「テメラリオ」を公道で試乗した印象",
+   "headline": "920馬力PHEVのランボルギーニ テメラリオを日本の公道で試乗",
    "keywords": [
     "テメラリオ",
     "ランボルギーニ",
@@ -120,53 +143,53 @@
    "video_official": false
   },
   {
-   "id": "432820fc51",
+   "id": "c2b9684bf1",
+   "source": "WEB CARTOP",
+   "weight": 1.1,
+   "url": "https://www.webcartop.jp/2026/08/1869136/",
+   "title": "この911はもはやヴィトンの時計をもち運ぶ移動式ケース!? ルイ・ヴィトンとシンガーがタッグを組んだ911にヴィトンファン悶絶必至",
+   "summary": "この記事をまとめると ■シンガーとルイ・ヴィトンがタッグを組んで2台の特別なポルシェ911を製作した ■シンガーの911は取り外してデスククロックにもできる時計や専用バッグも用意する ■過去にも自動車メーカーがルイ・ヴィトンとタッグを組んだ例がある シンガーがモントレーで発表した最新モデルはルイ・ヴ...",
+   "published": "Mon, 17 Aug 2026 08:30:06 +0000",
+   "has_video": false,
+   "image_url": "",
+   "kept": true,
+   "reason": "シンガー×ルイ・ヴィトンの911はカスタム・スーパーカー好きに刺さる",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 8,
+   "category": "PARTS",
+   "headline": "シンガーとルイ・ヴィトンファンが組んだ特別なポルシェ911が2台発表",
+   "keywords": [
+    "シンガー",
+    "ポルシェ911",
+    "ルイ・ヴィトン"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  },
+  {
+   "id": "26e0c0b878",
    "source": "Auto Messe Web",
    "weight": 1.2,
-   "url": "https://www.automesseweb.jp/2026/08/19/1979301",
-   "title": "「スペーサーはダメ」。NISMOホイール流用でツライチを極めた432オレンジのRZ34",
-   "summary": "初代S30の「Z432」をオマージュ。専用色オレンジを纏う2024年式フェアレディZ ST 鮮やかなオレンジのボディが視線を集める1台がある。オーナーの“きん”さんが選んだのは、RZ34の専用色として設定された432オレ [&#8230;] The post 「スペーサーはダメ」。NISMOホイール流用でツライチを極めた432オレンジのRZ34 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
-   "published": "Tue, 18 Aug 2026 22:00:15 +0000",
+   "url": "https://www.automesseweb.jp/2026/08/19/1979700",
+   "title": "421馬力のAMG「A45S」をチューン。速さではなく楽しさを追う理由",
+   "summary": "デジテックのECUチューニングでバブリング音やコンフォートモードを最適化。ボンド東京が仕上げた実用的カスタマイズ 421psを発生するメルセデスAMG「A45 S」を、速さではなく楽しさの方向へ振り切った1台がある。テー [&#8230;] The post 421馬力のAMG「A45S」をチューン。速さではなく楽しさを追う理由 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Wed, 19 Aug 2026 12:00:02 +0000",
    "has_video": false,
-   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/08/02_AMW_260813_nissan_fairladyz-rz34_432look-1200x800.jpg",
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/08/20_AMW_260814_mercedes-benz_a45s-1200x800.jpg",
    "kept": true,
-   "reason": "RZ34のツライチカスタムはZ乗りに響く",
+   "reason": "AMG A45 Sのチューニング実例、ホットハッチ好きに刺さる",
    "matched": [],
    "region_hint": "JP",
    "score": 7,
    "category": "PARTS",
-   "headline": "NISMOホイール流用でツライチを極めた432オレンジのRZ34",
+   "headline": "メルセデスベンツAMG A45S Sを楽しさ方向にチューン、チューニングECUとコンフォートモードを最適化",
    "keywords": [
-    "RZ34",
-    "フェアレディZ",
-    "ツライチ"
+    "A45 S",
+    "ECUチューニング",
+    "AMG"
    ],
    "region": "JP",
-   "video_official": false
-  },
-  {
-   "id": "59bc1b851d",
-   "source": "Auto Messe Web",
-   "weight": 1.2,
-   "url": "https://www.automesseweb.jp/2026/08/18/1978066",
-   "title": "AMG製6.0リッターV12 × 4ターボで850馬力。クライスラー製スーパースポーツが幻に終わった本当の理由【クルマ昔噺】",
-   "summary": "2004年デトロイトショーで突如現れたスーパースポーツカー、クライスラー「ME four-twelve」の悲運 モータージャーナリストの中村孝仁氏が、世界に広がる豊富な経験談を今に伝える連載コラム。今回は、2004年のデ [&#8230;] The post AMG製6.0リッターV12 × 4ターボで850馬力。クライスラー製スーパースポーツが幻に終わった本当の理由【クルマ昔噺】 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
-   "published": "Tue, 18 Aug 2026 12:00:01 +0000",
-   "has_video": false,
-   "image_url": "https://image-automesseweb.com/wp-content/uploads/2024/04/09_230403_AMW_SLK_02.jpg",
-   "kept": true,
-   "reason": "850馬力の幻のスーパーカー話は旧車・歴史好きに響く",
-   "matched": [],
-   "region_hint": "JP",
-   "score": 7,
-   "category": "RETRO",
-   "headline": "AMG製リッターV12×4ターボ850馬力、クライスラー「ME four-twelve」が幻に終わった理由",
-   "keywords": [
-    "ME four-twelve",
-    "クライスラー",
-    "スーパーカー"
-   ],
-   "region": "WORLD",
    "video_official": false
   },
   {
@@ -180,47 +203,19 @@
    "has_video": false,
    "image_url": "",
    "kept": true,
-   "reason": "三菱ラリーアートの31年初快挙はモータースポーツファンに刺さる",
+   "reason": "三菱ラリーアートの日本人初総合優勝は国内モータースポーツの節目",
    "matched": [],
    "region_hint": "JP",
    "score": 7,
    "category": "RACE",
-   "headline": "チーム三菱アジアクロスカントリーラリーアートが日本人ペアで初の総合優勝",
+   "headline": "ワークスチーム三菱ラリーアートが日本人ペア初のAXCR2026総合優勝を達成",
    "keywords": [
     "三菱ラリーアート",
-    "アジアクロスカントリーラリー",
-    "AXCR"
-   ],
-   "region": "WORLD",
-   "video_official": false
-  },
-  {
-   "id": "d64f67600f",
-   "source": "WEB CARTOP",
-   "weight": 1.1,
-   "url": "https://www.webcartop.jp/2026/08/1869494/",
-   "title": "車名が「Goes Like Hell」だと!? コブラでお馴染み「シェルビー」がホットハッチを手がけていただけでも衝撃なのに10年前の落札価格がたった275万円でまた衝撃",
-   "summary": "この記事をまとめると ■コブラやGT350などの大排気量FRスポーツカーで有名なシェルビー ■じつはシェルビーはFFハッチバックもチューニングして限定販売していたことがあった ■オムニGLHSの2016年のオークション落札価格はたった275万円だった キャロル・シェルビーによる隠れたホットハッチ 「...",
-   "published": "Wed, 19 Aug 2026 08:33:37 +0000",
-   "has_video": false,
-   "image_url": "",
-   "kept": true,
-   "reason": "シェルビー製ホットハッチという意外な歴史はコアファンに刺さる",
-   "matched": [],
-   "region_hint": "JP",
-   "score": 7,
-   "category": "RETRO",
-   "headline": "シェルビーが手がけたFF限定ホットハッチ、オムニGLHSの素性",
-   "keywords": [
-    "シェルビー",
-    "ホットハッチ",
-    "旧車"
+    "AXCR",
+    "ラリー"
    ],
    "region": "WORLD",
    "video_official": false
   }
- ],
- "delivered": [
-  "1926b39285"
  ]
 }
