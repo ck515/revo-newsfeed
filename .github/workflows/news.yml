@@ -5,7 +5,7 @@ name: REVO news
 # install only happens on runs that have work to do.
 on:
   schedule:
-    - cron: "0 10 * * *"        # 19:00 JST — post the day's candidate list
+    - cron: "0 3 * * *"        # 19:00 JST — post the day's candidate list
     # Polls all day: the point is to pick up a reaction whenever it happens,
     # and a run with nothing to do costs a few seconds.
     - cron: "*/5 * * * *"
@@ -48,7 +48,7 @@ jobs:
         run: |
           if [ -n "${{ inputs.phase }}" ]; then
             echo "name=${{ inputs.phase }}" >> "$GITHUB_OUTPUT"
-          elif [ "${{ github.event.schedule }}" = "0 10 * * *" ]; then
+          elif [ "${{ github.event.schedule }}" = "0 3 * * *" ]; then
             echo "name=review" >> "$GITHUB_OUTPUT"
           else
             echo "name=publish" >> "$GITHUB_OUTPUT"
