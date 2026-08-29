@@ -1,0 +1,169 @@
+{
+ "date": "2026-08-29",
+ "message_id": "1543195268655349803",
+ "channel_id": "1517909000903987472",
+ "message_ids": [
+  "1543195268655349803"
+ ],
+ "emojis": [
+  "1️⃣",
+  "2️⃣",
+  "3️⃣",
+  "4️⃣",
+  "5️⃣",
+  "6️⃣",
+  "⏭"
+ ],
+ "candidates": [
+  {
+   "id": "9866662c9b",
+   "source": "WEB CARTOP",
+   "weight": 1.1,
+   "url": "https://www.webcartop.jp/2026/08/1873397/",
+   "title": "歴代Ｚを思わせる新しい「顔」を採用してNISMOには待望の６速MT追加！ 大幅改良で日産フェアレディＺの魅力が倍増",
+   "summary": "この記事をまとめると ■フロントにZエンブレムが復活しGノーズ風デザインに刷新 ■S30やZ31を意識した意匠でヘリテージ感をさらに強調 ■NISMOに要望の多かった6速MTを追加して走りを強化した 伝統と最新技術を融合した大改良 日産自動車がフェアレディZと同NISMOをマイナーチェンジした。今...",
+   "published": "Sat, 29 Aug 2026 01:00:24 +0000",
+   "has_video": false,
+   "image_url": "",
+   "kept": true,
+   "reason": "フェアレディZのMCでNISMOに6MT追加は走り系読者の最大関心事",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 9,
+   "category": "DEBUT",
+   "headline": "フェアレディZがMC、NISMOに6速MTを追加しフロントデザインも刷新",
+   "keywords": [
+    "フェアレディZ",
+    "NISMO",
+    "6速MT"
+   ],
+   "region": "JP",
+   "video_official": false
+  },
+  {
+   "id": "2ee6acfbc4",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/08/29/1982451",
+   "title": "シンガーに対抗する英国の空冷ポルシェ。15台限定の1台が約1億2760万円",
+   "summary": "1972年式911Eをベースに6000時間掛け再構築。英国ソーンリー・ケルハム「911ヨーロピアンRS」に付いた約1億2760万円 RMサザビーズが2026年8月13日〜15日に開催したオークション「Monterey 2 [&#8230;] The post シンガーに対抗する英国の空冷ポルシェ。15台限定の1台が約1億2760万円 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Sat, 29 Aug 2026 03:00:22 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/08/04_AMW_260825_Porsche-911-European-RS_.jpeg",
+   "kept": true,
+   "reason": "空冷911ベースの限定レストモッドは旧車好きに刺さる",
+   "matched": [],
+   "region_hint": "WORLD",
+   "score": 8,
+   "category": "RETRO",
+   "headline": "英ソーンリー・ケルハム911が1972年式911Eを再構築した限定15台",
+   "keywords": [
+    "911",
+    "レストモッド",
+    "空冷ポルシェ"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  },
+  {
+   "id": "f01236013d",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/08/29/1982494",
+   "title": "元サーキット仕様のハコスカ2000GT。ソレタコデュアルで月1回走る",
+   "summary": "L28改3リッターを積む元サーキット仕様の「ハコスカ2000GT」 1968年に登場した3代目日産「スカイライン（C10型）」。誕生から60年近くを経てもなお、箱型のフォルムから「ハコスカ」の愛称で親しまれる名車である。 [&#8230;] The post 元サーキット仕様のハコスカ2000GT。ソレタコデュアルで月1回走る first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Sat, 29 Aug 2026 02:30:45 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/08/00_AMW_260825_nissan-skyline-2000gt-s_.jpeg",
+   "kept": true,
+   "reason": "元サーキット仕様のハコスカがL28改で今も走る旧車実走記事",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 8,
+   "category": "RETRO",
+   "headline": "L28改3リッター搭載の元サーキット仕様ハコスカスカイラインHT2000GTが月1走行",
+   "keywords": [
+    "ハコスカ2000GT",
+    "C10型",
+    "旧車"
+   ],
+   "region": "JP",
+   "video_official": false
+  },
+  {
+   "id": "3d3f8bdf3a",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/08/29/1980762",
+   "title": "ノーマルフェンダーのままで9Jリムを飲み込むケンメリの足元に驚愕する",
+   "summary": "加工ナックルと加工ドラムのナロー化で極太リムを純正フェンダー内に収めた ノーマルフェンダーのままで、フロントに8J、リアに9Jのハヤシレーシングホイールが収まっている。答えはフェンダーではなく足まわり側にある。ナックルと [&#8230;] The post ノーマルフェンダーのままで9Jリムを飲み込むケンメリの足元に驚愕する first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Fri, 28 Aug 2026 21:30:17 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/08/10_AMW_260818_nissan_skyline_2000gt_02.jpg",
+   "kept": true,
+   "reason": "ケンメリの足まわり加工テクは旧車カスタム好きに直撃",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 8,
+   "category": "RETRO",
+   "headline": "加工ナックルでケンメリ4のノーマルフェンダー内にリア9Jを収める",
+   "keywords": [
+    "ケンメリ",
+    "ハヤシレーシング",
+    "旧車カスタム"
+   ],
+   "region": "JP",
+   "video_official": false
+  },
+  {
+   "id": "d3af9399cd",
+   "source": "WEB CARTOP",
+   "weight": 1.1,
+   "url": "https://www.webcartop.jp/2026/08/1872887/",
+   "title": "富士スピードウェイに700台超のカスタムカーが集結。熱狂のKUHL大感謝オフ会と突如発表された「KUHL×日産×映画」コラボ企画",
+   "summary": "この記事をまとめると ■700台超のカスタムカーが集まり「KUHL」最大級のファンイベントが開催された ■オフ会では2027年東京オートサロンに向けた「オール日産プロジェクト」始動を発表 ■「KUHL」は単なるカスタムブランドを超えてコミュニティへと成長している KUHLが大感謝オフ会を開催 20...",
+   "published": "Sat, 29 Aug 2026 08:30:20 +0000",
+   "has_video": false,
+   "image_url": "",
+   "kept": true,
+   "reason": "富士SW700台超のオフ会＋日産コラボ発表で規模感が大きい",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 7,
+   "category": "EVENT",
+   "headline": "富士スピードウェイにカスタムカー700台超、KUHLが大感謝オフ会を開催",
+   "keywords": [
+    "KUHL",
+    "オフ会",
+    "富士スピードウェイ"
+   ],
+   "region": "JP",
+   "video_official": false
+  },
+  {
+   "id": "3b0c25de39",
+   "source": "WEB CARTOP",
+   "weight": 1.1,
+   "url": "https://www.webcartop.jp/2026/08/1872729/",
+   "title": "チート級の強さに嫌われた挙げ句ルールまで変更！ 最強のレーシングカー「ポルシェ962C」が無双できた「勝利の方程式」",
+   "summary": "この記事をまとめると ■ポルシェ956から進化した962Cは世界の耐久レースで圧倒的な勝利を重ねた ■軽量アルミモノコックと高効率なフラット6ターボが強さの核心 ■パワーだけに頼らず燃費と耐久性を武器に10年以上も君臨した 10年以上も世界を席巻した常勝マシン 1980年代に世界中のレースで暴れま...",
+   "published": "Sat, 29 Aug 2026 08:20:48 +0000",
+   "has_video": false,
+   "image_url": "",
+   "kept": true,
+   "reason": "ポルシェ962Cの歴史解説は耐久レース好きに響く読み物",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 6,
+   "category": "RACE",
+   "headline": "ポルシェ962934962C956962Cが10年以上耐久レースを制した勝利の構造",
+   "keywords": [
+    "ポルシェ962C",
+    "耐久レース",
+    "グループC"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  }
+ ]
+}
