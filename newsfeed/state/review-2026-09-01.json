@@ -1,0 +1,143 @@
+{
+ "date": "2026-09-01",
+ "message_id": "1544261090765185034",
+ "channel_id": "1517909000903987472",
+ "message_ids": [
+  "1544261090765185034"
+ ],
+ "emojis": [
+  "1️⃣",
+  "2️⃣",
+  "3️⃣",
+  "4️⃣",
+  "5️⃣",
+  "⏭"
+ ],
+ "candidates": [
+  {
+   "id": "a26b11c7d6",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/09/01/1983759",
+   "title": "西部警察ルックのジャパンに3.2L搭載。4機目のエンジンで挑む20年愛蔵車",
+   "summary": "『西部警察』マシンXの魂を宿しサーキット最速を追う！ 雑誌のページを開き、そこに載っていた姿に一目惚れして衝動買い。それから気づけば20年という年月が流れていた——。オーナーの“H”さんが愛してやまない愛車が、1979年 [&#8230;] The post 西部警察ルックのジャパンに3.2L搭載。4機目のエンジンで挑む20年愛蔵車 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Mon, 31 Aug 2026 21:00:32 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/08/02_AMW_260830_nissan-skyline-2000gt-ex_.jpeg",
+   "kept": true,
+   "reason": "旧車×エンジンスワップ×サーキットは読者直撃",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 8,
+   "category": "RETRO",
+   "headline": "西部警察ルークのジャパンに3.2Lを搭載して2000GT-EX年、4機目のエンジンでサーキットへ",
+   "keywords": [
+    "旧車",
+    "エンジンスワップ",
+    "スカイラインジャパン"
+   ],
+   "region": "JP",
+   "video_official": false
+  },
+  {
+   "id": "1092190bd5",
+   "source": "WEB CARTOP",
+   "weight": 1.1,
+   "url": "https://www.webcartop.jp/2026/09/1873985/",
+   "title": "世に出なかったV10搭載「M5 CSL」にV8搭載「M3 CSL」。BMW Mのガレージに眠る名車を支えた幻のプロトタイプ",
+   "summary": "この記事をまとめると ■BMW Mには市販されなかったCSLプロトタイプが存在する ■V8やV10の高性能エンジンに軽量化や先進空力を投入 ■幻のCSLたちの技術はのちのBMW Mモデルへ受け継がれた 「CSL」には試作車が存在した BMWの抱える特殊部隊であるBMW Mは、50年にわたってレース...",
+   "published": "Tue, 01 Sep 2026 04:00:31 +0000",
+   "has_video": false,
+   "image_url": "",
+   "kept": true,
+   "reason": "幻のBMW M CSLプロトタイプはコアな車好きに強く刺さる",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 8,
+   "category": "RETRO",
+   "headline": "市販されなかったV10搭載M5 CSLとV8搭載M3 CSLのプロトタイプが存在した",
+   "keywords": [
+    "BMW M",
+    "M5 CSL",
+    "M3 CSL"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  },
+  {
+   "id": "f884040ef6",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/09/01/1982988",
+   "title": "前後の造形連動で低く長く見せる。ヴァルドが仕上げたメルセデスベンツSクラス",
+   "summary": "純正のエレガンスを残しつつ、前後の造形を連動させて低く長く見せるヴァルドの手法 メルセデスの頂点に、これ以上何を足す余地があるのか。ヴァルドが手がけたスポーツライン・ブラックバイソンエディションは、メルセデス・ベンツ「S [&#8230;] The post 前後の造形連動で低く長く見せる。ヴァルドが仕上げたメルセデスベンツSクラス first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Tue, 01 Sep 2026 05:40:21 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/08/00_AMW_260826_mercedes-benz_sclass_wald.jpg",
+   "kept": true,
+   "reason": "ヴァルドのSクラスカスタムはJDM読者に刺さる",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 7,
+   "category": "PARTS",
+   "headline": "ヴァルドジャパンがSクラスをスポーツライン・ブラックバイソンエディションに仕上げた",
+   "keywords": [
+    "ヴァルド",
+    "メルセデス・ベンツ",
+    "カスタム"
+   ],
+   "region": "JP",
+   "video_official": false
+  },
+  {
+   "id": "9b4f65043a",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/08/31/1983493",
+   "title": "娘にもらわれず廃車寸前だったプント。茨城のデイラリーを走るサソリ仕様",
+   "summary": "知り合いの娘に拒否され廃車寸前だったフィアット「プントHGTアバルト」が復活！アバルトのサソリマークを纏い茨城の関東デイラリーを駆ける みずからクルマを走らせて楽しむモータースポーツには色々なジャンルがある。その中でもみ [&#8230;] The post 娘にもらわれず廃車寸前だったプント。茨城のデイラリーを走るサソリ仕様 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Mon, 31 Aug 2026 10:00:12 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2027/08/05_AMW_260828_mitsukuni_rally_fiat_punto-1200x800.jpg",
+   "kept": true,
+   "reason": "プントHGTアバルトのラリー参戦記は旧車・スポーツ双方に訴求",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 7,
+   "category": "RACE",
+   "headline": "廃車寸前だったフィアット131「プントHGTアバルト」が関東デイラリーシリーズを走る",
+   "keywords": [
+    "プントHGTアバルト",
+    "ラリー",
+    "アバルト"
+   ],
+   "region": "JP",
+   "video_official": false
+  },
+  {
+   "id": "35f79f739b",
+   "source": "WEB CARTOP",
+   "weight": 1.1,
+   "url": "https://www.webcartop.jp/2026/09/1873426/",
+   "title": "ソアラ、GT-R、MID4。日本車が一番熱かった80年代モーターショー伝説",
+   "summary": "戦後ニッポン社会と産業を吸い込んで育ったイベント 新しいホンダ・プレリュードが売れているらしい。祝・昭和100年！ 的なご祝儀人気なのか、やっぱりああいうクルマが欲しい、ということなのかもしれない。いまにしてみればずいぶん華やかだった20世紀へのノスタルジーは、根強いのだ。 我らがクルマ界の一大...",
+   "published": "Tue, 01 Sep 2026 08:10:54 +0000",
+   "has_video": false,
+   "image_url": "",
+   "kept": true,
+   "reason": "80年代モーターショーの旧車・名車回顧は刺さる",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 7,
+   "category": "RETRO",
+   "headline": "ソアラ、スカイラインGT-R、MID4が並んだ80年代モーターショーの熱量を振り返る",
+   "keywords": [
+    "旧車",
+    "GT-R",
+    "MID4"
+   ],
+   "region": "JP",
+   "video_official": false
+  }
+ ]
+}
