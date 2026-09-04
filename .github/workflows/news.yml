@@ -5,7 +5,7 @@ name: REVO news
 # install only happens on runs that have work to do.
 on:
   schedule:
-    - cron: "0 3 * * *"        # 12:00 JST — post the day's candidate list
+    - cron: "0 10 * * *"        # 19:00 JST — post the day's candidate list
     # Polls all day: the point is to pick up a reaction whenever it happens,
     # and a run with nothing to do costs a few seconds.
     - cron: "*/5 * * * *"
@@ -48,7 +48,7 @@ jobs:
         run: |
           if [ -n "${{ inputs.phase }}" ]; then
             echo "name=${{ inputs.phase }}" >> "$GITHUB_OUTPUT"
-          elif [ "${{ github.event.schedule }}" = "0 3 * * *" ]; then
+          elif [ "${{ github.event.schedule }}" = "0 10 * * *" ]; then
             echo "name=review" >> "$GITHUB_OUTPUT"
           else
             echo "name=publish" >> "$GITHUB_OUTPUT"
@@ -109,12 +109,3 @@ jobs:
           curl -s -X POST "$DISCORD_WEBHOOK_URL" \
             -H "Content-Type: application/json" \
             -d "{\"content\": \"⚠️ REVO news 失敗 (${{ steps.phase.outputs.name }})\\nhttps://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}\"}"
-
-      # 失敗を Discord に流す。Actions の画面を見に行かないと気づけない状態を
-      # 作らないため。
-      - name: Notify failure
-        if: failure()
-        run: |
-          curl -s -X POST "$DISCORD_WEBHOOK_URL" \
-            -H "Content-Type: application/json" \
-            -d "{\"content\": \"⚠️ REVO news が失敗しました (${{ steps.phase.outputs.name }})\\nhttps://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}\"}"
