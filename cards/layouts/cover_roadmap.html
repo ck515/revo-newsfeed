@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><style>__BASE_CSS__
+/* ROADMAP COVER
+   The year is the whole message, so it gets the size and nothing competes with
+   it. Everything else is a caption underneath. A photo is optional here: this
+   card works on black, because a year set large is already an image. */
+
+.photo { position:absolute; inset:0; z-index:0; background:var(--card); overflow:hidden; }
+.photo img { width:100%; height:100%; object-fit:cover; display:block; filter:saturate(0.86) contrast(1.05); }
+.photo::after {
+  content:''; position:absolute; inset:0;
+  background:
+    linear-gradient(180deg, rgba(10,10,11,0.20) 0%, rgba(10,10,11,0.40) 46%, rgba(10,10,11,0.95) 100%),
+    rgba(10,10,11, var(--overlay));
+}
+
+.cover-body { position:absolute; z-index:2; left:var(--pad); right:var(--pad); bottom:206px; }
+.year {
+  font-family:'SairaCond',sans-serif; font-weight:900; font-size:246px; line-height:0.84;
+  letter-spacing:0.005em; color:var(--fg); margin-left:-6px;
+}
+.title {
+  font-family:'NotoJP',sans-serif; font-weight:900; font-size:60px; line-height:1.3;
+  letter-spacing:-0.01em; color:var(--fg); margin-top:26px; font-feature-settings:"palt" 1;
+}
+.sub {
+  font-family:'NotoJP',sans-serif; font-weight:400; font-size:29px; line-height:1.66;
+  color:var(--fg-mid); margin-top:18px; font-feature-settings:"palt" 1;
+}
+.count {
+  display:flex; align-items:center; gap:16px; margin-top:34px;
+  font-family:'NotoJP',sans-serif; font-weight:500; font-size:27px; color:var(--fg-low);
+}
+.count b {
+  font-family:'SairaCond',sans-serif; font-weight:900; font-size:32px;
+  color:var(--accent);
+}
+.swipe {
+  display:flex; align-items:center; gap:10px;
+  font-family:'SairaCond',sans-serif; font-weight:600; font-size:24px;
+  letter-spacing:0.2em; color:var(--fg-low);
+}
+.swipe u { text-decoration:none; color:var(--accent); letter-spacing:-0.1em; }
+</style></head>
+<body class="__BODY_CLASS__">
+  <div class="card" id="card">
+    __PHOTO__
+    <div class="tag" id="tag"><span>ROADMAP</span></div>
+    <div class="stripe" id="stripe"></div>
+    <div class="cover-body">
+      <div class="year">__YEAR__</div>
+      <div class="title">__TITLE__</div>
+      <div class="sub">__SUB__</div>
+      <div class="count"><b>__COUNT__</b><span>件の新機能を予定</span></div>
+    </div>
+    <div class="footer"><div class="hair"></div>
+      <div class="footer-row"><div class="mark">__MARK__</div>
+        <div class="swipe">SWIPE <u>››</u></div></div>
+    </div>
+  </div>
+<script>
+document.fonts.ready.then(function () { document.body.dataset.ready = '1'; });
+</script></body></html>

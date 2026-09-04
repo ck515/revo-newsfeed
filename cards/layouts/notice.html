@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><style>__BASE_CSS__
+/* NOTICE — 機能のクローズ告知
+   A withdrawal is not a changelog entry. Listing it in the same stamped rows
+   as new features makes it read as routine, and users who relied on the
+   feature find out by accident. So this card states the reason first, in
+   sentence form, and lists the affected features underneath — quiet, not
+   stamped, with the accent used only to mark that the list is the important
+   part.
+
+   The names are set in white at full weight because the one thing a reader
+   must not miss is whether their feature is on the list. */
+
+.head {
+  font-family:'NotoJP',sans-serif; font-weight:900; font-size:52px; line-height:1.32;
+  letter-spacing:-0.01em; color:var(--fg); font-feature-settings:"palt" 1;
+}
+.reason {
+  font-family:'NotoJP',sans-serif; font-weight:400; font-size:29px; line-height:1.72;
+  color:var(--fg-mid); margin-top:24px; font-feature-settings:"palt" 1;
+}
+.rule-full { width:100%; height:1px; background:var(--border); margin:48px 0 0; }
+
+.items { display:flex; flex-direction:column; flex:1 1 auto; min-height:0; justify-content:center; gap:0; }
+.it { display:flex; align-items:flex-start; gap:22px; padding:24px 0; border-bottom:1px solid var(--border); }
+/* The bar aligns to the name, not to the block, so it does not stretch down
+   past the description and turn into a bracket. */
+.it .bar { flex:0 0 4px; height:34px; background:var(--accent); margin-top:6px; }
+.it .body { min-width:0; }
+.it .nm {
+  font-family:'NotoJP',sans-serif; font-weight:900; font-size:42px; line-height:1.25;
+  color:var(--fg); font-feature-settings:"palt" 1;
+}
+.it .ds {
+  font-family:'NotoJP',sans-serif; font-weight:400; font-size:26px; line-height:1.6;
+  color:var(--fg-mid); margin-top:8px; font-feature-settings:"palt" 1;
+}
+.foot-note {
+  font-family:'NotoJP',sans-serif; font-weight:400; font-size:26px; line-height:1.66;
+  color:var(--fg-low); margin-top:30px; font-feature-settings:"palt" 1;
+}
+</style></head>
+<body class="__BODY_CLASS__">
+  <div class="card" id="card">
+    <div class="tag" id="tag"><span>NOTICE</span></div>
+    <div class="stripe" id="stripe"></div>
+    <div class="body-area" id="bodybox">
+      <div class="head">__HEAD__</div>
+      <div class="reason">__REASON__</div>
+      <div class="rule-full"></div>
+      <div class="items" id="fit">__ITEMS__</div>
+      <div class="foot-note">__NOTE__</div>
+    </div>
+    <div class="footer"><div class="hair"></div>
+      <div class="footer-row"><div class="mark">__MARK__</div><div class="date">__DATE__</div></div>
+    </div>
+  </div>
+<script>
+document.fonts.ready.then(function () {
+  var box = document.getElementById('bodybox');
+  var SETS = [[52,42],[46,38],[42,34],[38,31],[34,28]];
+  for (var i = 0; i < SETS.length; i++) {
+    document.querySelector('.head').style.fontSize = SETS[i][0] + 'px';
+    document.querySelectorAll('.it .nm').forEach(function (e) { e.style.fontSize = SETS[i][1] + 'px'; });
+    document.querySelectorAll('.it .ds').forEach(function (e) { e.style.fontSize = Math.round(SETS[i][1] * 0.62) + 'px'; });
+    if (box.scrollHeight <= box.clientHeight + 1) break;
+  }
+  document.body.dataset.ready = '1';
+});
+</script></body></html>

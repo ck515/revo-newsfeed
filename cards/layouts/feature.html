@@ -10,28 +10,32 @@
    parts, and it forces the copy into three concrete claims instead of a
    paragraph of feature marketing. */
 
+/* The English name was the largest element on the card in solid accent, but
+   the reader reads the Japanese. Demoting it to a label and promoting the
+   Japanese name is most of what made this look cheap. */
 .name-en {
-  font-family:'SairaCond',sans-serif; font-weight:900; font-size:112px; line-height:0.92;
-  letter-spacing:0.01em; color:var(--accent); transform:skewX(var(--skew));
-  margin-bottom:18px;
+  font-family:'SairaCond',sans-serif; font-weight:600; font-size:34px; line-height:1;
+  letter-spacing:0.24em; color:var(--fg-low); transform:none;
+  margin-bottom:26px;
 }
 .name-ja {
-  font-family:'NotoJP',sans-serif; font-weight:900; font-size:52px; line-height:1.34;
+  font-family:'NotoJP',sans-serif; font-weight:900; font-size:74px; line-height:1.3;
   letter-spacing:-0.01em; color:var(--fg); font-feature-settings:"palt" 1;
 }
 .lead {
   font-family:'NotoJP',sans-serif; font-weight:500; font-size:31px; line-height:1.66;
   color:var(--fg-mid); margin-top:22px; font-feature-settings:"palt" 1;
 }
-.rule-sm { margin:44px 0 8px; }
+.rule-sm { margin:52px 0 8px; width:100%; height:1px; background:var(--border); }
 
 .points { display:flex; flex-direction:column; flex:1 1 auto; min-height:0; justify-content:space-evenly; margin-top:12px; }
 .pt { display:flex; align-items:flex-start; gap:26px; padding:22px 0; }
 .pt .n {
-  flex:0 0 58px; height:58px; border-radius:50%;
-  border:2px solid var(--accent); color:var(--accent);
-  font-family:'SairaCond',sans-serif; font-weight:900; font-size:30px;
-  display:flex; align-items:center; justify-content:center;
+  flex:0 0 30px; height:30px;
+  color:var(--accent);
+  font-family:'SairaCond',sans-serif; font-weight:900; font-size:26px;
+  display:flex; align-items:flex-start; justify-content:flex-start;
+  padding-top:8px;
 }
 .pt .tx {
   font-family:'NotoJP',sans-serif; font-weight:700; font-size:34px; line-height:1.5;
@@ -66,7 +70,7 @@ document.fonts.ready.then(function () {
   stripe.style.left = (tag.offsetLeft + tag.offsetWidth + 18) + 'px';
   var box = document.getElementById('bodybox');
   var en = document.querySelector('.name-en'), ja = document.querySelector('.name-ja');
-  var SETS = [[112,52,34],[100,46,31],[88,42,28],[78,38,25],[68,34,22]];
+  var SETS = [[34,74,34],[34,66,31],[34,58,28],[34,52,25],[34,46,22]];
   for (var i = 0; i < SETS.length; i++) {
     en.style.fontSize = SETS[i][0] + 'px';
     ja.style.fontSize = SETS[i][1] + 'px';

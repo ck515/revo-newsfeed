@@ -18,28 +18,35 @@ html:has(body.transparent), body.transparent, body.transparent .card { backgroun
 .card { position:relative; width:1080px; height:1350px; background:var(--bg); overflow:hidden; }
 
 /* --- tag + livery stripe (shared signature) --- */
+/* The tag was a filled accent slab with everything on the card skewed to
+   match. Skew on every element reads as discount-flyer sports graphics, and a
+   solid accent block is the loudest thing that can sit in a corner. A rule and
+   letterspaced caps say the same thing without shouting. */
 .tag {
-  position:absolute; z-index:2; left:var(--pad); top:158px; height:62px;
-  display:flex; align-items:center; justify-content:center;
-  min-width:168px; padding:0 26px;
-  background:var(--accent); transform:skewX(var(--skew));
+  position:absolute; z-index:2; left:var(--pad); top:158px; height:auto;
+  display:flex; align-items:center; gap:14px;
+  min-width:0; padding:0;
+  background:transparent; transform:none;
+}
+.tag::before {
+  content:''; display:block; width:26px; height:1px;
+  background:var(--fg-low); flex:0 0 auto;
 }
 .tag span {
-  display:block; transform:skewX(11deg);
-  font-family:'SairaCond',sans-serif; font-weight:900; font-size:38px; line-height:1;
-  letter-spacing:0.13em; color:var(--bg); white-space:nowrap;
+  display:block; transform:none;
+  font-family:'SairaCond',sans-serif; font-weight:600; font-size:30px; line-height:1;
+  letter-spacing:0.26em; color:var(--fg-mid); white-space:nowrap;
 }
-.stripe { position:absolute; z-index:2; top:158px; height:62px; display:flex; gap:10px; transform:skewX(var(--skew)); }
-.stripe i { display:block; width:10px; background:rgba(255,255,255,0.22); }
-.stripe i:first-child { background:var(--accent); opacity:0.45; }
+/* Removed: three diagonal bars that carried no meaning and only added noise. */
+.stripe { display:none; }
 
 /* --- footer (shared) --- */
 .footer { position:absolute; z-index:2; left:var(--pad); right:var(--pad); bottom:var(--pad); }
 .hair { height:1px; background:var(--border); margin-bottom:32px; }
 .footer-row { display:flex; align-items:baseline; justify-content:space-between; }
 .mark {
-  font-family:'SairaCond',sans-serif; font-weight:900; font-size:52px; line-height:1;
-  letter-spacing:0.05em; transform:skewX(var(--skew)); color:var(--fg);
+  font-family:'SairaCond',sans-serif; font-weight:900; font-size:44px; line-height:1;
+  letter-spacing:0.06em; transform:none; color:var(--fg);
 }
 /* A supplied logo replaces the typed wordmark. It is not skewed — the type was
    sloped to match the livery, but a finished logo already carries its own
@@ -47,8 +54,8 @@ html:has(body.transparent), body.transparent, body.transparent .card { backgroun
 .mark.has-logo { transform:none; letter-spacing:0; }
 .mark img { display:block; height:var(--logo-h, 52px); width:auto; }
 .date {
-  font-family:'SairaCond',sans-serif; font-weight:900; font-size:52px; line-height:1;
-  letter-spacing:0.02em; transform:skewX(var(--skew)); color:var(--fg-low); white-space:nowrap;
+  font-family:'SairaCond',sans-serif; font-weight:600; font-size:30px; line-height:1;
+  letter-spacing:0.06em; transform:none; color:var(--fg-low); white-space:nowrap;
 }
 
 /* --- shared type helpers --- */

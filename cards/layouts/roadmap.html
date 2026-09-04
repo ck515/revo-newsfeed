@@ -10,16 +10,13 @@
    are solid accent, the current one is outlined, the rest are dark. */
 
 .period { display:flex; align-items:baseline; gap:22px; margin-bottom:14px; }
-.period .num { font-size:132px; line-height:0.86; color:var(--fg); letter-spacing:0.01em; }
-.period .lab { font-family:'NotoJP',sans-serif; font-weight:900; font-size:34px; color:var(--fg-mid); }
+.period .num { font-size:96px; line-height:0.9; color:var(--fg); letter-spacing:0.02em; transform:none; }
+.period .lab { font-family:'NotoJP',sans-serif; font-weight:500; font-size:30px; color:var(--fg-low); letter-spacing:0.04em; }
 
-.segments { display:flex; gap:9px; margin:38px 0 46px; }
-.segments i {
-  flex:1; height:20px; display:block;
-  background:var(--card-2); border:2px solid var(--border);
-}
-.segments i.done { background:var(--accent); border-color:var(--accent); }
-.segments i.now  { background:transparent; border-color:var(--accent); }
+.segments { display:flex; gap:6px; margin:34px 0 52px; }
+.segments i { flex:1; height:6px; display:block; background:var(--border); border:none; }
+.segments i.done { background:var(--fg); }
+.segments i.now  { background:var(--accent); }
 
 .phases { display:flex; flex-direction:column; flex:1 1 auto; min-height:0; justify-content:space-evenly; }
 .phase {
@@ -28,12 +25,12 @@
 }
 .phase:last-child { border-bottom:1px solid var(--border); }
 .phase .st {
-  flex:0 0 132px; font-family:'SairaCond',sans-serif; font-weight:900;
-  font-size:26px; line-height:1.5; letter-spacing:0.12em;
-  transform:skewX(var(--skew)); color:var(--fg-low);
+  flex:0 0 118px; font-family:'SairaCond',sans-serif; font-weight:600;
+  font-size:22px; line-height:1.7; letter-spacing:0.2em;
+  transform:none; color:var(--fg-low);
 }
-.phase.done .st { color:var(--accent); }
-.phase.now  .st { color:var(--fg); }
+.phase.done .st { color:var(--fg-mid); }
+.phase.now  .st { color:var(--fg); font-weight:900; }
 .phase .tx {
   font-family:'NotoJP',sans-serif; font-weight:700; font-size:40px; line-height:1.42;
   color:var(--fg-mid); font-feature-settings:"palt" 1;

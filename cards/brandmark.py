@@ -17,9 +17,11 @@ from pathlib import Path
 BRAND_DIR = Path(__file__).resolve().parent / "brand"
 CANDIDATES = ["logo.png", "logo.svg", "logo.webp", "logo.jpg"]
 
-# Height in the footer. The typed wordmark is 52px tall; a lockup with a symbol
-# beside the letters usually needs a little more to read at the same weight.
-LOGO_HEIGHT = 56
+# Height in the footer. The supplied wordmark is a heavy rounded italic that
+# carries much more ink than the typed Saira version it replaced, so it reads
+# larger at the same height and needs to be set smaller to sit at the same
+# weight as the date opposite it.
+LOGO_HEIGHT = 38
 
 
 def logo_path() -> Path | None:
@@ -51,5 +53,8 @@ def apply(tpl: str, logo_color: str = "white") -> str:
     return (
         tpl.replace("__MARK__", inner)
         .replace("__LOGO_CLASS__", cls)
-        .replace("--pad:76px;", f"--pad:76px; --logo-h:{LOGO_HEIGHT}px;")
+        .replace(
+            "--pad:76px;",
+            f"--pad:76px; --logo-h:{LOGO_HEIGHT}px; --logo-sm:{LOGO_HEIGHT * 1.6:.0f}px;",
+        )
     )

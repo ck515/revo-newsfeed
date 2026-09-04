@@ -10,8 +10,8 @@
    line gets a stamp, so a release reads as work done rather than as marketing. */
 
 .head { display:flex; align-items:baseline; gap:24px; margin-bottom:10px; }
-.head .ver { font-size:116px; line-height:0.9; color:var(--fg); }
-.head .when { font-family:'NotoJP',sans-serif; font-weight:900; font-size:32px; color:var(--fg-mid); }
+.head .ver { font-size:92px; line-height:0.92; color:var(--fg); transform:none; }
+.head .when { font-family:'NotoJP',sans-serif; font-weight:500; font-size:30px; color:var(--fg-low); letter-spacing:0.04em; }
 
 .count {
   font-family:'NotoJP',sans-serif; font-weight:500; font-size:27px;
@@ -26,14 +26,20 @@
 .row:last-child { border-bottom:1px solid var(--border); }
 /* The stamp is outlined, not filled: a page of solid accent blocks would read
    as a warning panel rather than a log. */
+/* Outlined stamps in accent read as a row of warning badges once there are
+   five of them. Plain letterspaced caps carry the same label quietly. */
 .row .stamp {
-  flex:0 0 104px; text-align:center;
-  font-family:'SairaCond',sans-serif; font-weight:900; font-size:23px; line-height:34px;
-  letter-spacing:0.1em; color:var(--accent);
-  border:2px solid var(--accent); transform:skewX(var(--skew));
+  flex:0 0 68px; text-align:left; padding-top:6px;
+  font-family:'SairaCond',sans-serif; font-weight:900; font-size:21px; line-height:1.4;
+  letter-spacing:0.16em; color:var(--fg-low);
+  border:none; transform:none;
 }
-.row .stamp span { display:block; transform:skewX(11deg); }
-.row.fix .stamp { color:var(--fg-mid); border-color:var(--border); }
+.row .stamp span { display:block; transform:none; }
+.row.imp .stamp { color:var(--accent); }
+.note {
+  font-family:'NotoJP',sans-serif; font-weight:400; font-size:26px; line-height:1.6;
+  color:var(--fg-low); margin-top:28px; font-feature-settings:"palt" 1;
+}
 .row .tx {
   font-family:'NotoJP',sans-serif; font-weight:700; font-size:38px; line-height:1.44;
   color:var(--fg); font-feature-settings:"palt" 1;
@@ -52,6 +58,7 @@
       </div>
       <div class="count">__COUNT__</div>
       <div class="log" id="fit">__ROWS__</div>
+      <div class="note">__NOTE__</div>
     </div>
 
     <div class="footer">

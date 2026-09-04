@@ -1,30 +1,30 @@
 name: REVO news
 
-# Two phases. Review runs once a day; publish polls often but bails out in
-# seconds unless somebody has actually reacted, so the expensive Playwright
-# install only happens on runs that have work to do.
+# One poll, all day. The schedule carries no meaning any more: decide_phase.py
+# looks at whether today's review has been written and picks the job from that.
+#
+# The previous design keyed the phase off which cron string fired, which broke
+# twice — once when the review time changed and the string it was compared
+# against did not, and again when GitHub skipped the single daily cron and the
+# day passed with no candidates at all. A missed slot is now picked up on the
+# next poll instead of being lost.
 on:
   schedule:
-    - cron: "0 10 * * *"        # 19:00 JST — post the day's candidate list
-    # Polls all day: the point is to pick up a reaction whenever it happens,
-    # and a run with nothing to do costs a few seconds.
     - cron: "*/5 * * * *"
   workflow_dispatch:
     inputs:
       phase:
-        description: "review or publish"
-        required: true
-        default: publish
+        description: "review or publish (空欄なら自動判定)"
+        required: false
+        default: ""
         type: choice
-        options: [review, publish]
+        options: ["", review, publish]
 
 concurrency:
   group: revo-news
   cancel-in-progress: false
 
 env:
-  # The runner clock is UTC. Without this, a run after midnight JST reads as
-  # the previous day and looks for a review file that was never written.
   TZ: Asia/Tokyo
   DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
   DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
@@ -45,18 +45,17 @@ jobs:
 
       - name: Decide phase
         id: phase
+        working-directory: newsfeed
         run: |
           if [ -n "${{ inputs.phase }}" ]; then
             echo "name=${{ inputs.phase }}" >> "$GITHUB_OUTPUT"
-          elif [ "${{ github.event.schedule }}" = "0 10 * * *" ]; then
-            echo "name=review" >> "$GITHUB_OUTPUT"
+            echo "phase=${{ inputs.phase }} (手動指定)"
           else
-            echo "name=publish" >> "$GITHUB_OUTPUT"
+            python decide_phase.py
           fi
 
-      # ---- publish: cheap check first -----------------------------------
-      # Only `requests` is needed to ask Discord who reacted. This is the step
-      # that runs ~60 times a day, so nothing heavier belongs here.
+      # Cheap check on the publish path: this runs ~288 times a day, so nothing
+      # heavier than `requests` belongs here.
       - name: Check for picks
         id: check
         if: steps.phase.outputs.name == 'publish'
@@ -65,7 +64,6 @@ jobs:
           pip install --quiet requests
           python check_picks.py
 
-      # ---- heavy install, only when needed ------------------------------
       - name: Cache Playwright browsers
         if: steps.phase.outputs.name == 'review' || steps.check.outputs.has_picks == 'true'
         uses: actions/cache@v4
@@ -76,33 +74,32 @@ jobs:
       - name: Install
         if: steps.phase.outputs.name == 'review' || steps.check.outputs.has_picks == 'true'
         run: |
-          pip install --quiet feedparser anthropic requests playwright budoux
+          pip install --quiet -r requirements.txt
           playwright install --with-deps chromium
 
       - name: Review
         if: steps.phase.outputs.name == 'review'
         working-directory: newsfeed
-        run: python run_review.py --live --strict
+        run: python run_review.py --live
 
       - name: Publish
         if: steps.phase.outputs.name == 'publish' && steps.check.outputs.has_picks == 'true'
         working-directory: newsfeed
         run: python run_publish.py
 
-      # seen.json and review-*.json must survive between runs, otherwise every
-      # article looks new every morning and picks are forgotten.
+      # seen.json and review-*.json must survive between runs — and the review
+      # file is now what stops the day's review from running twice, so losing it
+      # would mean re-posting the candidate list every five minutes.
       - name: Persist state
         if: steps.phase.outputs.name == 'review' || steps.check.outputs.has_picks == 'true'
         run: |
           git config user.name  "revo-news-bot"
           git config user.email "bot@users.noreply.github.com"
           git add newsfeed/state
-          git diff --cached --quiet || git commit -m "state: ${{ steps.phase.outputs.name }} $(date -u +%FT%H:%M)"
+          git diff --cached --quiet || git commit -m "state: ${{ steps.phase.outputs.name }} $(date +%FT%H:%M)"
           git pull --rebase --autostash
           git push
 
-      # Without this a failure is silent: Discord shows nothing and the only
-      # way to notice is to open the Actions page on a hunch.
       - name: Notify failure
         if: failure()
         run: |

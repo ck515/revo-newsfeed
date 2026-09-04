@@ -120,11 +120,17 @@ def render_roadmap(period: str, period_label: str, phases: list[dict],
 
 
 def render_changelog(version: str, items: list[dict], when: str = "",
+                     count: str = "", note: str = "",
                      date_str: str = "", transparent: bool = False,
                      out: str | Path = "changelog.png") -> Path:
-    """items: [{"tag": "NEW"|"IMP"|"FIX", "text": str}] — 3〜6件。"""
+    """items: [{"tag": "NEW"|"IMP"|"FIX", "text": str}] — 3〜6件。
+
+    `note` carries what did not fit. A release with thirty fixes cannot list
+    them all and should not read as though it only had five, so the remainder
+    is stated rather than dropped.
+    """
     rows = "".join(
-        f'<div class="row {"fix" if it.get("tag") == "FIX" else ""}">'
+        f'<div class="row {(it.get("tag") or "IMP").lower()}">'
         f'<div class="stamp"><span>{html.escape(it.get("tag", "IMP"))}</span></div>'
         f'<div class="tx">{html.escape(it["text"])}</div></div>'
         for it in items
@@ -132,8 +138,9 @@ def render_changelog(version: str, items: list[dict], when: str = "",
     return _shoot("changelog.html", {
         "VERSION": html.escape(version),
         "WHEN": html.escape(when),
-        "COUNT": f"{len(items)}件の改善",
+        "COUNT": html.escape(count or f"{len(items)}件の改善"),
         "ROWS": rows,
+        "NOTE": html.escape(note),
         "DATE": html.escape(_fmt_date(date_str)),
     }, Path(out), transparent)
 
@@ -213,3 +220,106 @@ def render_cover_feature(name_en: str, name_ja: str, hook: str, photo: str | Pat
         "DATE": html.escape(_fmt_date(date_str or date.today().isoformat())),
         "OVERLAY": str(overlay),
     }, Path(out), transparent)
+
+
+def render_lineup(period: str, items: list[dict], period_label: str = "",
+                  when: str = "", tag: str = "ROADMAP", date_str: str = "",
+                  start: int = 1, transparent: bool = False,
+                  out: str | Path = "lineup.png") -> Path:
+    """items: [{"name": str, "desc": str}] — 3〜5件。
+
+    Separate from render_roadmap because a roadmap answers "how far along" and
+    a lineup answers "what is coming" — the first needs status, the second
+    needs room to explain.
+    """
+    rows = "".join(
+        f'<div class="item"><div class="n">{i:02d}</div><div class="body">'
+        f'<div class="nm">{html.escape(it["name"])}</div>'
+        + (f'<div class="ds">{html.escape(it["desc"])}</div>' if it.get("desc") else "")
+        + "</div></div>"
+        # `start` continues the numbering across cards: a list split over two
+        # pages that restarts at 01 reads as two separate lists.
+        for i, it in enumerate(items, start)
+    )
+    return _shoot("lineup.html", {
+        "TAG": html.escape(tag),
+        "PERIOD": html.escape(period),
+        "PERIOD_LABEL": html.escape(period_label),
+        "WHEN": html.escape(when),
+        "ITEMS": rows,
+        "DATE": html.escape(_fmt_date(date_str or date.today().isoformat())),
+    }, Path(out), transparent)
+
+
+def render_cover_roadmap(year: str, title: str, sub: str, count: int,
+                         photo: str | Path | None = None, overlay: float = 0.30,
+                         date_str: str = "", transparent: bool = False,
+                         out: str | Path = "cover_roadmap.png") -> Path:
+    """Page one of a roadmap carousel. The photo is optional — a year set large
+    is already an image, so this one does not fall apart on black."""
+    return _shoot("cover_roadmap.html", {
+        "PHOTO": _photo_html(photo),
+        "YEAR": html.escape(year),
+        "TITLE": html.escape(title),
+        "SUB": html.escape(sub),
+        "COUNT": str(count),
+        "DATE": html.escape(_fmt_date(date_str or date.today().isoformat())),
+        "OVERLAY": str(overlay),
+    }, Path(out), transparent)
+
+
+def render_notice(head: str, reason: str, items: list, note: str = "",
+                  date_str: str = "", transparent: bool = False,
+                  out: str | Path = "notice.png") -> Path:
+    """Announce features being withdrawn.
+
+    Kept separate from render_changelog on purpose: a removal listed among
+    additions reads as routine, and anyone who used the feature learns about it
+    by accident. Here the reason comes first and the affected names are the
+    loudest thing on the card.
+    """
+    # Accepts a plain name or {"name", "desc"}: a reader who never used the
+    # feature still needs to know what is going away.
+    def row(it):
+        name = it["name"] if isinstance(it, dict) else it
+        desc = it.get("desc", "") if isinstance(it, dict) else ""
+        body = f'<div class="nm">{html.escape(name)}</div>'
+        if desc:
+            body += f'<div class="ds">{html.escape(desc)}</div>'
+        return f'<div class="it"><div class="bar"></div><div class="body">{body}</div></div>'
+
+    rows = "".join(row(it) for it in items)
+    return _shoot("notice.html", {
+        "HEAD": html.escape(head),
+        "REASON": html.escape(reason),
+        "ITEMS": rows,
+        "NOTE": html.escape(note),
+        "DATE": html.escape(_fmt_date(date_str or date.today().isoformat())),
+    }, Path(out), transparent)
+
+
+def render_outro(slogan: str = "もう、ひとりで走らない。",
+                 lead: str = "", cta: str = "", logo_height: int = 116,
+                 date_str: str = "", transparent: bool = False,
+                 out: str | Path = "outro.png") -> Path:
+    """The closing card of a carousel. Centred, no tag, no date.
+
+    Deliberately unlike the interior pages: an end card that keeps their
+    layout looks like a page whose content failed to load.
+    """
+    icon = BASE_DIR / "brand" / "icon.png"
+    icon_html = ""
+    if icon.exists():
+        import base64
+
+        b64 = base64.b64encode(icon.read_bytes()).decode()
+        icon_html = f'<div class="icon"><img src="data:image/png;base64,{b64}" alt=""></div>'
+
+    tpl = _shoot("outro.html", {
+        "ICON": icon_html,
+        "SLOGAN": html.escape(slogan),
+        "LEAD": html.escape(lead),
+        "CTA": html.escape(cta),
+        "DATE": "",
+    }, Path(out), transparent)
+    return tpl

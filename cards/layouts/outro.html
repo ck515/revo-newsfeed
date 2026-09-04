@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><style>__BASE_CSS__
+/* OUTRO — カルーセル末尾の共通カード
+   The last card is the only one with no information to deliver, so it should
+   not look like the others with the content removed. Centring it, dropping the
+   tag and the date, and letting the mark sit on its own is what makes it read
+   as an ending rather than a page that failed to load.
+
+   The mark is large but not huge: a wordmark blown up to fill the frame reads
+   as a splash screen, and the slogan is the line that has to be remembered. */
+
+.center {
+  position:absolute; inset:0; z-index:2;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding:0 var(--pad) 90px;
+  text-align:center;
+}
+.center .mark-lg {
+  font-family:'SairaCond',sans-serif; font-weight:900; font-size:116px; line-height:1;
+  letter-spacing:0.06em; color:var(--fg);
+}
+.center .mark-lg.has-logo { letter-spacing:0; }
+.center .mark-lg img { display:block; height:var(--logo-sm, 62px); width:auto; }
+/* The icon is a filled yellow tile, so it needs air around it or it reads as a
+   sticker dropped onto the card rather than part of a lockup. */
+/* Rounded to match the app icon as it appears on a home screen — a hard
+   square reads as the raw asset rather than the installed app. */
+.icon { width:196px; height:196px; margin-bottom:44px; }
+.icon img { border-radius:44px; }
+.icon img { display:block; width:100%; height:100%; border-radius:44px; }
+
+.slogan {
+  font-family:'NotoJP',sans-serif; font-weight:900; font-size:46px; line-height:1.5;
+  letter-spacing:0.02em; color:var(--fg); margin-top:46px; font-feature-settings:"palt" 1;
+}
+.rule-c { width:56px; height:1px; background:var(--border); margin:46px 0; }
+.lead {
+  font-family:'NotoJP',sans-serif; font-weight:400; font-size:29px; line-height:1.8;
+  color:var(--fg-mid); font-feature-settings:"palt" 1; max-width:780px;
+}
+.cta {
+  position:absolute; z-index:2; left:var(--pad); right:var(--pad); bottom:var(--pad);
+  display:flex; align-items:center; justify-content:center; gap:14px;
+  font-family:'NotoJP',sans-serif; font-weight:500; font-size:27px; color:var(--fg-low);
+}
+.cta b { color:var(--accent); font-weight:900; }
+</style></head>
+<body class="__BODY_CLASS__">
+  <div class="card" id="card">
+    <div class="center">
+      __ICON__
+      <div class="mark-lg __LOGO_CLASS__">__MARK__</div>
+      <div class="slogan">__SLOGAN__</div>
+      <div class="rule-c"></div>
+      <div class="lead">__LEAD__</div>
+    </div>
+    <div class="cta">__CTA__</div>
+  </div>
+<script>
+document.fonts.ready.then(function () { document.body.dataset.ready = '1'; });
+</script></body></html>
