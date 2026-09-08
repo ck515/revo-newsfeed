@@ -37,7 +37,9 @@
     "HKS"
    ],
    "region": "JP",
-   "video_official": false
+   "video_official": false,
+   "date": "2026-09-08",
+   "body": "ARTA MECHANICSが、トヨタ GR86（ZN8型）をベースにHKS GTIII-RSターボキットを組み込んだ「VIGALE R IORI EDITION」を世界限定1台で発表した。スーパーGTで活躍する木村偉織氏が開発テストを担当し、実走で230km/hオーバーの加速を記録している。価格は990万円。街乗りとサーキット走行の両立を狙ったこの一台、あなたならどう使う？"
   },
   {
    "id": "948aa08f4d",
@@ -139,5 +141,8 @@
    "region": "JP",
    "video_official": false
   }
+ ],
+ "delivered": [
+  "b125f78c39"
  ]
 }
