@@ -1,0 +1,169 @@
+{
+ "date": "2026-09-16",
+ "message_id": "1549645527300317324",
+ "channel_id": "1517909000903987472",
+ "message_ids": [
+  "1549645527300317324"
+ ],
+ "emojis": [
+  "1️⃣",
+  "2️⃣",
+  "3️⃣",
+  "4️⃣",
+  "5️⃣",
+  "6️⃣",
+  "⏭"
+ ],
+ "candidates": [
+  {
+   "id": "d51b919e40",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/09/16/1988719",
+   "title": "予想額を大幅オーバー。シビックType Rエンジンを載せたロータス愛",
+   "summary": "226馬力K20と26年一族所有の信頼！ 421万円で落札された理由 シビックType R用エンジンを移植した2000年式ロータス「エリーゼ S1」がオークションへ出品され、事前の予想額を大幅オーバーする約421万円で競 [&#8230;] The post 予想額を大幅オーバー。シビックType Rエンジンを載せたロータス愛 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Wed, 16 Sep 2026 02:50:38 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/09/25_AMW_260914_lotus-elise-s1-type49_.jpeg",
+   "kept": true,
+   "reason": "旧車エリーゼS1×シビックType Rエンジン換装のオークション落札話",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 8,
+   "category": "RETRO",
+   "headline": "エリーゼ S1にシビックType Rエンジン換装、421万円で落札",
+   "keywords": [
+    "エリーゼ S1",
+    "シビックType R",
+    "エンジンスワップ"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  },
+  {
+   "id": "a0157e50ba",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/09/16/1988129",
+   "title": "ボディ内部の空気を整えて抵抗削減。RKデザインが仕立てるNDロードスター",
+   "summary": "ボディ内部の空気を整える新発想。RKデザインはダクトキットでNDロードスターの空気抵抗を減らす エアロパーツを見た目のファッションではなく、走行時の空気抵抗（ドラッグ）を減らすための機能部品としてとらえる。滋賀のRKデザ [&#8230;] The post ボディ内部の空気を整えて抵抗削減。RKデザインが仕立てるNDロードスター first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Wed, 16 Sep 2026 01:00:36 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2027/09/01_AMW_260911_mazda_roadstar_rkdesign-1200x801.jpg",
+   "kept": true,
+   "reason": "NDロードスター向けの機能系エアロパーツでカスタム読者に訴求",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 7,
+   "category": "PARTS",
+   "headline": "RKデザインがNDロードスター向けダクトキットで空気抵抗を低減",
+   "keywords": [
+    "NDロードスター",
+    "RKデザイン",
+    "エアロパーツ"
+   ],
+   "region": "JP",
+   "video_official": false
+  },
+  {
+   "id": "28c11233d3",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/09/16/1988697",
+   "title": "納屋で25年間眠っていた愛車が復活。英国スタジオが再構築したフィアット500",
+   "summary": "ミラノの気鋭デザインと伝統の2気筒！ 126流用メカを詰める試作車 イギリスの新進気鋭スタジオ「La Cinquecento（ラ・チンクエチェント）」が、クラシック・フィアット500の本格レストモッド（現代技術で再構築す [&#8230;] The post 納屋で25年間眠っていた愛車が復活。英国スタジオが再構築したフィアット500 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Tue, 15 Sep 2026 23:00:43 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/09/03_AMW_260914_500_Scattante_.jpeg",
+   "kept": true,
+   "reason": "クラシックフィアット500のレストモッドで旧車・カスタム両方に刺さる",
+   "matched": [],
+   "region_hint": "WORLD",
+   "score": 7,
+   "category": "RETRO",
+   "headline": "英デザインスタジオ La Cinquecento がクラシックフィアット500をハイエンドレストモッド化",
+   "keywords": [
+    "フィアット500",
+    "レストモッド",
+    "La Cinquecento"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  },
+  {
+   "id": "79972f43f7",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/09/16/1988696",
+   "title": "カワイイ見た目で中身はターボ。自作アルミゲートとヴィッツRSエンジンを積んだbB愛",
+   "summary": "NCP13過給機と5速MTを搭載！ サーキット走行も見据えた過激な仕様 カワイイ見た目の裏にヴィッツRS（NCP13型）用ターボエンジンを搭載し、自作のワンオフアルミリアゲートをあわせたトヨタ「bBオープンデッキ」。20 [&#8230;] The post カワイイ見た目で中身はターボ。自作アルミゲートとヴィッツRSエンジンを積んだbB愛 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Tue, 15 Sep 2026 21:00:49 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/09/02_AMW_260914_bB.jpg",
+   "kept": true,
+   "reason": "bBオープンデッキにヴィッツRS（NCP13型）エンジン＋ターボの硬派仕様",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 7,
+   "category": "RETRO",
+   "headline": "トヨタbBオープンデッキにヴィッツRS（NCP13型）ターボ＋5速MTを搭載した1台",
+   "keywords": [
+    "bBオープンデッキ",
+    "ヴィッツRS",
+    "NCP13"
+   ],
+   "region": "JP",
+   "video_official": false
+  },
+  {
+   "id": "4892cedb8c",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/09/16/1989093",
+   "title": "選択肢が少ないプジョー用に狙い。508 GTを引き立てる「RS01」",
+   "summary": "外装変更はわずか2点に限定！ フランス車の造形美を極めるカスタム プジョー用のアルミホイールは、そもそも選べる銘柄が多くない。キャスト（鋳造）の空白地帯に狙いを定めたのが、アールズレーシングがブランド初のオリジナルデザイ [&#8230;] The post 選択肢が少ないプジョー用に狙い。508 GTを引き立てる「RS01」 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Wed, 16 Sep 2026 02:00:32 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/09/06_AMW_260915_peugeot_508-1200x800.jpg",
+   "kept": true,
+   "reason": "プジョー508 GT向けのホイール新製品でカスタム系読者に刺さる",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 6,
+   "category": "PARTS",
+   "headline": "プジョー508GT GT向けにアールズレーシング初のオリジナルホイール「オリジナルデザインホイールRS01」",
+   "keywords": [
+    "508 GT",
+    "RS01",
+    "アールズレーシング"
+   ],
+   "region": "JP",
+   "video_official": false
+  },
+  {
+   "id": "8d64df432f",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/09/16/1988897",
+   "title": "無加工ポン付けで北米ルックへ。IPFの「グリルマーカー for ジムニー」登場",
+   "summary": "純正配線やボディの穴あけは不要！ 手軽にUSスタイルを作る4灯ランプ スズキ「ジムニー」のフロントフェイスにマーカーランプを追加し、手軽にUSスタイルへと仕立てられる「グリルマーカー for ジムニー」がIPFから登場し [&#8230;] The post 無加工ポン付けで北米ルックへ。IPFの「グリルマーカー for ジムニー」登場 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Wed, 16 Sep 2026 00:00:38 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/09/02_AMW_260914_JIMNY.jpg",
+   "kept": true,
+   "reason": "ジムニー向けUSルックパーツはカスタム読者層とマッチ",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 6,
+   "category": "PARTS",
+   "headline": "IPFがジムニー向けグリルマーカーランプを発売、無加工で北米ルックに",
+   "keywords": [
+    "ジムニー",
+    "IPF",
+    "グリルマーカー"
+   ],
+   "region": "JP",
+   "video_official": false
+  }
+ ]
+}
