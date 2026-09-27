@@ -1,0 +1,169 @@
+{
+ "date": "2026-09-27",
+ "message_id": "1553665293828620389",
+ "channel_id": "1517909000903987472",
+ "message_ids": [
+  "1553665293828620389"
+ ],
+ "emojis": [
+  "1️⃣",
+  "2️⃣",
+  "3️⃣",
+  "4️⃣",
+  "5️⃣",
+  "6️⃣",
+  "⏭"
+ ],
+ "candidates": [
+  {
+   "id": "1c0c20abf8",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/09/27/1991512",
+   "title": "18歳で手にして40年。日産「フェアレディ240ZG」とZ432の2台を慈しむオーナーの解答",
+   "summary": "ゴッティマグの15インチとポテンザRE-71RS！ MK63ブレーキで止めるS30 深く艶やかなマルーンのボディに「Gノーズ」とリベット留めのオーバーフェンダーが美しい存在感を放つ。18歳でS30系フェアレディZを手にし [&#8230;] The post 18歳で手にして40年。日産「フェアレディ240ZG」とZ432の2台を慈しむオーナーの解答 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Sat, 26 Sep 2026 21:00:11 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/09/AMW_260923_Fairladyz_4-1200x800.jpg",
+   "kept": true,
+   "reason": "フェアレディ240ZGとZ432の2台持ちオーナー記事は旧車読者の最高値コンテンツ",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 9,
+   "category": "RETRO",
+   "headline": "40年間大切にしてきたフェアレディ240ZGZ240ZGとZ432の2台持ちオーナー",
+   "keywords": [
+    "フェアレディ240ZG",
+    "Z432",
+    "旧車"
+   ],
+   "region": "JP",
+   "video_official": false
+  },
+  {
+   "id": "8fce8c17f2",
+   "source": "WEB CARTOP",
+   "weight": 1.1,
+   "url": "https://www.webcartop.jp/2026/09/1879855/",
+   "title": "丸目を捨てた911はモビーディックの再来！ ポルシェが本気で作った「911 GT2 RS」ベースのワンオフモデルが過激すぎる",
+   "summary": "この記事をまとめると ■ポルシェがモントレー・カーウィークで「フラッハバウRS」を発表した ■「フラッハバウRS」は911 GT2 RSをフラットノーズ化したワンオフモデルだ ■フラットノーズに巨大ウイングで強大なダウンフォースを発生する超本格仕様となる 伝説の「モビーディック」をオマージュ スー...",
+   "published": "Sat, 26 Sep 2026 08:30:36 +0000",
+   "has_video": false,
+   "image_url": "",
+   "kept": true,
+   "reason": "911 GT2 RSベースのフラットノーズワンオフはスーパーカー好きに直撃",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 9,
+   "category": "DEBUT",
+   "headline": "ポルシェ911が911 GT2 スラントノーズWRITERSベースのフラットノーズワンオフ「フラッハバウRS」を公開",
+   "keywords": [
+    "911 GT2 RS",
+    "フラッハバウRS",
+    "ポルシェ"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  },
+  {
+   "id": "9a7f5c3d0a",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/09/27/1991334",
+   "title": "シボレー「コルベット」約1.1億円で手槌。ガムテープ補修と時速341kmでル・マンを制した個体",
+   "summary": "NARTの跳ね馬カラーを纏いサルト24時間を完走したL88型ビッグブロックV8の快挙 跳ね馬のカラーでル・マンを制したアメリカンV8が存在する。ガムテープ補修で時速341kmを叩き出した伝説のレーサーが、RMサザビーズの [&#8230;] The post シボレー「コルベット」約1.1億円で手槌。ガムテープ補修と時速341kmでル・マンを制した個体 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Sun, 27 Sep 2026 02:50:46 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/09/00_AMW_260922_Chevrolet-Corvette-L88-RED_NART-Le-Mans_.jpeg",
+   "kept": true,
+   "reason": "ル・マン優勝コルベットのオークション落札は旧車・レース好きに刺さる",
+   "matched": [],
+   "region_hint": "WORLD",
+   "score": 8,
+   "category": "RETRO",
+   "headline": "ル・マン24優勝のコルベット L88型が約1.1億円で落札",
+   "keywords": [
+    "コルベット",
+    "ル・マン",
+    "オークション"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  },
+  {
+   "id": "6c855fb25d",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/09/27/1991915",
+   "title": "北米ニスモの吸気とトップシークレットのドライカーボン。日産「フェアレディZ」に宿る走りの本質",
+   "summary": "フェニックスパワーのECUチューンで出力向上！ アラゴスタ車高調で支えるフットワーク 日産「フェアレディZ（RZ34型）」の潜在能力を引き出し、美しさと走りの高次元な融合を果たした1台が存在する。トップシークレット製のド [&#8230;] The post 北米ニスモの吸気とトップシークレットのドライカーボン。日産「フェアレディZ」に宿る走りの本質 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Sat, 26 Sep 2026 21:30:51 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/09/AMW_260925_FairladyZ_5-1-1200x800.jpg",
+   "kept": true,
+   "reason": "フェアレディZ RZ34のトップシークレット+北米NISMOパーツ構成は直球で刺さる",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 8,
+   "category": "PARTS",
+   "headline": "フェアレディZ RZ34にトップシークレットドライカーボンと北米NISMOの吸気",
+   "keywords": [
+    "フェアレディZ",
+    "RZ34",
+    "トップシークレット"
+   ],
+   "region": "JP",
+   "video_official": false
+  },
+  {
+   "id": "521faf9388",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/09/27/1992107",
+   "title": "純正バンパーに重ねる計算された低さ。トヨタ「アクア GR SPORT」を研ぎ澄ますシルクブレイズの造形",
+   "summary": "アイラインからリアウイングまで揃う6点！ ヴィゴロッソ17インチとポテンザで固めたデモカー 純正のGRバンパーを生かしたまま、アクアの目つきと下まわりの見え方を変えられる。シルクブレイズスポーツがトヨタ「アクア GR S [&#8230;] The post 純正バンパーに重ねる計算された低さ。トヨタ「アクア GR SPORT」を研ぎ澄ますシルクブレイズの造形 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Sun, 27 Sep 2026 06:30:46 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/09/02_AMW_260925_toyota_aqua_aeroparts-1200x800.jpg",
+   "kept": true,
+   "reason": "シルクブレイズのエアロキットはカスタム系読者に刺さる",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 6,
+   "category": "PARTS",
+   "headline": "アクア GR SPORTSにシルクブレイズスポーツのエアロ6点フルセット",
+   "keywords": [
+    "アクア GR SPORT",
+    "シルクブレイズ",
+    "カスタム"
+   ],
+   "region": "JP",
+   "video_official": false
+  },
+  {
+   "id": "e3d1144700",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/09/27/1988848",
+   "title": "フィアット「パンダ」アバルト用足を加工流用。GT Romanに憧れたオーナーの白黒スタイル",
+   "summary": "インパラやアルファロメオを経て辿り着いた2015年式イージーのチューニング術 18日連続の長雨が続いた関東地方。群馬県の館林城ゆめひろばで開催された「のらぱんだ会」のオフ会「ぱんだら」には、初代から3代目まで、3世代42 [&#8230;] The post フィアット「パンダ」アバルト用足を加工流用。GT Romanに憧れたオーナーの白黒スタイル first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Sat, 26 Sep 2026 23:00:08 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/09/04_AMW_260914_fiat-panda_.jpeg",
+   "kept": true,
+   "reason": "フィアット パンダのオフ会・カスタム紹介は旧車文化層に響く",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 6,
+   "category": "EVENT",
+   "headline": "フィアット「パンダ3」42台が集うワンオフ会でアバルト足流用車が登場",
+   "keywords": [
+    "パンダ",
+    "アバルト",
+    "オフ会"
+   ],
+   "region": "JP",
+   "video_official": false
+  }
+ ]
+}
