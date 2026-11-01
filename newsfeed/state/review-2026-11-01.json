@@ -1,0 +1,169 @@
+{
+ "date": "2026-11-01",
+ "message_id": "1566361144178770000",
+ "channel_id": "1517909000903987472",
+ "message_ids": [
+  "1566361144178770000"
+ ],
+ "emojis": [
+  "1️⃣",
+  "2️⃣",
+  "3️⃣",
+  "4️⃣",
+  "5️⃣",
+  "6️⃣",
+  "⏭"
+ ],
+ "candidates": [
+  {
+   "id": "2fd0c774b4",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/01/2002993",
+   "title": "「クルマを鍛える場所まで変えるな」！ 欧州撤退でもニュルへと挑むスバル「WRX STI」【Key’s note】",
+   "summary": "販売環境の激変と過酷な走破実験は無縁。水平対向の鼓動を轟かせ次代へ技術を繋ぐ使命 レーシングドライバーであり自動車評論家でもある木下隆之が、毎週発信している人気連載コラム「Key’s note」。今回は、スバルが欧州でガ [&#8230;] The post 「クルマを鍛える場所まで変えるな」！ 欧州撤退でもニュルへと挑むスバル「WRX STI」【Key’s note】 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Sun, 01 Nov 2026 06:30:43 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/10/00_AMW_261030_subaru-wrx-nbr_.jpeg",
+   "kept": true,
+   "reason": "WRX STIがニュル挑戦継続、車好きの関心高い",
+   "matched": [],
+   "region_hint": "WORLD",
+   "score": 8,
+   "category": "RACE",
+   "headline": "欧州撤退後もニュルブルクリンクに挑み続けるスバル「WRX STI」",
+   "keywords": [
+    "WRX STI",
+    "ニュルブルクリンク",
+    "スバル"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  },
+  {
+   "id": "780d2fc969",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/01/2003112",
+   "title": "初代S30に現行Zの心臓移植！ 300馬力セントラも堂々登場の日産「SEMAコンセプト」",
+   "summary": "往年の意匠と最新過給機の融合に羊の皮を被る狼。愛好家と技術者の熱意が昇華した晴れ舞台 日産は米国ラスベガスで開催されるSEMAショー2026に、ファンや社員の情熱から生まれた3台のコンセプトカーを出展する。最高出力300 [&#8230;] The post 初代S30に現行Zの心臓移植！ 300馬力セントラも堂々登場の日産「SEMAコンセプト」 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Sat, 31 Oct 2026 23:00:23 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/10/33_AMW_261030_nissan-concept_.jpeg",
+   "kept": true,
+   "reason": "S30に現行Z心臓移植、旧車×新技術でSEMA向け",
+   "matched": [],
+   "region_hint": "WORLD",
+   "score": 8,
+   "category": "EVENT",
+   "headline": "初代S30に現行Zのエンジンを移植した日産「SEMAコンセプトカー」公開",
+   "keywords": [
+    "S30",
+    "SEMA",
+    "日産"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  },
+  {
+   "id": "0c7406e6f1",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/01/2002441",
+   "title": "40年間ガレージで眠らせず完全再生！ 5667万円で落札された「ディーノ246 GT」",
+   "summary": "下地から整えた深紅の艶と主要機構の一致。長年の単一保管が生み出した高値決着 ベルギーの競売に登場した1974年式フェラーリ「ディーノ246 GT」。新車時から40年間単一オーナーが慈しみ、金属素地まで剥離したレストア歴や [&#8230;] The post 40年間ガレージで眠らせず完全再生！ 5667万円で落札された「ディーノ246 GT」 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Sun, 01 Nov 2026 02:30:03 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/10/00_AMW_261028_dino-246gt_.jpeg",
+   "kept": true,
+   "reason": "ディーノ246 GTの高額落札、旧車好きに刺さる",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 7,
+   "category": "RETRO",
+   "headline": "40年間の単一オーナー車「ディーノ206246 GTS」が5667万円で落札",
+   "keywords": [
+    "ディーノ246 GT",
+    "旧車",
+    "オークション"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  },
+  {
+   "id": "f274cb47bc",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/01/2002390",
+   "title": "街ですれ違った瞬間に人生が変わった！ 40年間ひと筋で愛し抜く「ディーノ246 GT」",
+   "summary": "高騰する相場をよそに美術品化を拒否。修繕と整備を重ねて長旅や公道を味わう日常 高価なスーパーカーは走らせずに保管するもの、という前提を軽々と裏切る1台が、甲高い排気音とともに会場へ入ってきた。千葉県佐倉市のクラシックカー [&#8230;] The post 街ですれ違った瞬間に人生が変わった！ 40年間ひと筋で愛し抜く「ディーノ246 GT」 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Sat, 31 Oct 2026 22:00:50 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/10/06_AMW_261028_dino_246gt.jpg",
+   "kept": true,
+   "reason": "ディーノ246 GTを40年日常使いする旧車愛好家の話",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 7,
+   "category": "RETRO",
+   "headline": "40年間乗り続ける「ディーノ206246GT GT」オーナーの走る旧車哲学",
+   "keywords": [
+    "ディーノ246 GT",
+    "旧車",
+    "オーナー"
+   ],
+   "region": "JP",
+   "video_official": false
+  },
+  {
+   "id": "8070560170",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/01/2002962",
+   "title": "停止状態から2トンの力で路面に吸着する最新EV！ マクマートリー「スピアリング・ピュア」",
+   "summary": "床下ファンが風力不要の負圧を生成。F1を超越した旋回性能で新時代を開く量産仕様 英国マクマートリー・オートモーティブが創業10周年を迎え、電動ハイパートラックカー「スピアリング・ピュア」を公開した。床下ファンにより停止状 [&#8230;] The post 停止状態から2トンの力で路面に吸着する最新EV！ マクマートリー「スピアリング・ピュア」 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Sun, 01 Nov 2026 05:30:04 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/10/05_AMW_261029_McMurtry_.jpeg",
+   "kept": true,
+   "reason": "床下ファンの電動ハイパーカー、技術的関心を引く",
+   "matched": [],
+   "region_hint": "WORLD",
+   "score": 6,
+   "category": "DEBUT",
+   "headline": "マクマートリー「スピアリング・ピュア」が量産仕様を公開",
+   "keywords": [
+    "スピアリング・ピュア",
+    "マクマートリー",
+    "EV"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  },
+  {
+   "id": "ceec1f297e",
+   "source": "WEB CARTOP",
+   "weight": 1.1,
+   "url": "https://www.webcartop.jp/2026/11/1892092/",
+   "title": "Ｆ１だけじゃなくてオフロードでもホンダは大暴れ！ 驚愕の1300馬力SUV「パスポート バハスペック」がSEMAショーに降臨",
+   "summary": "この記事をまとめると ■ホンダが2026年のSEMAショーに出展する車両を発表した ■「ホンダ・パスポート バハスペック」はBaja1000に出場するために作られた ■1300馬力を発揮するパワーユニットを搭載する ホンダが作るオフロード界のF1マシン現る アメリカのカスタムカー文化は、日本以上と...",
+   "published": "Sun, 01 Nov 2026 01:00:32 +0000",
+   "has_video": false,
+   "image_url": "",
+   "kept": true,
+   "reason": "1300馬力のオフロードSUV、SEMA出展でカスタム好きに響く",
+   "matched": [],
+   "region_hint": "WORLD",
+   "score": 6,
+   "category": "EVENT",
+   "headline": "ホンダが「パスポート バハスペック」をSEMAショーに出展",
+   "keywords": [
+    "パスポート バハスペック",
+    "SEMA",
+    "ホンダ"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  }
+ ]
+}
