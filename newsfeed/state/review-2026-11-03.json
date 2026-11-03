@@ -1,0 +1,91 @@
+{
+ "date": "2026-11-03",
+ "message_id": "1567099120634826854",
+ "channel_id": "1517909000903987472",
+ "message_ids": [
+  "1567099120634826854"
+ ],
+ "emojis": [
+  "1️⃣",
+  "2️⃣",
+  "3️⃣",
+  "⏭"
+ ],
+ "candidates": [
+  {
+   "id": "ab16768b4b",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/03/2004008",
+   "title": "新車価格235万円が約534万円へと跳ね上がった！ 英国のホンダ「インテグラ タイプR」",
+   "summary": "1998年式ホンダ「インテグラ タイプR（DC2型）」が英競売に出品。売り切り1万ポンド開始から新車の約2.3倍となる約534万円で落札された。日本で20年超愛された走行7万km台の個体を通じ、世界的な高騰の背景と全貌を詳しく解説する。 The post 新車価格235万円が約534万円へと跳ね上がった！ 英国のホンダ「インテグラ タイプR」 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Tue, 03 Nov 2026 02:30:15 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/11/00_AMW_261102_Honda-Integra-Type-R_.jpeg",
+   "kept": true,
+   "reason": "DC2インテグラ タイプRが英国競売で約534万円、旧車高騰の象徴",
+   "matched": [],
+   "region_hint": "WORLD",
+   "score": 9,
+   "category": "RETRO",
+   "headline": "E-DC2-1300800型インテグラ タイプRが英国競売で約534万円に",
+   "keywords": [
+    "インテグラ タイプR",
+    "DC2",
+    "旧車相場"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  },
+  {
+   "id": "d1f043b8bd",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/03/2003589",
+   "title": "フェンダーが深く被る超低車高！ 3.1LのL型直6を積んだ日産「スカイライン」とS30Z",
+   "summary": "端正な外見と過激な心臓の調和。ソレックスやOERキャブレターが奏でる乾いた金属音 日本のモータリゼーション黎明期を駆け抜けた日産の傑作スポーツカーは、半世紀以上の時を経た現代でも色あせない魅力を放つ。名機と名高い直列6気 [&#8230;] The post フェンダーが深く被る超低車高！ 3.1LのL型直6を積んだ日産「スカイライン」とS30Z first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Mon, 02 Nov 2026 22:00:37 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/10/AMW_261031_fairladyz_1-1200x814.jpg",
+   "kept": true,
+   "reason": "L型直6スカイラインとS30Zの旧車2台は読者の刺さるコンテンツ",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 8,
+   "category": "RETRO",
+   "headline": "3.1L L型直6を積む日産スカイラインとS30Zの超低車高仕様",
+   "keywords": [
+    "スカイライン",
+    "S30Z",
+    "L型直6"
+   ],
+   "region": "JP",
+   "video_official": false
+  },
+  {
+   "id": "0f4148974c",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/03/2003412",
+   "title": "ガソリン車の非力感を一発解消！ トルク約44Nm増果たすトヨタ「ランドクルーザー250」",
+   "summary": "重厚な車体を軽快に押し出す過給力。ボルトオン構造と車検適合で日常の走りを変革 トヨタ「ランドクルーザー250」のガソリン車に向けて、BLITZ（ブリッツ）からスーパーチャージャーキット「COMPRESSOR SYSTEM [&#8230;] The post ガソリン車の非力感を一発解消！ トルク約44Nm増果たすトヨタ「ランドクルーザー250」 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Tue, 03 Nov 2026 07:30:02 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2027/10/03_AMW_261031_landcluiser250.jpg",
+   "kept": true,
+   "reason": "BLITZのランクル250向けスーパーチャージャーはパーツ系で興味を引く",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 6,
+   "category": "PARTS",
+   "headline": "BLITZがランドクルーザーランクル250向けスーパーチャージャーキットを発売",
+   "keywords": [
+    "ランドクルーザー250",
+    "BLITZ",
+    "スーパーチャージャー"
+   ],
+   "region": "JP",
+   "video_official": false
+  }
+ ]
+}
