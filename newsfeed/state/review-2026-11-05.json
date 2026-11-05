@@ -1,0 +1,143 @@
+{
+ "date": "2026-11-05",
+ "message_id": "1567842983217471589",
+ "channel_id": "1517909000903987472",
+ "message_ids": [
+  "1567842983217471589"
+ ],
+ "emojis": [
+  "1️⃣",
+  "2️⃣",
+  "3️⃣",
+  "4️⃣",
+  "5️⃣",
+  "⏭"
+ ],
+ "candidates": [
+  {
+   "id": "1dac24e9a6",
+   "source": "WEB CARTOP",
+   "weight": 1.1,
+   "url": "https://www.webcartop.jp/2026/11/1892796/",
+   "title": "トヨタ新型「GRセリカ」の市販化を予測！ トヨタWRC参戦車「GRセリカ Rally1」発表から探るクルマのスペック",
+   "summary": "この記事をまとめると ■トヨタが2027年のWRCにGRセリカ Rally1を投入することを発表 ■市販版は未発表ながらG20Eエンジンやミッドシップ4WD採用の可能性が浮上 ■市販化の行方は東京オートサロンでの発表に注目だ GRセリカはロードバージョンの夢を見るか トヨタは11月3日、フィンラン...",
+   "published": "Thu, 05 Nov 2026 04:00:06 +0000",
+   "has_video": false,
+   "image_url": "",
+   "kept": true,
+   "reason": "GRセリカ市販化予測はスポーツカー好きに最高の関心ネタ",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 9,
+   "category": "DEBUT",
+   "headline": "GR-DATセリカ Rally1から市販版のスペックを予測する",
+   "keywords": [
+    "GRセリカ",
+    "GRセリカ Rally1",
+    "WRC"
+   ],
+   "region": "JP",
+   "video_official": false
+  },
+  {
+   "id": "e60f4b92db",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/05/2003637",
+   "title": "完成から1年で新車の2.5倍へ大化け！ 約1億9910万円落札のキメラ「EVO37」",
+   "summary": "ランチア037を現代技術で再構築したキメラ「EVO37」の018号車が欧州競売に登場。走行240km未満の美車で、新車価格約7920万円の約2.5倍となる約1億9910万円で落札。505馬力ツイン過給機を搭載した限定レストモッドの価値を追う。 The post 完成から1年で新車の2.5倍へ大化け！ 約1億9910万円落札のキメラ「EVO37」 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Thu, 05 Nov 2026 02:30:31 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/11/00_AMW_261101_lancia-kimera-evo37_.jpeg",
+   "kept": true,
+   "reason": "限定レストモッドが新車価格の2.5倍で落札、旧車・相場ネタとして刺さる",
+   "matched": [],
+   "region_hint": "WORLD",
+   "score": 8,
+   "category": "RETRO",
+   "headline": "キメラ「EVO37」が約1億9910万円で落札、新車価格の2.5倍に",
+   "keywords": [
+    "EVO37",
+    "レストモッド",
+    "ランチア037"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  },
+  {
+   "id": "69a2cf55eb",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/05/2003807",
+   "title": "黄色いミウラとギブリが並び立つ！ 誕生60周年を祝う5000台超の熱気あふれる記念の現場",
+   "summary": "イタリアのボローニャで開催された「オート・エ・モト・デポカ」。FIVA創立60周年の節目に、誕生60周年を迎えたランボルギーニ「ミウラ」とマセラティ「ギブリ」が並んで展示。故ムナーリ氏の殿堂入りなど熱気に包まれた記念イベントを紹介する。（120文字） The post 黄色いミウラとギブリが並び立つ！ 誕生60周年を祝う5000台超の熱気あふれる記念の現場 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Thu, 05 Nov 2026 05:30:46 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/11/30_AMW_261103_fiva_.jpeg",
+   "kept": true,
+   "reason": "ミウラとギブリ60周年、旧車イベントとして興味高い",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 7,
+   "category": "RETRO",
+   "headline": "ランボルギーニ「ミウラ」とマセラティ「ギブリ」が誕生60周年で並んだ",
+   "keywords": [
+    "ミウラ",
+    "ギブリ",
+    "旧車"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  },
+  {
+   "id": "a9e316dca9",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/05/2004447",
+   "title": "走行会なのに本気のグリッドスタート！ 100台のイタリア勢が赤シグナルで一斉にヨーイドン",
+   "summary": "アルファ ロメオやフィアットの専門ショップ「スティーレ」が袖ケ浦で開催した走行会。台風中止を乗り越え100台が集結し、予選から赤シグナルによるグリッドスタートまで本格レース形式を堪能。初心者から上級者まで熱狂した1日を紹介する。（119文字） The post 走行会なのに本気のグリッドスタート！ 100台のイタリア勢が赤シグナルで一斉にヨーイドン first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Wed, 04 Nov 2026 23:00:02 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/11/04_AMW_261104_stile_.jpeg",
+   "kept": true,
+   "reason": "袖ケ浦でイタリア車100台の走行会、国内イベント情報として刺さる",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 7,
+   "category": "EVENT",
+   "headline": "アルファ ロメオ＆フィアット100台が袖ケ浦でグリッドスタート走行会",
+   "keywords": [
+    "アルファ ロメオ",
+    "走行会",
+    "袖ケ浦"
+   ],
+   "region": "JP",
+   "video_official": false
+  },
+  {
+   "id": "ac257d7567",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/05/2004374",
+   "title": "「あえて車高は落とさない！」 日産「フェアレディZ」白い鍛造19インチと極太タイヤの足元",
+   "summary": "過度なローダウンを避け低重心を強調。専用エアロと極太タイヤで走りの質感を高めた機能美 歴代モデルへのオマージュを散りばめたロングノーズ＆ショートデッキの美しいフォルムで、世界中のスポーツカーファンを虜にしているRZ34型 [&#8230;] The post 「あえて車高は落とさない！」 日産「フェアレディZ」白い鍛造19インチと極太タイヤの足元 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Wed, 04 Nov 2026 22:00:11 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/11/AMW_261106_fairladyz_1-1200x800.jpg",
+   "kept": true,
+   "reason": "RZ34のカスタム足まわり紹介、スポーツカー好きには一定の関心",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 6,
+   "category": "PARTS",
+   "headline": "RZ34型フェアレディZに白い鍛造35R19インチと極太タイヤを装着",
+   "keywords": [
+    "フェアレディZ",
+    "RZ34",
+    "カスタム"
+   ],
+   "region": "JP",
+   "video_official": false
+  }
+ ]
+}
