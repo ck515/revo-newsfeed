@@ -1,0 +1,91 @@
+{
+ "date": "2026-11-06",
+ "message_id": "1568107168626909275",
+ "channel_id": "1517909000903987472",
+ "message_ids": [
+  "1568107168626909275"
+ ],
+ "emojis": [
+  "1️⃣",
+  "2️⃣",
+  "3️⃣",
+  "⏭"
+ ],
+ "candidates": [
+  {
+   "id": "06cd43d702",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/06/2004868",
+   "title": "セナがF1会場へ自走で通った愛機！ ホンダ「NSX」新車800万円から1.8億円へ大化け",
+   "summary": "偉大な王者が日常の足にした1台。公式証明書が血統を裏付け事前予想を上回った英国決着 アイルトン・セナがポルトガル滞在時に愛用した1991年式ホンダ「NSX」が、RMサザビーズの「The London Auction 20 [&#8230;] The post セナがF1会場へ自走で通った愛機！ ホンダ「NSX」新車800万円から1.8億円へ大化け first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Thu, 05 Nov 2026 21:30:29 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/11/07_AMW_261105_Honda-NSX.jpeg",
+   "kept": true,
+   "reason": "セナのNSXという最強の組み合わせ、旧車高騰の象徴",
+   "matched": [],
+   "region_hint": "WORLD",
+   "score": 9,
+   "category": "RETRO",
+   "headline": "セナ愛用の1991年式ホンダディーラーNSXが英国競売で1.8億円に",
+   "keywords": [
+    "NSX",
+    "アイルトン・セナ",
+    "旧車オークション"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  },
+  {
+   "id": "d9b18033f1",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/06/2004082",
+   "title": "ネット競売の高額中古と完全決別！ 日産「ハコスカ」やS30Zの部品が新品で手に入る時代へ",
+   "summary": "日産「スカイライン」（ハコスカ・ケンメリ）やS30Zの部品難を救うコーリン・プロジェクト。1本3万円台からのスターシャーク等の復刻ホイールをはじめ、前後バンパーやゴム類、内装まで新品で揃うパーツ展開と販売価格の詳細を紹介する。（119文字） The post ネット競売の高額中古と完全決別！ 日産「ハコスカ」やS30Zの部品が新品で手に入る時代へ first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Thu, 05 Nov 2026 21:00:29 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/11/00_AMW_261101_nissan-skyline-2000gt_.jpeg",
+   "kept": true,
+   "reason": "ハコスカ・S30Zの復刻パーツは旧車オーナーに直撃",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 9,
+   "category": "PARTS",
+   "headline": "ハコスカ・S30Zの復刻パーツが新品で入手できるようになった",
+   "keywords": [
+    "ハコスカ",
+    "S30Z",
+    "復刻パーツ"
+   ],
+   "region": "JP",
+   "video_official": false
+  },
+  {
+   "id": "4f85cb895c",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/06/2003677",
+   "title": "跳ね馬のエンブレムなしで約1億円！ 152台のみ作られたアルミ製「ディーノ206 GT」",
+   "summary": "1968年式ディーノ「206 GT」が欧州競売で約9918万円にて落札。早逝した愛息の名を冠し跳ね馬バッジなしで誕生した初期型は、152台のみ作られた総アルミボディの傑作。38時間の重整備を経た28号車の歴史的価値を追う。 The post 跳ね馬のエンブレムなしで約1億円！ 152台のみ作られたアルミ製「ディーノ206 GT」 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Fri, 06 Nov 2026 02:30:34 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/11/00_AMW_261101_dino-206gt_.jpeg",
+   "kept": true,
+   "reason": "152台限定の希少旧車が約1億円で落札、旧車再評価の典型",
+   "matched": [],
+   "region_hint": "WORLD",
+   "score": 8,
+   "category": "RETRO",
+   "headline": "152台のみ製造のアルフレディーノ206 246 GTSが欧州競売で約1億円落札",
+   "keywords": [
+    "ディーノ206 GT",
+    "旧車",
+    "オークション"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  }
+ ]
+}
