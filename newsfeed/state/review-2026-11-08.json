@@ -1,0 +1,91 @@
+{
+ "date": "2026-11-08",
+ "message_id": "1568920793134407740",
+ "channel_id": "1517909000903987472",
+ "message_ids": [
+  "1568920793134407740"
+ ],
+ "emojis": [
+  "1️⃣",
+  "2️⃣",
+  "3️⃣",
+  "⏭"
+ ],
+ "candidates": [
+  {
+   "id": "8f9eb7ed38",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/08/2003725",
+   "title": "欧州仕様のV8を積む初期型！ 約1720万円で落札されたフェラーリ「308 GTB」",
+   "summary": "1979年式フェラーリ「308 GTB」が欧州競売で約1720万円にて落札。低重心化を誇る欧州初期型のドライサンプ潤滑を備え、ウェーバー4基のV8を搭載。ベルギー名門店で新車納車された由緒ある個体の価値と、手堅い競売決着の背景を解説。 The post 欧州仕様のV8を積む初期型！ 約1720万円で落札されたフェラーリ「308 GTB」 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Sun, 08 Nov 2026 02:30:00 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/11/09_AMW_261101_ferrari-308gtb_.jpeg",
+   "kept": true,
+   "reason": "フェラーリ308 GTBの旧車オークション相場は高関心",
+   "matched": [],
+   "region_hint": "WORLD",
+   "score": 7,
+   "category": "RETRO",
+   "headline": "クラシックフェラーリ308 GTBドライサンプ初期型が約1720万円で落札",
+   "keywords": [
+    "フェラーリ308 GTB",
+    "旧車",
+    "オークション"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  },
+  {
+   "id": "8d2c3cdb8d",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/08/2003165",
+   "title": "全パーツをネット通販で調達！ 余ったアルミテープも駆使しDIYしたマツダ「ロードスター」",
+   "summary": "重心高いSUVから乗り換えて実感した人馬一体の軽さ。下り坂を駆け抜ける自然吸気の快音 ボディは塗り替えられ、ピンストライプが引かれた状態で売られていた1991年式。その塗装に惹かれて購入したオーナーは、ヘッドカバーの耐熱 [&#8230;] The post 全パーツをネット通販で調達！ 余ったアルミテープも駆使しDIYしたマツダ「ロードスター」 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Sat, 07 Nov 2026 22:00:32 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/10/02_AMW_261030_mazda_na-roadstar_owner02.jpg",
+   "kept": true,
+   "reason": "1991年式ロードスターのDIYカスタムは旧車・走り系に響く",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 6,
+   "category": "RETRO",
+   "headline": "ネット通販パーツのみで仕上げた1991年式マツダロードスター",
+   "keywords": [
+    "ロードスター",
+    "DIY",
+    "旧車"
+   ],
+   "region": "JP",
+   "video_official": false
+  },
+  {
+   "id": "494d719c1b",
+   "source": "WEB CARTOP",
+   "weight": 1.1,
+   "url": "https://www.webcartop.jp/2026/11/1893282/",
+   "title": "日本は13年で重税なのに……日本車が次々とアメリカへ「流出」するも現地で愛されまくっている現実に複雑な気もち",
+   "summary": "この記事をまとめると ■カリフォルニア・ロングビーチでJCCS2026が開催された ■日本専売車やフルノーマルの旧車も数多く展示された ■アメリカは旧車を文化的遺産として尊重していることが感じられた なぜアメリカ人は日本の旧車が好き？ 2026年10月3日（現地時間）、カリフォルニア州ロングビーチ...",
+   "published": "Sat, 07 Nov 2026 22:00:55 +0000",
+   "has_video": false,
+   "image_url": "",
+   "kept": true,
+   "reason": "日本旧車の米国流出問題はJDM読者に強く刺さる",
+   "matched": [],
+   "region_hint": "WORLD",
+   "score": 6,
+   "category": "RETRO",
+   "headline": "JCCS2026でわかる日本旧車の米国流出と現地での人気",
+   "keywords": [
+    "旧車",
+    "JCCS",
+    "JDM"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  }
+ ]
+}
