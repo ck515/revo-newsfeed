@@ -1,0 +1,143 @@
+{
+ "date": "2026-11-09",
+ "message_id": "1569230092494971040",
+ "channel_id": "1517909000903987472",
+ "message_ids": [
+  "1569230092494971040"
+ ],
+ "emojis": [
+  "1️⃣",
+  "2️⃣",
+  "3️⃣",
+  "4️⃣",
+  "5️⃣",
+  "⏭"
+ ],
+ "candidates": [
+  {
+   "id": "9f415a71ad",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/09/2004523",
+   "title": "改造費約5280万円なのにまさかの流札。ランチア「デルタ」20台限定レストモッドの衝撃",
+   "summary": "300PS超の心臓部と炭素繊維を注入。最高7480万円の予想に届かず買い手なしの幕引き ランチアのWRC6連覇を支えた名機を再構築したフューチュリスタ。わずか20台が製作されたうちの15号車が、ブロードアロー・オークショ [&#8230;] The post 改造費約5280万円なのにまさかの流札。ランチア「デルタ」20台限定レストモッドの衝撃 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Mon, 09 Nov 2026 02:30:04 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/11/01_AMW_261104_Lancia-Delta-Integrale-Futurista.jpeg",
+   "kept": true,
+   "reason": "ランチアデルタのレストモッドは旧車・WRC好きに直撃",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 8,
+   "category": "RETRO",
+   "headline": "ランチアデルタ「デルタS4」20台限定レストモッドが流札、改造費5280万円",
+   "keywords": [
+    "ランチア",
+    "デルタ",
+    "レストモッド"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  },
+  {
+   "id": "f11a78773e",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/09/2005382",
+   "title": "不動車から生足で地面スレスレ！ メンバー上げ加工で全国各地へ自走する日産「ブルーバード」",
+   "summary": "主要機関の上方移設と他銘柄サス移植。気候の良い季節に長距離遠征を楽しむ過激な旧車 SNSで見かけた姿に惹かれ、不動車の1971年式日産「ブルーバード（510型）」を手に入れたオーナーの“とっさ”さん。かつて高級VIPセダ [&#8230;] The post 不動車から生足で地面スレスレ！ メンバー上げ加工で全国各地へ自走する日産「ブルーバード」 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Sun, 08 Nov 2026 21:00:39 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/11/AMW_261107_BLUEBIRD_9-1200x800.jpg",
+   "kept": true,
+   "reason": "510ブルーバードのメンバー上げ極車は旧車カスタム好きに直撃",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 8,
+   "category": "RETRO",
+   "headline": "1971年式日産「ブルーバードクーペ（510型）」を不動車から地面スレスレに仕上げ",
+   "keywords": [
+    "ブルーバード 510型",
+    "旧車カスタム",
+    "ローライダー"
+   ],
+   "region": "JP",
+   "video_official": false
+  },
+  {
+   "id": "bcd236748c",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/09/2006356",
+   "title": "マセラティと手を組み1周年！ 歴代名車の魂を受け継いだアルファ ロメオ「33ストラダーレ」",
+   "summary": "アルファロメオとマセラティによる特注車プロジェクト「BOTTEGAFUORISERIE」が設立1周年を迎えた。露出カーボンの33ストラダーレや多彩な限定モデルを手掛け、文化の継承まで担う共同拠点の歩みと次なる計画を紹介する。（117文字） The post マセラティと手を組み1周年！ 歴代名車の魂を受け継いだアルファ ロメオ「33ストラダーレ」 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Mon, 09 Nov 2026 05:30:18 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/11/04_AMW_261108_alfa-romeo_.jpeg",
+   "kept": true,
+   "reason": "33ストラダーレはスーパーカー好きに刺さる限定モデル",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 7,
+   "category": "DEBUT",
+   "headline": "アルファロメオ ロメオ「33ストラダーレ」特注プロジェクトが1周年",
+   "keywords": [
+    "アルファロメオ",
+    "33ストラダーレ",
+    "限定モデル"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  },
+  {
+   "id": "2d160d7fb7",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/09/2004947",
+   "title": "米国の造園業者から日本の大工へ！ 1965年式の荷台で今も現場へと通うシボレー「C20」",
+   "summary": "半世紀以上を経た実働ピックアップ。アメリカの歴史を宿し働く道具として稼働する現在地 クリームホワイトのボディに入る屋号とイラスト。アメリカで造園業者が新車から使い込んだシボレー「C20」のユーティリティトラックは、2オー [&#8230;] The post 米国の造園業者から日本の大工へ！ 1965年式の荷台で今も現場へと通うシボレー「C20」 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Sun, 08 Nov 2026 21:30:33 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/11/13_AMW_261105_chevrolet_c20.jpg",
+   "kept": true,
+   "reason": "1965年式C20の実働現役ストーリーは旧車好きに刺さる",
+   "matched": [],
+   "region_hint": "WORLD",
+   "score": 7,
+   "category": "RETRO",
+   "headline": "1965年式シボレー「C20」が日本の現場で今も現役稼働",
+   "keywords": [
+    "シボレー C20",
+    "旧車",
+    "ピックアップ"
+   ],
+   "region": "JP",
+   "video_official": false
+  },
+  {
+   "id": "810801aace",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/09/2005408",
+   "title": "ルーフとゲートに2段のウイング！ 4枚ディフューザーで武装したトヨタ「カローラスポーツ」",
+   "summary": "純正ボディの美しさを尊重。前後の跳ね上げと立体的な造形で後ろ姿を引き締める仕掛け シンプル＆スマートなシルエットを描き出すシルクブレイズに、よりスポーティな味付けをプラスしたシルクブレイズスポーツ。トヨタ「カローラスポー [&#8230;] The post ルーフとゲートに2段のウイング！ 4枚ディフューザーで武装したトヨタ「カローラスポーツ」 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Sun, 08 Nov 2026 22:00:02 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/11/01_AMW_COROLLASPORT.jpg",
+   "kept": true,
+   "reason": "カローラスポーツへの本格エアロはカスタム系に響く",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 6,
+   "category": "PARTS",
+   "headline": "シルクブレイズスポーツがトヨタ「カローラスポーツ」に2段ゲートウイングを設定",
+   "keywords": [
+    "カローラスポーツ",
+    "シルクブレイズ",
+    "エアロ"
+   ],
+   "region": "JP",
+   "video_official": false
+  }
+ ]
+}
