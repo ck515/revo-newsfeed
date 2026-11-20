@@ -1,0 +1,65 @@
+{
+ "date": "2026-11-20",
+ "message_id": "1573187302350389320",
+ "channel_id": "1517909000903987472",
+ "message_ids": [
+  "1573187302350389320"
+ ],
+ "emojis": [
+  "1️⃣",
+  "2️⃣",
+  "⏭"
+ ],
+ "candidates": [
+  {
+   "id": "0b232ab39c",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/20/2006363",
+   "title": "新車時はF1仕様より126万円安かった6速MTが約8125万円！ フェラーリ「F430」",
+   "summary": "金属ゲートを弾く6速MT仕様の「F430」。新車時2079万円から約8125万円へ 米国のオークションにて、2005年式フェラーリ「F430」が51万1000ドル（約8125万円）で落札された。4.3リッターの自然吸気V [&#8230;] The post 新車時はF1仕様より126万円安かった6速MTが約8125万円！ フェラーリ「F430」 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Fri, 20 Nov 2026 02:30:25 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/11/05_AMW_261108_Ferrari-F430.jpeg",
+   "kept": true,
+   "reason": "F430 MT仕様の高騰は旧車好きに刺さる",
+   "matched": [],
+   "region_hint": "WORLD",
+   "score": 8,
+   "category": "RETRO",
+   "headline": "フェラーリF430の6速MTが競売で約8125万円に",
+   "keywords": [
+    "フェラーリ",
+    "F430",
+    "旧車相場"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  },
+  {
+   "id": "6fda1c04a0",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/20/2008405",
+   "title": "見た目は1955年型なのに約9.8リッターで741馬力！ 極低車高のシボレー「ベルエア」",
+   "summary": "リアのフレームを新設して低いスタンスを確保。既製品シャシーを大幅加工したワンオフ 米国ネブラスカ州のCAL Automotive Creationsが、2026年11月のSEMAショーで1955年型シボレー「ベルエア」を [&#8230;] The post 見た目は1955年型なのに約9.8リッターで741馬力！ 極低車高のシボレー「ベルエア」 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Fri, 20 Nov 2026 01:00:13 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/11/04_AMW_261112_Chevrolet_Bel_Air.jpeg",
+   "kept": true,
+   "reason": "SEMA発の旧車フルカスタムはコア層が反応",
+   "matched": [],
+   "region_hint": "WORLD",
+   "score": 7,
+   "category": "RETRO",
+   "headline": "1955年型シボレー ベルエアを741馬力にフルカスタム",
+   "keywords": [
+    "シボレー",
+    "ベルエア",
+    "SEMA"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  }
+ ]
+}
