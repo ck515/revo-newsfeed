@@ -1,0 +1,169 @@
+{
+ "date": "2026-11-25",
+ "message_id": "1575114051497893978",
+ "channel_id": "1517909000903987472",
+ "message_ids": [
+  "1575114051497893978"
+ ],
+ "emojis": [
+  "1️⃣",
+  "2️⃣",
+  "3️⃣",
+  "4️⃣",
+  "5️⃣",
+  "6️⃣",
+  "⏭"
+ ],
+ "candidates": [
+  {
+   "id": "c37c5c5b5e",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/25/2010722",
+   "title": "屋根を開けると閉じた状態より重心が3ミリ低下！ ランボルギーニ「テメラリオ スパイダー」",
+   "summary": "ランボルギーニが初の電動格納式ハードトップを採用。920psで最高速343km/hへ ランボルギーニは2026年11月19日、新型ハイブリッドスポーツ「テメラリオ スパイダー」を発表した。4.0LツインターボV8と3基の [&#8230;] The post 屋根を開けると閉じた状態より重心が3ミリ低下！ ランボルギーニ「テメラリオ スパイダー」 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Wed, 25 Nov 2026 05:30:47 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/11/16_AMW_261120_lamborghini_TEMERARIO_SPYDER_AMBIENT.jpeg",
+   "kept": true,
+   "reason": "ランボルギーニ新型スパイダーはスーパーカー好きに直撃",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 9,
+   "category": "DEBUT",
+   "headline": "ランボルギーニ テメラリオV8 スパイダーが世界初公開、920psのハイブリッドスポーツ",
+   "keywords": [
+    "テメラリオ スパイダー",
+    "ランボルギーニ",
+    "ハイブリッド"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  },
+  {
+   "id": "85cec2ced7",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/25/2006561",
+   "title": "走行わずか171kmで約29億5539万円！ 千葉県で温存されていたフェラーリ「F50」",
+   "summary": "新車当時の付属品を揃えた極上の保管状態。歴史的価値と低走行が破格の高騰をもたらす 米国で開催されたブロードアローの競売に、走行距離わずか171kmという1997年式のフェラーリ「F50」が出品された。かつて千葉県で長年大 [&#8230;] The post 走行わずか171kmで約29億5539万円！ 千葉県で温存されていたフェラーリ「F50」 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Wed, 25 Nov 2026 02:30:14 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/11/10_AMW_261108_Ferrari-F50.jpeg",
+   "kept": true,
+   "reason": "フェラーリF50の極上個体オークションは旧車・相場好きに響く",
+   "matched": [],
+   "region_hint": "WORLD",
+   "score": 8,
+   "category": "RETRO",
+   "headline": "千葉保管のフェラーリ F50、走行171kmで約29億円落札",
+   "keywords": [
+    "F50",
+    "フェラーリ",
+    "オークション"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  },
+  {
+   "id": "0c25679d57",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/25/2010191",
+   "title": "リアだけで13cmも幅広に！ 純金コーティング排気系も備えるフェラーリ「12チリンドリ」",
+   "summary": "ドイツの名門ノビテックが限定モデルを発表。前後フェンダーをカーボンで大胆に広げる ドイツのチューナーであるノビテックが、フェラーリ「12チリンドリ」の限定ワイドボディモデルを発表した。フロント7cm、リア13cm拡幅のフ [&#8230;] The post リアだけで13cmも幅広に！ 純金コーティング排気系も備えるフェラーリ「12チリンドリ」 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Wed, 25 Nov 2026 01:00:15 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/11/04_AMW_261117_NOVITEC_NLARGO_F12Cil.jpeg",
+   "kept": true,
+   "reason": "ノビテックによるフェラーリのワイドボディキットはチューニング好きに刺さる",
+   "matched": [],
+   "region_hint": "WORLD",
+   "score": 8,
+   "category": "PARTS",
+   "headline": "ノビテックがフェラーリ NF12チリンドリ向けワイドボディキットを発表",
+   "keywords": [
+    "12チリンドリ",
+    "ノビテック",
+    "ワイドボディ"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  },
+  {
+   "id": "d395554ca1",
+   "source": "WEB CARTOP",
+   "weight": 1.1,
+   "url": "https://www.webcartop.jp/2026/11/1898692/",
+   "title": "駆動用バッテリーをミッドシップに搭載するＥＶポルシェは準備万端！ 2027年にデビューする新型「718ボクスター」のカモフラージュされた姿を公開",
+   "summary": "この記事をまとめると ■ポルシェが開発最終段階にある新型718ボクスターのカモフラージュされた姿を公開 ■新型718ボクスターのEVは2027年第1四半期に世界初公開される予定 ■バッテリーをシート後方に配置してミッドシップ的操縦感覚を実現している EVの新型718ボクスターは2027年初頭デビュー...",
+   "published": "Wed, 25 Nov 2026 05:30:13 +0000",
+   "has_video": false,
+   "image_url": "",
+   "kept": true,
+   "reason": "ポルシェ新型718ボクスターEVは国内でも注目度が高い",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 8,
+   "category": "DEBUT",
+   "headline": "新型ポルシェ718ボクスターGTSのBEVが2027年第1四半期に世界初公開へ",
+   "keywords": [
+    "718ボクスター",
+    "ポルシェ",
+    "EV"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  },
+  {
+   "id": "d92512c869",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/25/2011359",
+   "title": "260万円で買った走行21万km！ タイプRエンジンを積む黄色い丸目ホンダ「インテグラ」",
+   "summary": "環状スタイルへの憧れを叶えつつ日常の移動から走行会デビューまで狙う愛車 大阪でクルマ好きとして育ち、環状族への憧れからホンダ「インテグラ」や「シビック」に乗りたいと思っていた“モツ煮”さん。ところが、購入のきっかけは意外 [&#8230;] The post 260万円で買った走行21万km！ タイプRエンジンを積む黄色い丸目ホンダ「インテグラ」 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Tue, 24 Nov 2026 22:30:46 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/11/02_AMW_261124_INTEGRA.jpg",
+   "kept": true,
+   "reason": "タイプRエンジン搭載の旧車インテグラはJDM旧車好きに刺さる",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 7,
+   "category": "RETRO",
+   "headline": "タイプRエンジン搭載の丸目ホンダ インテグラオンリーを260万円で購入",
+   "keywords": [
+    "インテグラ",
+    "タイプR",
+    "旧車"
+   ],
+   "region": "JP",
+   "video_official": false
+  },
+  {
+   "id": "48683e86e9",
+   "source": "WEB CARTOP",
+   "weight": 1.1,
+   "url": "https://www.webcartop.jp/2026/11/1897373/",
+   "title": "最高速400km/h・850馬力！ ダイムラー時代のクライスラーが放った「幻のV12スーパーカー」【21世紀スーパーカーFILE #36】",
+   "summary": "この記事をまとめると ■ダイムラー・クライスラーは2004年にスーパースポーツの「ME 4-12」を発表した ■ME 4-12はAMG製6リッターV12に4基のターボを組み合わせて850馬力を発生 ■デトロイトショーを騒然とさせた超弩級コンセプトカーながらも市販されることはなかった AMG製エンジン...",
+   "published": "Wed, 25 Nov 2026 08:30:37 +0000",
+   "has_video": false,
+   "image_url": "",
+   "kept": true,
+   "reason": "幻のV12スーパーカーはスーパーカー好きに刺さる読み物",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 6,
+   "category": "RETRO",
+   "headline": "ダイムラー・クライスラーMEが2004年に発表した幻のリッターV12スーパーカーFILE ME 4-12",
+   "keywords": [
+    "ME 4-12",
+    "V12",
+    "スーパーカー"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  }
+ ]
+}
