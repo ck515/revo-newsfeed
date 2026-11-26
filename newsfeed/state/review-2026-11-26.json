@@ -1,0 +1,169 @@
+{
+ "date": "2026-11-26",
+ "message_id": "1575347581930963035",
+ "channel_id": "1517909000903987472",
+ "message_ids": [
+  "1575347581930963035"
+ ],
+ "emojis": [
+  "1️⃣",
+  "2️⃣",
+  "3️⃣",
+  "4️⃣",
+  "5️⃣",
+  "6️⃣",
+  "⏭"
+ ],
+ "candidates": [
+  {
+   "id": "2644154e78",
+   "source": "WEB CARTOP",
+   "weight": 1.1,
+   "url": "https://www.webcartop.jp/2026/11/1898864/",
+   "title": "【試乗】250台限定のインテグラ・タイプＳを貸し切りの峠で全開！ ストリートならシビック・タイプＲよりも走りが楽しい!!",
+   "summary": "この記事をまとめると ■国交省の新制度により北米仕様のままのクルマが日本で販売可能になった ■ホンダはインテグラ・タイプSを250台限定で日本に導入 ■公道のワインディングを貸し切りにして試乗した サーキット寄りのタイプRに対しインテグラはストリート寄りで開発 日本では久しく途絶えていたインテグラ...",
+   "published": "Thu, 26 Nov 2026 02:00:38 +0000",
+   "has_video": false,
+   "image_url": "",
+   "kept": true,
+   "reason": "インテグラ・タイプS国内限定導入の峠試乗は直撃コンテンツ",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 9,
+   "category": "DEBUT",
+   "headline": "250台限定のインテグラ・シビックタイプRSを峠の貸し切り路で試乗",
+   "keywords": [
+    "インテグラ・タイプS",
+    "ホンダ",
+    "限定車"
+   ],
+   "region": "JP",
+   "video_official": false
+  },
+  {
+   "id": "f90b2888a2",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/26/2007954",
+   "title": "ベルリンの同じ家族が約20年守り抜いた41台限定車！ 「パンテーラSi」が約4173万円",
+   "summary": "伊デザインと米国V8が融合した20年の集大成。巨匠が外観を改めた1991年式の価値 デ・トマソ「パンテーラ」は、イタリアンデザインのボディにアメリカ製V8エンジンを組み合わせたスポーツカーとして、1970年代から長く生産 [&#8230;] The post ベルリンの同じ家族が約20年守り抜いた41台限定車！ 「パンテーラSi」が約4173万円 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Thu, 26 Nov 2026 02:30:36 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/11/06_AMW_261111_De-Tomaso-Pantera-Si.jpeg",
+   "kept": true,
+   "reason": "デ・トマソ限定旧車の高額落札、旧車好きに刺さる",
+   "matched": [],
+   "region_hint": "WORLD",
+   "score": 8,
+   "category": "RETRO",
+   "headline": "41台限定のデ・トマソ「パンテーラSi」が約4173万円で落札",
+   "keywords": [
+    "デ・トマソ",
+    "パンテーラ",
+    "旧車"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  },
+  {
+   "id": "115049cf7a",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/26/2011488",
+   "title": "29年前に日本酒4本と交換で入手！ 子育て10年を経て定年復活させた日産「スカイライン」",
+   "summary": "サビだらけだった昭和47年式ハコスカを当時の純正部品と全塗装でオリジナル再生 約29年前に日本酒4本と交換で譲り受けた1972年（昭和47年）式日産「スカイライン2000GT-X」を所有する“森岡博之”さん。サビだらけだ [&#8230;] The post 29年前に日本酒4本と交換で入手！ 子育て10年を経て定年復活させた日産「スカイライン」 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Wed, 25 Nov 2026 21:30:42 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/11/AMW_261124_skylinegt_9-1200x800.jpg",
+   "kept": true,
+   "reason": "ハコスカ旧車レストア実話は旧車好き読者に強く刺さる",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 8,
+   "category": "RETRO",
+   "headline": "日本酒4本で入手した「スカイライン2000GT-X」を定年後にレストア",
+   "keywords": [
+    "スカイライン2000GT-X",
+    "ハコスカ",
+    "旧車"
+   ],
+   "region": "JP",
+   "video_official": false
+  },
+  {
+   "id": "73ceae60cc",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/26/2011301",
+   "title": "快適装備も後席も削ってサーキットへ振り切ったVWの割り切り！ 過激「ID.ポロ GTI」",
+   "summary": "大型SUV用の後輪モーターを小型車の前輪へ搭載！ 2ドア化したVW「ID.ポロ GTI」 フォルクスワーゲンは2026年11月20日、コンセプトカー「ID.ポロ GTI クラブスポーツ コンセプト」を発表した。367ps [&#8230;] The post 快適装備も後席も削ってサーキットへ振り切ったVWの割り切り！ 過激「ID.ポロ GTI」 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Wed, 25 Nov 2026 22:00:18 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/11/06_AMW_261124_vw_gti.jpeg",
+   "kept": true,
+   "reason": "サーキット全振りの電動ホットハッチコンセプトで刺さる",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 7,
+   "category": "DEBUT",
+   "headline": "VWが後席を廃した「ID.ポロ GTI クラブスポーツ コンセプトカー」を発表",
+   "keywords": [
+    "ID.ポロ GTI",
+    "VW",
+    "ホットハッチ"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  },
+  {
+   "id": "faa9362ca2",
+   "source": "Auto Messe Web",
+   "weight": 1.2,
+   "url": "https://www.automesseweb.jp/2026/11/26/2007587",
+   "title": "重さ400kg・18.5馬力で約718万円！ 洗濯機メーカーが作った「ゼータ・スポーツ」",
+   "summary": "家電や工具を手掛けた豪州企業が65年前に挑んだ乗用車。ロンドンの競売で高値を記録 RMサザビーズがロンドンで開催したオークション「The London Auction 2026」にて、オーストラリアのライトバーン社が製造 [&#8230;] The post 重さ400kg・18.5馬力で約718万円！ 洗濯機メーカーが作った「ゼータ・スポーツ」 first appeared on AUTO MESSE WEB（オートメッセウェブ）.",
+   "published": "Wed, 25 Nov 2026 21:00:38 +0000",
+   "has_video": false,
+   "image_url": "https://image-automesseweb.com/wp-content/uploads/2026/11/05_AMW_261111_Lightburn-Zeta-Sports.jpeg",
+   "kept": true,
+   "reason": "珍車オークション落札、旧車好きの知的好奇心を刺激",
+   "matched": [],
+   "region_hint": "WORLD",
+   "score": 6,
+   "category": "RETRO",
+   "headline": "洗濯機メーカー製「ゼータ・スポーツ」がロンドンで約718万円",
+   "keywords": [
+    "ゼータ・スポーツ",
+    "旧車",
+    "オークション"
+   ],
+   "region": "WORLD",
+   "video_official": false
+  },
+  {
+   "id": "3f962225d5",
+   "source": "WEB CARTOP",
+   "weight": 1.1,
+   "url": "https://www.webcartop.jp/2026/11/1898228/",
+   "title": "『サーキットの狼』から『ドリキン』の台頭、『頭文字D』へ！ 世界を席巻した「日本が誇るドリフト文化」誕生の軌跡",
+   "summary": "この記事をまとめると ■モータースポーツの世界ではたびたびドリフトという技が使われる ■ジムカーナやイベントなどで披露されることが多く次第に競技として定着した ■高橋国光や土屋圭市などのドライバーもレース中にたびたび使っていた技だった ドリフトは日本発祥って本当？ 実車からラジコン、ゲームに至るま...",
+   "published": "Thu, 26 Nov 2026 02:40:09 +0000",
+   "has_video": false,
+   "image_url": "",
+   "kept": true,
+   "reason": "ドリフト文化の歴史解説、JDM好き読者の共感を得やすい",
+   "matched": [],
+   "region_hint": "JP",
+   "score": 6,
+   "category": "RETRO",
+   "headline": "サーキットの狼からドリキン、頭文字Dへ続く日本フォーミュラドリフト文化の変遷",
+   "keywords": [
+    "ドリフト",
+    "土屋圭市",
+    "JDM"
+   ],
+   "region": "JP",
+   "video_official": false
+  }
+ ]
+}
